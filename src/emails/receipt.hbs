@@ -1,0 +1,67 @@
+---
+layout: layout.hbs
+subject: Thanks for purchasing from [product name]. This is a receipt for {{total}}
+---
+<table class="email-content" width="100%" cellpadding="0" cellspacing="0">
+
+  <!-- Logo -->
+  <tr>
+    <td class="email-masthead">
+      <a href="#" class="email-masthead_name">[product name]</a>
+    </td>
+  </tr>
+
+  <!-- Email Body -->
+  <tr>
+    <td class="email-body" width="100%" cellpadding="0" cellspacing="0">
+      <table class="email-body_inner" align="center" width="570" cellpadding="0" cellspacing="0">
+
+        <!-- Body content -->
+        <tr>
+          <td class="content-cell">
+
+            <h1>Hi &#123;&#123;name&#125;&#125;,</h1>
+            <p>Thanks for ordering from [product name]. This email serves as a receipt for your purchase. No payment is due with this receipt.</p>
+            <p>Please retain this email receipt for your records. Also, on your statement this purchase will appear as “[statement name]”.</p>
+
+            <table class="invoice-wrapper" width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td><h3>&#123;&#123;invoice_id&#125;&#125;</h3></td>
+                <td><h3 class="align-right">&#123;&#123;date&#125;&#125;</h3></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <table class="invoice-table" width="100%" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <th><p>Description</p></th>
+                      <th><p class="align-right">Amount</p></th>
+                    </tr>
+                    &#123;&#123;#each invoice_details&#125;&#125;
+                      <tr>
+                        <td width="80%">&#123;&#123;description&#125;&#125;</td>
+                        <td class="align-right" width="20%">&#123;&#123;amount&#125;&#125;</td>
+                      </tr>
+                    &#123;&#123;/each&#125;&#125;
+                    <tr>
+                      <td width="80%" class="total-cell" valign="middle"><p class="total-cell_label">Total</p></td>
+                      <td width="20%" class="total-cell" valign="middle"><p>&#123;&#123;total&#125;&#125;</p></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+
+            <p>Cheers,<br>The team at [product name]</p>
+            <p><strong>P.S.</strong> Please reply to this email if you want to ask a question or just say hi.</p>
+
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      {{> footer }}
+    </td>
+  </tr>
+</table>

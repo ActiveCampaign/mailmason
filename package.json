@@ -1,0 +1,40 @@
+{
+  "name": "postmark-email-templates",
+  "version": "0.0.1",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "start": "gulp",
+    "html": "grunt html",
+    "css": "grunt css",
+    "build": "grunt build"
+  },
+  "devDependencies": {
+    "assemble": "^0.4.42",
+    "autoprefixer": "^6.3.6",
+    "cssnano": "^3.7.1",
+    "grunt": "~1.0.1",
+    "grunt-autoprefixer": "^3.0.3",
+    "grunt-cache-bust": "^1.3.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-imageoptim": "^1.4.1",
+    "grunt-inline": "^0.3.4",
+    "grunt-postmark": "0.0.6",
+    "grunt-premailer": "1.0.0",
+    "grunt-prettify": "^0.4.0",
+    "grunt-sass": "^1.0.0",
+    "grunt-scss-lint": "^0.3.6",
+    "grunt-spamcheck": "0.1.0",
+    "grunt-text-replace": "^0.4.0",
+    "gulp": "^3.9.1",
+    "gulp-htmlmin": "^2.0.0",
+    "gulp-postcss": "^6.1.1",
+    "gulp-sass": "^2.3.2",
+    "load-grunt-tasks": "^3.2.0",
+    "time-grunt": "^1.2.1"
+  }
+}
