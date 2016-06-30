@@ -4,10 +4,10 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/wildbit/postmark-build-templates"
   },
   "scripts": {
-    "start": "gulp",
+    "start": "grunt watch",
     "html": "grunt html",
     "css": "grunt css",
     "build": "grunt build"
