@@ -1,0 +1,28 @@
+/* Buttons ------------------------------ */
+
+.button {
+  display: inline-block;
+  width: 200px;
+  background-color: $c-blue;
+  border-radius: 3px;
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 45px;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.16);
+  -webkit-text-size-adjust: none;
+  mso-hide: all;
+}
+.button--green {
+  background-image: url(https://i.imgur.com/AMHUBHs.jpg);
+  background-color: $c-green;
+}
+.button--red {
+  background-image: url(https://i.imgur.com/0XBOook.jpg);
+  background-color: $c-red;
+}
+.button--blue {
+  background-image: url(https://i.imgur.com/XYqeYJQ.jpg);
+  background-color: $c-blue;
+}
