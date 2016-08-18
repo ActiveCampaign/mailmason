@@ -20,12 +20,18 @@ a {
   width: 100%;
   margin: 0;
   padding: 0;
+  -premailer-width: 100%;
+  -premailer-cellpadding: 0;
+  -premailer-cellspacing: 0;
   background-color: #F2F4F6; }
 
 .email-content {
   width: 100%;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  -premailer-width: 100%;
+  -premailer-cellpadding: 0;
+  -premailer-cellspacing: 0; }
 
 /* Masthead ----------------------- */
 .email-masthead {
@@ -47,6 +53,9 @@ a {
   width: 100%;
   margin: 0;
   padding: 0;
+  -premailer-width: 100%;
+  -premailer-cellpadding: 0;
+  -premailer-cellspacing: 0;
   border-top: 1px solid #EDEFF2;
   border-bottom: 1px solid #EDEFF2;
   background-color: #FFF; }
@@ -54,12 +63,18 @@ a {
 .email-body_inner {
   width: 570px;
   margin: 0 auto;
-  padding: 0; }
+  padding: 0;
+  -premailer-width: 570px;
+  -premailer-cellpadding: 0;
+  -premailer-cellspacing: 0; }
 
 .email-footer {
   width: 570px;
   margin: 0 auto;
   padding: 0;
+  -premailer-width: 570px;
+  -premailer-cellpadding: 0;
+  -premailer-cellspacing: 0;
   text-align: center; }
   .email-footer p {
     color: #AEAEAE; }
@@ -68,6 +83,9 @@ a {
   width: 100%;
   margin: 30px auto;
   padding: 0;
+  -premailer-width: 100%;
+  -premailer-cellpadding: 0;
+  -premailer-cellspacing: 0;
   text-align: center; }
 
 .body-sub {
@@ -85,12 +103,18 @@ a {
 .invoice-wrapper {
   width: 100%;
   margin: 0;
-  padding: 35px 0; }
+  padding: 35px 0;
+  -premailer-width: 100%;
+  -premailer-cellpadding: 0;
+  -premailer-cellspacing: 0; }
 
 .invoice-table {
   width: 100%;
   margin: 0;
-  padding: 25px 0 0 0; }
+  padding: 25px 0 0 0;
+  -premailer-width: 100%;
+  -premailer-cellpadding: 0;
+  -premailer-cellspacing: 0; }
   .invoice-table th {
     padding-bottom: 8px;
     border-bottom: 1px solid #EDEFF2; }
