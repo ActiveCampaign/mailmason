@@ -36,7 +36,7 @@ Watches the `src` directory for changes and builds to `dist`.
 Check out `Gruntfile.js` for more details on how each task works.
 
 ### Run specific tasks
-In most cases running `npm start` and letting the watcher do the builds for you will get the job done. But sometimes you may want to run granular scripts to build just the HTML or CSS.
+In most cases running `npm start` and letting the watcher do the builds for you will get the job done. But sometimes you may need to run granular scripts to just build the HTML or CSS.
 
 ```bash
 npm run html
