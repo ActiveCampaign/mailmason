@@ -12,7 +12,7 @@ module.exports = function(grunt) {
     distGlob: 'dist/*.html',
     layouts: 'src/layouts',
     partials: 'src/partials/*',
-    images: 'src/images',
+    images: 'src/images'
   };
 
   /* Configuration
@@ -26,9 +26,6 @@ module.exports = function(grunt) {
     ------------------------------------------------- */
 
     sass: {
-      options: {
-        sourceMap: false
-      },
       styles: {
         src: path.cssSrc,
         dest: path.cssDest
@@ -41,7 +38,6 @@ module.exports = function(grunt) {
 
     autoprefixer: {
       options: {
-        map: false,
         browsers: ['last 6 versions', 'ie >= 9']
       },
       styles: {
@@ -115,7 +111,8 @@ module.exports = function(grunt) {
       },
       html: {
         options: {
-          removeComments: true
+          removeComments: true,
+          preserveStyles: true
         },
         files: [{
           expand: true,
@@ -201,15 +198,15 @@ module.exports = function(grunt) {
         to: 'TO_ADDRESS',
         subject: 'PM TEMPLATE TEST'
       },
-      // grunt postmark:welcome - Sends just the welcome email
+      // run "grunt postmark:welcome" - Sends just the welcome email
       welcome: {
         src: 'dist/welcome.html'
       },
-      // grunt postmark:emails - Sends all of the emails. Be careful not to spam PM if you have a bunch of emails.
+      // run "grunt postmark:emails" - Sends all of the emails. Be careful not to spam PM if you have a bunch of emails.
       emails: {
         src: [path.distGlob]
       },
-      // grunt postmark:litmus - Add a litmus test address here.
+      // run "grunt postmark:litmus" - Add a litmus test address here.
       litmus: {
         to: '',
         src: [path.distGlob]
