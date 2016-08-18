@@ -1,0 +1,23 @@
+/* Buttons ------------------------------ */
+
+.button {
+  display: inline-block;
+  width: 200px;
+  background-color: $c-blue;
+  border-radius: 3px;
+  color: #FFF;
+  font-size: 15px;
+  line-height: 45px;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.16);
+  -webkit-text-size-adjust: none;
+  mso-hide: all;
+
+  &--green {
+    background-color: $c-green;
+  }
+  &--red {
+    background-color: $c-red;
+  }
+}

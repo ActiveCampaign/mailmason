@@ -9,11 +9,10 @@ module.exports = function(grunt) {
     cssDest: 'src/stylesheets/global.css',
     emailSrc: 'src/emails/*.hbs',
     dist: 'dist/',
+    distGlob: 'dist/*.html',
     layouts: 'src/layouts',
     partials: 'src/partials/*',
-    images: 'src/images',
-    cdn: 'http://assets.wildbit.com/postmark/emails/images/',
-    ftp: '/web/content/postmark/emails/images'
+    images: 'src/images'
   };
 
   /* Configuration
@@ -27,9 +26,6 @@ module.exports = function(grunt) {
     ------------------------------------------------- */
 
     sass: {
-      options: {
-        sourceMap: false
-      },
       styles: {
         src: path.cssSrc,
         dest: path.cssDest
@@ -42,7 +38,6 @@ module.exports = function(grunt) {
 
     autoprefixer: {
       options: {
-        map: false,
         browsers: ['last 6 versions', 'ie >= 9']
       },
       styles: {
@@ -53,6 +48,8 @@ module.exports = function(grunt) {
 
 
     /* Assemble
+       Assembles our handlebars templates. Documentation might be incompatible since the latest version uses an entirely different build system.
+       See: https://github.com/assemble/assemble/
     ------------------------------------------------- */
 
     assemble: {
@@ -69,6 +66,8 @@ module.exports = function(grunt) {
 
 
     /* Inline
+       Brings external resources in the HTML files. Basically just takes our CSS file and inserts it as a style block.
+       See: https://github.com/chyingp/grunt-inline
     ------------------------------------------------- */
 
     inline: {
@@ -83,6 +82,8 @@ module.exports = function(grunt) {
 
 
     /* Prettify
+       Formats our template HTML files.
+       See: https://github.com/jonschlinkert/grunt-prettify
     ------------------------------------------------- */
 
     prettify: {
@@ -100,16 +101,22 @@ module.exports = function(grunt) {
 
 
     /* Premailer
+       Adds all sorts of email magic. Adds inline styles to each element based off class. Also generates plain text versions and allows us to control commonly used table attributes via CSS.
+       See: https://github.com/dwightjack/grunt-premailer
     ------------------------------------------------- */
 
     premailer: {
+      options: {
+        warnLevel: 'none'
+      },
       html: {
         options: {
-          //removeComments: true
+          removeComments: true,
+          preserveStyles: true
         },
         files: [{
           expand: true,
-          src: [path.dist + '*.html'],
+          src: [path.distGlob],
           dest: ''
         }]
       },
@@ -119,7 +126,7 @@ module.exports = function(grunt) {
         },
         files: [{
           expand: true,
-          src: [path.dist + '*.html'],
+          src: [path.distGlob],
           dest: '',
           ext: '.txt'
         }]
@@ -127,28 +134,8 @@ module.exports = function(grunt) {
     },
 
 
-    /* Cache bust
-    ------------------------------------------------- */
-
-    cacheBust: {
-      options: {
-        encoding: 'utf8',
-        algorithm: 'md5',
-        length: 16,
-        rename: false,
-      },
-      emails: {
-        files: [{
-          src: [path.dist + '*.html']
-        },
-        {
-          src: [path.builds + '*.html']
-        }]
-      }
-    },
-
-
     /* Watch
+       Watches all files in the src directory for changes.
     ------------------------------------------------- */
 
     watch: {
@@ -164,26 +151,22 @@ module.exports = function(grunt) {
     ------------------------------------------------- */
 
     replace: {
+      // We encode our mustachio variables so that our assemble(handlebars) task won’t get confused.
       variableSyntax: {
-        src: ['dist/*.html'],
+        src: [path.distGlob],
         overwrite: true,
         replacements: [
-          {
-            from: '&#123;&#123;',
-            to: '{{'
-          },
-          {
-            from: '&#125;&#125;',
-            to: '}}'
-          }
+          { from: '&#123;&#123;', to: '{{' },
+          { from: '&#125;&#125;', to: '}}' }
         ]
       },
+      // Add some additional attributes that grunt inline removed
       styleBlock: {
-        src: ['dist/*.html'],
+        src: [path.distGlob],
         overwrite: true,
         replacements: [
           {
-            from: '<style>',
+            from: '<style type="text/css">',
             to: '<style type="text/css" rel="stylesheet" media="all">'
           }
         ]
@@ -192,31 +175,41 @@ module.exports = function(grunt) {
 
 
     /* Spamcheck
+       Sends all of our HTML files through Postmark’s spamcheck API.
+       See: https://github.com/derekrushforth/grunt-spamcheck
     ------------------------------------------------- */
 
     spamcheck: {
       emails: {
-        src: [path.dist + '*.html']
+        src: [path.distGlob]
       }
     },
 
 
     /* Postmark
+       Sends test emails through Postmark. Add and remove template targets as needed.
+       See: https://github.com/derekrushforth/grunt-postmark
     ------------------------------------------------- */
 
     postmark: {
       options: {
-        serverToken: 'SERVER_TOKEN',
-        from: 'FROM_ADDRESS',
+        serverToken: 'SERVER_TOKEN', // Add your server token
+        from: 'FROM_ADDRESS', // Add your from address. Must be a valid sender signature.
         to: 'TO_ADDRESS',
         subject: 'PM TEMPLATE TEST'
       },
-      emails: {
-        src: [path.dist + '*.html']
+      // run "grunt postmark:welcome" - Sends just the welcome email
+      welcome: {
+        src: 'dist/welcome.html'
       },
+      // run "grunt postmark:emails" - Sends all of the emails. Be careful not to spam PM if you have a bunch of emails.
+      emails: {
+        src: [path.distGlob]
+      },
+      // run "grunt postmark:litmus" - Add a litmus test address here.
       litmus: {
         to: '',
-        src: [path.dist + '*.html']
+        src: [path.distGlob]
       }
     }
 
@@ -226,19 +219,14 @@ module.exports = function(grunt) {
   /* Tasks
   ================================================= */
 
-  grunt.registerTask('default', ['css', 'assemble', 'inline', 'replace', 'prettify']);
-  grunt.registerTask('premailerbuild', ['css', 'html', 'prettify']);
+  grunt.registerTask('default', ['css', 'html']);
 
   // Assets
-  grunt.registerTask('html', ['assemble', 'premailer']);
+  grunt.registerTask('html', ['assemble', 'inline', 'premailer', 'replace', 'prettify']);
   grunt.registerTask('css', ['sass', 'autoprefixer']);
 
   // Testing
   grunt.registerTask('send', ['postmark:emails']);
   grunt.registerTask('spam', ['spamcheck']);
   grunt.registerTask('litmus', ['postmark:litmus']);
-
-  // Build
-  grunt.registerTask('build', ['css', 'html', 'cacheBust', 'upload']);
-
 };

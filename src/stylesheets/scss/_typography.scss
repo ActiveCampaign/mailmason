@@ -1,0 +1,24 @@
+/* Type ------------------------------ */
+
+h1 {
+  @include heading();
+}
+h2 {
+  @include heading($size: 16px);
+}
+h3 {
+  @include heading($size: 14px);
+}
+p {
+  margin-top: 0;
+  color: $c-slate;
+  font-size: 16px;
+  line-height: 1.5em;
+  text-align: left;
+}
+p.sub {
+  font-size: 12px;
+}
+p.center {
+  text-align: center;
+}

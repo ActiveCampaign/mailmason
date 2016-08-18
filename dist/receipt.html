@@ -1,10 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Thanks for purchasing from [product name]. This is a receipt for {{total}}</title>
-    <style type="text/css" rel="stylesheet" media="all">
+    <style>
     /* Base ------------------------------ */
     
     *:not(br):not(tr):not(html) {
@@ -31,6 +31,9 @@
       width: 100%;
       margin: 0;
       padding: 0;
+      -premailer-width: 100%;
+      -premailer-cellpadding: 0;
+      -premailer-cellspacing: 0;
       background-color: #F2F4F6;
     }
     
@@ -38,6 +41,9 @@
       width: 100%;
       margin: 0;
       padding: 0;
+      -premailer-width: 100%;
+      -premailer-cellpadding: 0;
+      -premailer-cellspacing: 0;
     }
     /* Masthead ----------------------- */
     
@@ -63,6 +69,9 @@
       width: 100%;
       margin: 0;
       padding: 0;
+      -premailer-width: 100%;
+      -premailer-cellpadding: 0;
+      -premailer-cellspacing: 0;
       border-top: 1px solid #EDEFF2;
       border-bottom: 1px solid #EDEFF2;
       background-color: #FFF;
@@ -72,12 +81,18 @@
       width: 570px;
       margin: 0 auto;
       padding: 0;
+      -premailer-width: 570px;
+      -premailer-cellpadding: 0;
+      -premailer-cellspacing: 0;
     }
     
     .email-footer {
       width: 570px;
       margin: 0 auto;
       padding: 0;
+      -premailer-width: 570px;
+      -premailer-cellpadding: 0;
+      -premailer-cellspacing: 0;
       text-align: center;
     }
     
@@ -89,6 +104,9 @@
       width: 100%;
       margin: 30px auto;
       padding: 0;
+      -premailer-width: 100%;
+      -premailer-cellpadding: 0;
+      -premailer-cellspacing: 0;
       text-align: center;
     }
     
@@ -111,12 +129,18 @@
       width: 100%;
       margin: 0;
       padding: 35px 0;
+      -premailer-width: 100%;
+      -premailer-cellpadding: 0;
+      -premailer-cellspacing: 0;
     }
     
     .invoice-table {
       width: 100%;
       margin: 0;
       padding: 25px 0 0 0;
+      -premailer-width: 100%;
+      -premailer-cellpadding: 0;
+      -premailer-cellspacing: 0;
     }
     
     .invoice-table th {
@@ -151,6 +175,57 @@
     
     .total-cell_label {
       padding: 0 15px 0 0;
+    }
+    /* Utilities ------------------------------ */
+    
+    .align-right {
+      text-align: right;
+    }
+    
+    .align-left {
+      text-align: left;
+    }
+    
+    .align-center {
+      text-align: center;
+    }
+    /*Media Queries ------------------------------ */
+    
+    @media only screen and (max-width: 600px) {
+      .email-body_inner,
+      .email-footer {
+        width: 100% !important;
+      }
+    }
+    
+    @media only screen and (max-width: 500px) {
+      .button {
+        width: 100% !important;
+      }
+    }
+    /* Buttons ------------------------------ */
+    
+    .button {
+      display: inline-block;
+      width: 200px;
+      background-color: #3869D4;
+      border-radius: 3px;
+      color: #FFF;
+      font-size: 15px;
+      line-height: 45px;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16);
+      -webkit-text-size-adjust: none;
+      mso-hide: all;
+    }
+    
+    .button--green {
+      background-color: #22BC66;
+    }
+    
+    .button--red {
+      background-color: #FF6136;
     }
     /* Type ------------------------------ */
     
@@ -193,134 +268,92 @@
     p.center {
       text-align: center;
     }
-    /* Buttons ------------------------------ */
-    
-    .button {
-      display: inline-block;
-      width: 200px;
-      background-color: #3869D4;
-      border-radius: 3px;
-      color: #ffffff;
-      font-size: 15px;
-      line-height: 45px;
-      text-align: center;
-      text-decoration: none;
-      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16);
-      -webkit-text-size-adjust: none;
-      mso-hide: all;
-    }
-    
-    .button--green {
-      background-image: url(https://i.imgur.com/AMHUBHs.jpg);
-      background-color: #22BC66;
-    }
-    
-    .button--red {
-      background-image: url(https://i.imgur.com/0XBOook.jpg);
-      background-color: #FF6136;
-    }
-    
-    .button--blue {
-      background-image: url(https://i.imgur.com/XYqeYJQ.jpg);
-      background-color: #3869D4;
-    }
-    /* General ------------------------------ */
-    
-    .align-right {
-      text-align: right;
-    }
-    /*Media Queries ------------------------------ */
-    
-    @media only screen and (max-width: 600px) {
-      .email-body_inner,
-      .email-footer {
-        width: 100% !important;
-      }
-    }
-    
-    @media only screen and (max-width: 500px) {
-      .button {
-        width: 100% !important;
-      }
-    }
     </style>
   </head>
-  <body>
-    <span class="preheader">{{preheader}}</span>
-    <table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0">
+  <body style="-webkit-text-size-adjust: none; box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; height: 100%; line-height: 1.4; margin: 0; width: 100% !important;" bgcolor="#F2F4F6">
+    <style type="text/css" rel="stylesheet" media="all">
+    body {
+      width: 100% !important;
+      height: 100%;
+      margin: 0;
+      line-height: 1.4;
+      background-color: #F2F4F6;
+      color: #74787E;
+      -webkit-text-size-adjust: none;
+    }
+    </style>
+    <span class="preheader" style="box-sizing: border-box; display: none !important; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">{{preheader}}</span>
+    <table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 0; padding: 0; width: 100%;" bgcolor="#F2F4F6">
       <tr>
-        <td align="center">
-          <table class="email-content" width="100%" cellpadding="0" cellspacing="0">
-            <!-- Logo -->
+        <td align="center" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
+          <table class="email-content" width="100%" cellpadding="0" cellspacing="0" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 0; padding: 0; width: 100%;">
             <tr>
-              <td class="email-masthead">
-                <a href="#" class="email-masthead_name">[product name]</a>
+              <td class="email-masthead" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; padding: 25px 0;" align="center">
+                <a href="#" class="email-masthead_name" style="box-sizing: border-box; color: #bbbfc3; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; font-weight: bold; text-decoration: none; text-shadow: 0 1px 0 white;">[product name]</a>
               </td>
             </tr>
-            <!-- Email Body -->
             <tr>
-              <td class="email-body" width="100%" cellpadding="0" cellspacing="0">
-                <table class="email-body_inner" align="center" width="570" cellpadding="0" cellspacing="0">
-                  <!-- Body content -->
+              <td class="email-body" width="100%" cellpadding="0" cellspacing="0" style="-premailer-cellpadding: 0; -premailer-cellspacing: 0; border-bottom-color: #EDEFF2; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #EDEFF2; border-top-style: solid; border-top-width: 1px; box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 0; padding: 0; width: 100%;" bgcolor="#FFF">
+                <table class="email-body_inner" align="center" width="570" cellpadding="0" cellspacing="0" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 0 auto; padding: 0; width: 570px;">
                   <tr>
-                    <td class="content-cell">
-                      <h1>Hi {{name}},</h1>
-                      <p>Thanks for ordering from [product name]. This email serves as a receipt for your purchase. No payment is due with this receipt.</p>
-                      <p>Please retain this email receipt for your records. Also, on your statement this purchase will appear as “[statement name]”.</p>
-                      <table class="invoice-wrapper" width="100%" cellpadding="0" cellspacing="0">
+                    <td class="content-cell" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; padding: 35px;">
+                      <h1 style="box-sizing: border-box; color: #2F3133; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 19px; font-weight: bold; margin-top: 0;" align="left">Hi {{name}},</h1>
+                      <p style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 1.5em; margin-top: 0;" align="left">Thanks for ordering from [product name]. This email serves as a receipt for your purchase. No payment is due with this receipt.</p>
+                      <p style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 1.5em; margin-top: 0;" align="left">Please retain this email receipt for your records. Also, on your statement this purchase will appear as “[statement name]”.</p>
+                      <table class="invoice-wrapper" width="100%" cellpadding="0" cellspacing="0" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 0; padding: 35px 0; width: 100%;">
                         <tr>
-                          <td>
-                            <h3>{{invoice_id}}</h3></td>
-                          <td>
-                            <h3 class="align-right">{{date}}</h3></td>
+                          <td style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
+                            <h3 style="box-sizing: border-box; color: #2F3133; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 14px; font-weight: bold; margin-top: 0;" align="left">{{invoice_id}}</h3></td>
+                          <td style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
+                            <h3 class="align-right" style="box-sizing: border-box; color: #2F3133; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 14px; font-weight: bold; margin-top: 0;" align="right">{{date}}</h3></td>
                         </tr>
                         <tr>
-                          <td colspan="2">
-                            <table class="invoice-table" width="100%" cellpadding="0" cellspacing="0">
+                          <td colspan="2" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
+                            <table class="invoice-table" width="100%" cellpadding="0" cellspacing="0" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 0; padding: 25px 0 0; width: 100%;">
                               <tr>
-                                <th>
-                                  <p>Description</p>
+                                <th style="border-bottom-color: #EDEFF2; border-bottom-style: solid; border-bottom-width: 1px; box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; padding-bottom: 8px;">
+                                  <p style="box-sizing: border-box; color: #9BA2AB; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 12px; line-height: 1.5em; margin: 0;" align="left">Description</p>
                                 </th>
-                                <th>
-                                  <p class="align-right">Amount</p>
+                                <th style="border-bottom-color: #EDEFF2; border-bottom-style: solid; border-bottom-width: 1px; box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; padding-bottom: 8px;">
+                                  <p class="align-right" style="box-sizing: border-box; color: #9BA2AB; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 12px; line-height: 1.5em; margin: 0;" align="right">Amount</p>
                                 </th>
                               </tr>
                               {{#each invoice_details}}
                               <tr>
-                                <td width="80%">{{description}}</td>
-                                <td class="align-right" width="20%">{{amount}}</td>
+                                <td width="80%" style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 15px; line-height: 18px; padding: 10px 0;">{{description}}</td>
+                                <td class="align-right" width="20%" style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 15px; line-height: 18px; padding: 10px 0;" align="right">{{amount}}</td>
                               </tr>
                               {{/each}}
                               <tr>
-                                <td width="80%" class="total-cell" valign="middle">
-                                  <p class="total-cell_label">Total</p>
+                                <td width="80%" class="total-cell" valign="middle" style="border-top-color: #EDEFF2; border-top-style: solid; border-top-width: 1px; box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 15px; line-height: 18px; padding: 10px 0;">
+                                  <p class="total-cell_label" style="box-sizing: border-box; color: #2F3133; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; font-weight: bold; line-height: 1.5em; margin: 0; padding: 0 15px 0 0;" align="right">Total</p>
                                 </td>
-                                <td width="20%" class="total-cell" valign="middle">
-                                  <p>{{total}}</p>
+                                <td width="20%" class="total-cell" valign="middle" style="border-top-color: #EDEFF2; border-top-style: solid; border-top-width: 1px; box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 15px; line-height: 18px; padding: 10px 0;">
+                                  <p style="box-sizing: border-box; color: #2F3133; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; font-weight: bold; line-height: 1.5em; margin: 0;" align="right">{{total}}</p>
                                 </td>
                               </tr>
                             </table>
                           </td>
                         </tr>
                       </table>
-                      <p>Cheers,
-                        <br>The team at [product name]</p>
-                      <p><strong>P.S.</strong> Please reply to this email if you want to ask a question or just say hi.</p>
+                      <p style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 1.5em; margin-top: 0;" align="left">Cheers,
+                        <br />The team at [product name]</p>
+                      <p style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 1.5em; margin-top: 0;" align="left"><strong style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">P.S.</strong> Please reply to this email if you want to ask a question or just say hi.</p>
                     </td>
                   </tr>
                 </table>
               </td>
             </tr>
             <tr>
-              <td>
-                <table class="email-footer" align="center" width="570" cellpadding="0" cellspacing="0">
+              <td style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
+                <table class="email-footer" align="center" width="570" cellpadding="0" cellspacing="0" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 0 auto; padding: 0; text-align: center; width: 570px;">
                   <tr>
-                    <td class="content-cell">
-                      <p class="sub center">&copy; 2016 [product name]. All rights reserved.</p>
-                      <p class="sub center">
+                    <td class="content-cell" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; padding: 35px;">
+                      <p class="sub center" style="box-sizing: border-box; color: #AEAEAE; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 12px; line-height: 1.5em; margin-top: 0;" align="center">© 2016 [product name]. All rights reserved.</p>
+                      <p class="sub center" style="box-sizing: border-box; color: #AEAEAE; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 12px; line-height: 1.5em; margin-top: 0;" align="center">
                         [product name]
-                        <br>[product address]
-                        <br>[product address line 2]
+                        <br />[product address]
+                        <br />[product address line 2]
                       </p>
                     </td>
                   </tr>

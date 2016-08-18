@@ -20,46 +20,58 @@ a {
   width: 100%;
   margin: 0;
   padding: 0;
+  -premailer-width: 100%;
+  -premailer-cellpadding: 0;
+  -premailer-cellspacing: 0;
   background-color: #F2F4F6; }
 
 .email-content {
   width: 100%;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  -premailer-width: 100%;
+  -premailer-cellpadding: 0;
+  -premailer-cellspacing: 0; }
 
 /* Masthead ----------------------- */
 .email-masthead {
   padding: 25px 0;
   text-align: center; }
-
-.email-masthead_logo {
-  width: 94px; }
-
-.email-masthead_name {
-  font-size: 16px;
-  font-weight: bold;
-  color: #bbbfc3;
-  text-decoration: none;
-  text-shadow: 0 1px 0 white; }
+  .email-masthead_logo {
+    width: 94px; }
+  .email-masthead_name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #bbbfc3;
+    text-decoration: none;
+    text-shadow: 0 1px 0 white; }
 
 /* Body ------------------------------ */
 .email-body {
   width: 100%;
   margin: 0;
   padding: 0;
+  -premailer-width: 100%;
+  -premailer-cellpadding: 0;
+  -premailer-cellspacing: 0;
   border-top: 1px solid #EDEFF2;
   border-bottom: 1px solid #EDEFF2;
   background-color: #FFF; }
-
-.email-body_inner {
-  width: 570px;
-  margin: 0 auto;
-  padding: 0; }
+  .email-body_inner {
+    width: 570px;
+    margin: 0 auto;
+    padding: 0;
+    -premailer-width: 570px;
+    -premailer-cellpadding: 0;
+    -premailer-cellspacing: 0; }
 
 .email-footer {
   width: 570px;
   margin: 0 auto;
   padding: 0;
+  -premailer-width: 570px;
+  -premailer-cellpadding: 0;
+  -premailer-cellspacing: 0;
   text-align: center; }
   .email-footer p {
     color: #AEAEAE; }
@@ -68,6 +80,9 @@ a {
   width: 100%;
   margin: 30px auto;
   padding: 0;
+  -premailer-width: 100%;
+  -premailer-cellpadding: 0;
+  -premailer-cellspacing: 0;
   text-align: center; }
 
 .body-sub {
@@ -85,12 +100,18 @@ a {
 .invoice-wrapper {
   width: 100%;
   margin: 0;
-  padding: 35px 0; }
+  padding: 35px 0;
+  -premailer-width: 100%;
+  -premailer-cellpadding: 0;
+  -premailer-cellspacing: 0; }
 
 .invoice-table {
   width: 100%;
   margin: 0;
-  padding: 25px 0 0 0; }
+  padding: 25px 0 0 0;
+  -premailer-width: 100%;
+  -premailer-cellpadding: 0;
+  -premailer-cellspacing: 0; }
   .invoice-table th {
     padding-bottom: 8px;
     border-bottom: 1px solid #EDEFF2; }
@@ -112,9 +133,47 @@ a {
     text-align: right;
     font-weight: bold;
     color: #2F3133; }
+  .total-cell_label {
+    padding: 0 15px 0 0; }
 
-.total-cell_label {
-  padding: 0 15px 0 0; }
+/* Utilities ------------------------------ */
+.align-right {
+  text-align: right; }
+
+.align-left {
+  text-align: left; }
+
+.align-center {
+  text-align: center; }
+
+/*Media Queries ------------------------------ */
+@media only screen and (max-width: 600px) {
+  .email-body_inner,
+  .email-footer {
+    width: 100% !important; } }
+
+@media only screen and (max-width: 500px) {
+  .button {
+    width: 100% !important; } }
+
+/* Buttons ------------------------------ */
+.button {
+  display: inline-block;
+  width: 200px;
+  background-color: #3869D4;
+  border-radius: 3px;
+  color: #FFF;
+  font-size: 15px;
+  line-height: 45px;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16);
+  -webkit-text-size-adjust: none;
+  mso-hide: all; }
+  .button--green {
+    background-color: #22BC66; }
+  .button--red {
+    background-color: #FF6136; }
 
 /* Type ------------------------------ */
 h1 {
@@ -150,44 +209,3 @@ p.sub {
 
 p.center {
   text-align: center; }
-
-/* Buttons ------------------------------ */
-.button {
-  display: inline-block;
-  width: 200px;
-  background-color: #3869D4;
-  border-radius: 3px;
-  color: #ffffff;
-  font-size: 15px;
-  line-height: 45px;
-  text-align: center;
-  text-decoration: none;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16);
-  -webkit-text-size-adjust: none;
-  mso-hide: all; }
-
-.button--green {
-  background-image: url(https://i.imgur.com/AMHUBHs.jpg);
-  background-color: #22BC66; }
-
-.button--red {
-  background-image: url(https://i.imgur.com/0XBOook.jpg);
-  background-color: #FF6136; }
-
-.button--blue {
-  background-image: url(https://i.imgur.com/XYqeYJQ.jpg);
-  background-color: #3869D4; }
-
-/* General ------------------------------ */
-.align-right {
-  text-align: right; }
-
-/*Media Queries ------------------------------ */
-@media only screen and (max-width: 600px) {
-  .email-body_inner,
-  .email-footer {
-    width: 100% !important; } }
-
-@media only screen and (max-width: 500px) {
-  .button {
-    width: 100% !important; } }
