@@ -1,4 +1,5 @@
 /* Layout ------------------------------ */
+
 .email-wrapper {
   @include table-scale();
   background-color: $c-gray-light;
@@ -9,6 +10,7 @@
 
 
 /* Masthead ----------------------- */
+
 .email-masthead {
   padding: 25px 0;
   text-align: center;
@@ -26,6 +28,7 @@
 
 
 /* Body ------------------------------ */
+
 .email-body {
   @include table-scale();
   border-top: 1px solid $c-slate-lighter;
@@ -43,6 +46,7 @@
     color: $c-gray;
   }
 }
+
 .body-action {
   @include table-scale($margin: 30px auto);
   text-align: center;
@@ -61,6 +65,7 @@
 
 
 /* Data table ------------------------------ */
+
 .invoice-wrapper {
   @include table-scale($padding: 35px 0);
 }
@@ -99,60 +104,6 @@
 .total-cell_label {
   padding: 0 15px 0 0;
 
-}
-
-
-/* Type ------------------------------ */
-h1 {
-  @include heading();
-}
-h2 {
-  @include heading($size: 16px);
-}
-h3 {
-  @include heading($size: 14px);
-}
-p {
-  margin-top: 0;
-  color: $c-slate;
-  font-size: 16px;
-  line-height: 1.5em;
-  text-align: left;
-}
-p.sub {
-  font-size: 12px;
-}
-p.center {
-  text-align: center;
-}
-
-
-/* Buttons ------------------------------ */
-.button {
-  display: inline-block;
-  width: 200px;
-  background-color: $c-blue;
-  border-radius: 3px;
-  color: #ffffff;
-  font-size: 15px;
-  line-height: 45px;
-  text-align: center;
-  text-decoration: none;
-  box-shadow: 0 2px 3px rgba(0,0,0,0.16);
-  -webkit-text-size-adjust: none;
-  mso-hide: all;
-}
-.button--green {
-  background-image: url(https://i.imgur.com/AMHUBHs.jpg);
-  background-color: $c-green;
-}
-.button--red {
-  background-image: url(https://i.imgur.com/0XBOook.jpg);
-  background-color: $c-red;
-}
-.button--blue {
-  background-image: url(https://i.imgur.com/XYqeYJQ.jpg);
-  background-color: $c-blue;
 }
 
 

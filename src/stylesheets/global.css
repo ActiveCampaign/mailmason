@@ -116,6 +116,44 @@ a {
 .total-cell_label {
   padding: 0 15px 0 0; }
 
+/* General ------------------------------ */
+.align-right {
+  text-align: right; }
+
+/*Media Queries ------------------------------ */
+@media only screen and (max-width: 600px) {
+  .email-body_inner,
+  .email-footer {
+    width: 100% !important; } }
+
+@media only screen and (max-width: 500px) {
+  .button {
+    width: 100% !important; } }
+
+/* Buttons ------------------------------ */
+.button {
+  display: inline-block;
+  width: 200px;
+  background-color: #3869D4;
+  border-radius: 3px;
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 45px;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16);
+  -webkit-text-size-adjust: none;
+  mso-hide: all; }
+
+.button--green {
+  background-color: #22BC66; }
+
+.button--red {
+  background-color: #FF6136; }
+
+.button--blue {
+  background-color: #3869D4; }
+
 /* Type ------------------------------ */
 h1 {
   margin-top: 0;
@@ -150,44 +188,3 @@ p.sub {
 
 p.center {
   text-align: center; }
-
-/* Buttons ------------------------------ */
-.button {
-  display: inline-block;
-  width: 200px;
-  background-color: #3869D4;
-  border-radius: 3px;
-  color: #ffffff;
-  font-size: 15px;
-  line-height: 45px;
-  text-align: center;
-  text-decoration: none;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16);
-  -webkit-text-size-adjust: none;
-  mso-hide: all; }
-
-.button--green {
-  background-image: url(https://i.imgur.com/AMHUBHs.jpg);
-  background-color: #22BC66; }
-
-.button--red {
-  background-image: url(https://i.imgur.com/0XBOook.jpg);
-  background-color: #FF6136; }
-
-.button--blue {
-  background-image: url(https://i.imgur.com/XYqeYJQ.jpg);
-  background-color: #3869D4; }
-
-/* General ------------------------------ */
-.align-right {
-  text-align: right; }
-
-/*Media Queries ------------------------------ */
-@media only screen and (max-width: 600px) {
-  .email-body_inner,
-  .email-footer {
-    width: 100% !important; } }
-
-@media only screen and (max-width: 500px) {
-  .button {
-    width: 100% !important; } }
