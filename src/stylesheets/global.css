@@ -37,16 +37,14 @@ a {
 .email-masthead {
   padding: 25px 0;
   text-align: center; }
-
-.email-masthead_logo {
-  width: 94px; }
-
-.email-masthead_name {
-  font-size: 16px;
-  font-weight: bold;
-  color: #bbbfc3;
-  text-decoration: none;
-  text-shadow: 0 1px 0 white; }
+  .email-masthead_logo {
+    width: 94px; }
+  .email-masthead_name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #bbbfc3;
+    text-decoration: none;
+    text-shadow: 0 1px 0 white; }
 
 /* Body ------------------------------ */
 .email-body {
@@ -59,14 +57,13 @@ a {
   border-top: 1px solid #EDEFF2;
   border-bottom: 1px solid #EDEFF2;
   background-color: #FFF; }
-
-.email-body_inner {
-  width: 570px;
-  margin: 0 auto;
-  padding: 0;
-  -premailer-width: 570px;
-  -premailer-cellpadding: 0;
-  -premailer-cellspacing: 0; }
+  .email-body_inner {
+    width: 570px;
+    margin: 0 auto;
+    padding: 0;
+    -premailer-width: 570px;
+    -premailer-cellpadding: 0;
+    -premailer-cellspacing: 0; }
 
 .email-footer {
   width: 570px;
@@ -136,13 +133,18 @@ a {
     text-align: right;
     font-weight: bold;
     color: #2F3133; }
+  .total-cell_label {
+    padding: 0 15px 0 0; }
 
-.total-cell_label {
-  padding: 0 15px 0 0; }
-
-/* General ------------------------------ */
+/* Utilities ------------------------------ */
 .align-right {
   text-align: right; }
+
+.align-left {
+  text-align: left; }
+
+.align-center {
+  text-align: center; }
 
 /*Media Queries ------------------------------ */
 @media only screen and (max-width: 600px) {
@@ -160,7 +162,7 @@ a {
   width: 200px;
   background-color: #3869D4;
   border-radius: 3px;
-  color: #ffffff;
+  color: #FFF;
   font-size: 15px;
   line-height: 45px;
   text-align: center;
@@ -168,15 +170,10 @@ a {
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16);
   -webkit-text-size-adjust: none;
   mso-hide: all; }
-
-.button--green {
-  background-color: #22BC66; }
-
-.button--red {
-  background-color: #FF6136; }
-
-.button--blue {
-  background-color: #3869D4; }
+  .button--green {
+    background-color: #22BC66; }
+  .button--red {
+    background-color: #FF6136; }
 
 /* Type ------------------------------ */
 h1 {

@@ -14,16 +14,17 @@
 .email-masthead {
   padding: 25px 0;
   text-align: center;
-}
-.email-masthead_logo {
-  width: 94px;
-}
-.email-masthead_name {
-  font-size: 16px;
-  font-weight: bold;
-  color: $c-slate-alt;
-  text-decoration: none;
-  text-shadow: 0 1px 0 rgba(255,255,255,1);
+
+  &_logo {
+    width: 94px;
+  }
+  &_name {
+    font-size: 16px;
+    font-weight: bold;
+    color: $c-slate-alt;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(255,255,255,1);
+  }
 }
 
 
@@ -34,10 +35,12 @@
   border-top: 1px solid $c-slate-lighter;
   border-bottom: 1px solid $c-slate-lighter;
   background-color: #FFF;
+
+  &_inner {
+    @include table-scale($width: 570px, $margin: 0 auto);
+  }
 }
-.email-body_inner {
-  @include table-scale($width: 570px, $margin: 0 auto);
-}
+
 .email-footer {
   @include table-scale($width: 570px, $margin: 0 auto);
   text-align: center;
@@ -100,20 +103,28 @@
     font-weight: bold;
     color: $c-gray-dark;
   }
+  &_label {
+    padding: 0 15px 0 0;
+  }
 }
-.total-cell_label {
-  padding: 0 15px 0 0;
-
-}
 
 
-/* General ------------------------------ */
+/* Utilities ------------------------------ */
+
 .align-right {
   text-align: right;
+}
+.align-left {
+  text-align: left;
+}
+.align-center {
+  text-align: center;
 }
 
 
 /*Media Queries ------------------------------ */
+// TODO: create a mixin for media queries instead
+
 @media only screen and (max-width: 600px) {
   .email-body_inner,
   .email-footer {

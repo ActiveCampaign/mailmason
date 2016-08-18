@@ -5,7 +5,7 @@
   width: 200px;
   background-color: $c-blue;
   border-radius: 3px;
-  color: #ffffff;
+  color: #FFF;
   font-size: 15px;
   line-height: 45px;
   text-align: center;
@@ -13,13 +13,11 @@
   box-shadow: 0 2px 3px rgba(0,0,0,0.16);
   -webkit-text-size-adjust: none;
   mso-hide: all;
-}
-.button--green {
-  background-color: $c-green;
-}
-.button--red {
-  background-color: $c-red;
-}
-.button--blue {
-  background-color: $c-blue;
+
+  &--green {
+    background-color: $c-green;
+  }
+  &--red {
+    background-color: $c-red;
+  }
 }
