@@ -6,13 +6,13 @@ By default, the generated templates use [Mustachio](https://github.com/wildbit/m
 
 ## What does it do for you?
 
-[X] Uses Handlebars to enable layouts and partials in templates and avoid redundancy
-[X] Enables the use of SCSS for generating the styles
-[X] Automatically inlines the resulting CSS to maximize email client compatibility
-[X] Automatically generates text versions of emails with the same content as the HTML versions
-[X] Enables easy sending of test emails through your Postmark account
-[X] Enables easy batch testing against the [Postmark Spamcheck API](http://spamcheck.postmarkapp.com)
-[X] Enables easy batch testing through [Litmus](http://litmus.com)
+* [X] Uses Handlebars to enable layouts and partials in templates and avoid redundancy
+* [X] Enables the use of SCSS for generating the styles
+* [X] Automatically inlines the resulting CSS to maximize email client compatibility
+* [X] Automatically generates text versions of emails with the same content as the HTML versions
+* [X] Enables easy sending of test emails through your Postmark account
+* [X] Enables easy batch testing against the [Postmark Spamcheck API](http://spamcheck.postmarkapp.com)
+* [X] Enables easy batch testing through [Litmus](http://litmus.com)
 
 ## Installation
 
