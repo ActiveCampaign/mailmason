@@ -80,8 +80,10 @@ See the [Litmus grunt task](https://github.com/wildbit/postmark-build-templates/
 
 The distribution (`/dist/` folder) is generated from the source files in the `/src` folder. That folder includes several sub-folders with the following folder structure:
 
+```
 /src
   /emails - The individual emails that will be generated.
   /layouts - The base layouts used for the emails.
   /partials - The header, footer, buttons, and other reusable elements.
   /stylesheets - SCSS stylesheets that will be inlined in the emails.
+```
