@@ -11,7 +11,8 @@
     "html": "grunt html",
     "css": "grunt css",
     "spamcheck": "grunt spamcheck",
-    "build": "grunt"
+    "build": "grunt",
+    "litmus": "grunt postmark:litmus"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
