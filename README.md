@@ -1,4 +1,18 @@
-# Postmark Emails
+# Postmark Transactional Email Build Templates
+
+This repository uses Grunt, Handlebars, and SCSS to build a set of transactional email templates using layouts and partials to reduce redundancy and streamline the process of creating both the HTML and palin text versions of your transactional emails.
+
+By default, the generated templates use [Mustachio](https://github.com/wildbit/mustachio) for the variable placeholders so that you can easily use them as [Postmark](https://postmarkapp.com) templates. However, the Mustachio pieces are only placeholders, and the generated templates could easily be adapted to work with any email provider.
+
+## What does it do for you?
+
+[X] Uses Handlebars to enable layouts and partials in templates and avoid redundancy
+[X] Enables the use of SCSS for generating the styles
+[X] Automatically inlines the resulting CSS to maximize email client compatibility
+[X] Automatically generates text versions of emails with the same content as the HTML versions
+[X] Enables easy sending of test emails through your Postmark account
+[X] Enables easy batch testing against the [Postmark Spamcheck API](http://spamcheck.postmarkapp.com)
+[X] Enables easy batch testing through [Litmus](http://litmus.com)
 
 ## Installation
 
@@ -30,7 +44,6 @@ npm start
 ```
 Watches the `src` directory for changes and builds to `dist`. 
 
-
 ## Usage
 
 Check out `Gruntfile.js` for more details on how each task works.
@@ -52,6 +65,13 @@ npm run spamcheck
 ```
 See the [Spamcheck grunt task](https://github.com/wildbit/postmark-build-templates/blob/master/Gruntfile.js#L182) if you’d like to spamcheck specific emails.
 
-
 ## Source files
-TODO: Descriptions of each directory in `src`.
+
+The distribution (`/dist/` folder) is generated from the source files in the `/src` folder. That folder includes several sub-folders with the following folder structure:
+
+/src
+  /emails - The individual emails that will be generated.
+  /layouts - The base layouts used for the emails.
+  /partials - The header, footer, buttons, and other reusable elements.
+  /stylesheets - SCSS stylesheets that will be inlined in the emails.
+
