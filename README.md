@@ -65,6 +65,12 @@ npm run spamcheck
 ```
 See the [Spamcheck grunt task](https://github.com/wildbit/postmark-build-templates/blob/master/Gruntfile.js#L182) if you’d like to spamcheck specific emails.
 
+### Test emails through Litmus
+```bash
+npm run litmus
+```
+See the [Litmus grunt task](https://github.com/wildbit/postmark-build-templates/blob/master/Gruntfile.js#L209) if you’d like to send the emails to Litmus for visual testing.
+
 ## Source files
 
 The distribution (`/dist/` folder) is generated from the source files in the `/src` folder. That folder includes several sub-folders with the following folder structure:
