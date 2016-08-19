@@ -12,11 +12,11 @@ have you on board.
 To get started using [product name], please confirm your account
 below:
 
-Danger Button ( # )
+Danger Button ( )
 
-Success button ( # )
+Success button ( )
 
-Default button ( # )
+Default button ( )
 
 Thanks,
 [sender name] and the [product name] Team
