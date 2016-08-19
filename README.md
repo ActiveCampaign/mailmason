@@ -1,10 +1,10 @@
 # Postmark Transactional Email Build Templates
 
-**Few tasks are more tedious than building a consistent set of well-tested and beautiful transactional email templates for your application.**
+*Few tasks are more tedious than building a consistent set of well-tested and beautiful transactional email templates for your application.*
 
 Not any longer.
 
-This repository uses Grunt, Handlebars, and SCSS to build a set of transactional email templates using layouts and partials to reduce redundancy and streamline the process of creating both the HTML and palin text versions of your transactional emails.
+With Build Templates, you can use Grunt, Handlebars, and SCSS to streamline building a consistent set of transactional email templates using layouts and partials to reduce redundancy and create both the HTML and palin text versions of your transactional emails in one fell swoop.
 
 By default, the generated templates use [Mustachio](https://github.com/wildbit/mustachio) for the variable placeholders so that you can easily use them as [Postmark](https://postmarkapp.com) templates. However, the Mustachio pieces are only placeholders, and the generated templates could easily be adapted to work with any email provider.
 
