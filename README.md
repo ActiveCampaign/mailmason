@@ -16,29 +16,34 @@ By default, the generated templates use [Mustachio](https://github.com/wildbit/m
 
 ## Installation
 
-1. Install [node version manager](https://github.com/creationix/nvm)
+1) Install [node version manager](https://github.com/creationix/nvm)
 ```bash
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.4/install.sh | bash
 ```
 
 
-2. Install and use node version specified from `.nvmrc`.
+2) Install and use node version specified from `.nvmrc`.
 ```bash
 nvm install && nvm use
 ```
 
-3. Install Grunt CLI globally
+3) Install Grunt CLI globally
 ```bash
 npm install -g grunt-cli
 ```
 
-4. Install premailer and nokogiri gems
+4) Install local dependencies
+```bash
+npm install
+```
+
+5) Install premailer and nokogiri gems
 ```bash
 gem install premailer
 gem install nokogiri
 ```
 
-5. Get to work.
+6) Get to work.
 ```bash
 npm start
 ```
@@ -80,4 +85,3 @@ The distribution (`/dist/` folder) is generated from the source files in the `/s
   /layouts - The base layouts used for the emails.
   /partials - The header, footer, buttons, and other reusable elements.
   /stylesheets - SCSS stylesheets that will be inlined in the emails.
-
