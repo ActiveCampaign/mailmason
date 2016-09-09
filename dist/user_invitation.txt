@@ -6,8 +6,8 @@
 Hi {{name}},
 ************
 
-Thanks for signing up for [[ Product Name ]]. We’re very excited
-to have you on board.
+Welcome to [[ Product Name ]]. We’re very excited to have you on
+board.
 
 To get started using [[ Product Name ]], please confirm your
 account below:

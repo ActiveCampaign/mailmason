@@ -1,6 +1,6 @@
 {{preheader}}
 
-[product name] ( # )
+[[ Product Name ]] ( # )
 
 ************
 Hi {{name}},
@@ -27,10 +27,10 @@ copy and paste the URL below into your web browser.
 
 {{action_url}} ( # )
 
-© 2016 [product name]. All rights reserved.
+© 2016 [[ Product Name ]]. All rights reserved.
 
-[product name]
+[[ Company Name, LLC ]]
 
-[product address]
+1234 Street Rd.
 
-[product address line 2]
+Suite 1234

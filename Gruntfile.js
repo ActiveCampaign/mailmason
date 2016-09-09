@@ -56,7 +56,21 @@ module.exports = function(grunt) {
       options: {
         layoutdir: path.layouts,
         partials: path.partials,
-        flatten: true
+        flatten: true,
+        sender_name: "[[ Sender Name ]]",
+        product_name: "[[ Product Name ]]",
+        statement_name: "[[ Credit Card Statement Name ]]",
+        formal_name: "[[ Company Name, LLC ]]",
+        address_line_1: "1234 Street Rd." ,
+        address_line_2: "Suite 1234",
+        city: "Cityville",
+        state: "ST",
+        country: "United States",
+        phone: "123-456-7890",
+        twitter_url: "https://twitter.com/example",
+        facebook_url: "",
+        pinterest_url: "",
+        instagram_url: ""
       },
       pages: {
         src: [path.emailSrc],

@@ -1,6 +1,6 @@
 ---
 layout: layout.hbs
-subject: Thanks for purchasing from [product name]. This is a receipt for {{total}}
+subject: Thanks for purchasing from {{product_name }}. This is a receipt for {{total}}
 ---
 <table class="email-content" width="100%" cellpadding="0" cellspacing="0">
 
@@ -16,8 +16,8 @@ subject: Thanks for purchasing from [product name]. This is a receipt for {{tota
           <td class="content-cell">
 
             <h1>Hi &#123;&#123;name&#125;&#125;,</h1>
-            <p>Thanks for ordering from [product name]. This email serves as a receipt for your purchase. No payment is due with this receipt.</p>
-            <p>Please retain this email receipt for your records. Also, on your statement this purchase will appear as “[statement name]”.</p>
+            <p>Thanks for ordering from {{product_name }}. This email serves as a receipt for your purchase. No payment is due with this receipt.</p>
+            <p>Please retain this email receipt for your records. Also, on your statement this purchase will appear as “{{statement_name }}”.</p>
 
             <table class="invoice-wrapper" width="100%" cellpadding="0" cellspacing="0">
               <tr>

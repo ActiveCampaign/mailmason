@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <title>Postmark Template Previews</title>
+    <script>
+      // The list of available templates for easy previewing
+      var templates = {
+        welcome: "Welcome",
+        reset_password: "Reset Password",
+        receipt: "Receipt",
+        notification: "Notification",
+        trial_expiring: "Trial Expiring",
+        trial_expired: "Trial Expired",
+        user_invitation: "User Invitation"
+      };
+    </script>
+  </head>
+  <body>
+    <h1>Table of Contents</h1>
+
+    <ol id="toc">
+      <!--
+        The table of contents is generated from the templates hash at the top
+        of the page using the JavaScript at the bottom of the page
+      -->
+    </ol>
+
+    <div id="previews">
+      <!--
+        The previews are generated from the templates hash at the top
+        of the page using the JavaScript at the bottom of the page
+      -->
+    </div>
+
+    <script>
+      // This is the block of JavaScript that generates the TOC and previews
+
+      // Find the table of contents and previews area
+      var toc = document.getElementById("toc");
+      var previews = document.getElementById("previews");
+
+      // Iterate over the templates to generate the TOC and previews
+      for (var key in templates) {
+        console.log(key);
+
+        // Build the table of contents for the various templates
+        var list_item = document.createElement("li");
+        var anchor = document.createElement("a");
+        anchor.setAttribute('href', "#" + key);
+        anchor.appendChild(document.createTextNode(templates[key]));
+        list_item.appendChild(anchor);
+        toc.appendChild(list_item);
+
+        // Build the heading for the template
+        var heading = document.createElement("h1");
+        heading.appendChild(document.createTextNode(templates[key]));
+        heading.setAttribute('id', key);
+        previews.appendChild(heading);
+
+        // Build the wide iframe preview for wide view of the template
+        var wide_preview = document.createElement("iframe");
+        wide_preview.setAttribute('width', '800')
+        wide_preview.setAttribute('height', '600')
+        wide_preview.setAttribute('src', "dist/" + key + ".html")
+        previews.appendChild(wide_preview);
+
+        // Build the wide iframe preview for narrow view of the template
+        var narrow_preview = document.createElement("iframe");
+        narrow_preview.setAttribute('width', '480')
+        narrow_preview.setAttribute('height', '600')
+        narrow_preview.setAttribute('src', "dist/" + key + ".html")
+        previews.appendChild(narrow_preview);
+
+        // Build the wide iframe preview for wide view of the template
+        var wide_preview = document.createElement("iframe");
+        wide_preview.setAttribute('width', '800')
+        wide_preview.setAttribute('height', '400')
+        wide_preview.setAttribute('src', "dist/" + key + ".txt")
+        previews.appendChild(wide_preview);
+
+        // Build the wide iframe preview for narrow view of the template
+        var narrow_preview = document.createElement("iframe");
+        narrow_preview.setAttribute('width', '480')
+        narrow_preview.setAttribute('height', '400')
+        narrow_preview.setAttribute('src', "dist/" + key + ".txt")
+        previews.appendChild(narrow_preview);
+
+      };
+    </script>
+  </body>
+</html>
