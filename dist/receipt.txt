@@ -6,13 +6,9 @@
 Hi {{name}},
 ************
 
-Thanks for ordering from [[ Product Name ]]. This email serves
-as a receipt for your purchase. No payment is due with this
-receipt.
+Thanks for ordering from [[ Product Name ]]. This email serves as a receipt for your purchase. No payment is due with this receipt.
 
-Please retain this email receipt for your records. Also, on your
-statement this purchase will appear as “[[ Credit Card Statement
-Name ]]”.
+Please retain this email receipt for your records. Also, on your statement this purchase will appear as “[[ Credit Card Statement Name ]]”.
 
 {{invoice_id}}
 --------------
@@ -38,8 +34,7 @@ Total
 Cheers,
 The team at [product name]
 
-P.S. Please reply to this email if you want to ask a question or
-just say hi.
+P.S. Please reply to this email if you want to ask a question or just say hi.
 
 © 2016 [[ Product Name ]]. All rights reserved.
 
