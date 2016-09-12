@@ -136,7 +136,8 @@ module.exports = function(grunt) {
       },
       txt: {
         options: {
-          mode: 'txt'
+          mode: 'txt',
+          lineLength: 16384
         },
         files: [{
           expand: true,
