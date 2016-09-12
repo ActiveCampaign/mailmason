@@ -66,6 +66,19 @@
   display: none !important;
 }
 
+/* Attribute list ------------------------------ */
+
+.attribute-list {
+  background-color: $c-slate-lighter;
+  display: block;
+  list-style-type: none;
+  margin: 0 0 21px;
+  padding: 16px;
+  li {
+
+  }
+}
+
 
 /* Data table ------------------------------ */
 

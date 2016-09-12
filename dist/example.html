@@ -123,6 +123,15 @@
     .preheader {
       display: none !important;
     }
+    /* Attribute list ------------------------------ */
+    
+    .attribute-list {
+      background-color: #EDEFF2;
+      display: block;
+      list-style-type: none;
+      margin: 0 0 21px;
+      padding: 16px;
+    }
     /* Data table ------------------------------ */
     
     .invoice-wrapper {
@@ -333,6 +342,11 @@
                           </td>
                         </tr>
                       </table>
+                      <hr style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;" />
+                      <ul class="attribute-list" style="background: #EDEFF2; box-sizing: border-box; display: block; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; list-style: none; margin: 0 0 21px; padding: 16px;">
+                        <li style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;"><strong style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">Login Page:</strong> {{login_url}}</li>
+                        <li style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;"><strong style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">Your Username:</strong> {{username}}</li>
+                      </ul>
                       <hr style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;" />
                       <p style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 1.5em; margin-top: 0;" align="left">Thanks,
                         <br />[[ Sender Name ]] and the [[ Product Name ]] Team</p>

@@ -96,6 +96,14 @@ a {
 .preheader {
   display: none !important; }
 
+/* Attribute list ------------------------------ */
+.attribute-list {
+  background-color: #EDEFF2;
+  display: block;
+  list-style-type: none;
+  margin: 0 0 21px;
+  padding: 16px; }
+
 /* Data table ------------------------------ */
 .invoice-wrapper {
   width: 100%;

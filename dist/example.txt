@@ -35,6 +35,9 @@ Success button ( %7B%7Baction_url%7D%7D )
 
 Default button ( %7B%7Baction_url%7D%7D )
 
+* Login Page: {{login_url}}
+* Your Username: {{username}}
+
 Thanks,
 [[ Sender Name ]] and the [[ Product Name ]] Team
 
