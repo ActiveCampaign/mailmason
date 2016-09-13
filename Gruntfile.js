@@ -9,7 +9,8 @@ module.exports = function(grunt) {
     cssDest: 'src/stylesheets/global.css',
     emailSrc: 'src/emails/*.hbs',
     dist: 'dist/',
-    distGlob: 'dist/*.html',
+    distHtmlGlob: 'dist/*.html',
+    distTextGlob: 'dist/*.txt',
     layouts: 'src/layouts',
     partials: 'src/partials/*',
     images: 'src/images'
@@ -59,7 +60,8 @@ module.exports = function(grunt) {
         flatten: true,
         sender_name: "[[ Sender Name ]]",
         product_name: "[[ Product Name ]]",
-        statement_name: "[[ Credit Card Statement Name ]]",
+        product_url: "https://example.com",
+        credit_card_statement_name: "[[ Credit Card Statement Name ]]",
         formal_name: "[[ Company Name, LLC ]]",
         address_line_1: "1234 Street Rd." ,
         address_line_2: "Suite 1234",
@@ -130,7 +132,7 @@ module.exports = function(grunt) {
         },
         files: [{
           expand: true,
-          src: [path.distGlob],
+          src: [path.distHtmlGlob],
           dest: ''
         }]
       },
@@ -141,7 +143,7 @@ module.exports = function(grunt) {
         },
         files: [{
           expand: true,
-          src: [path.distGlob],
+          src: [path.distHtmlGlob],
           dest: '',
           ext: '.txt'
         }]
@@ -165,19 +167,22 @@ module.exports = function(grunt) {
     /* Replace
     ------------------------------------------------- */
 
+    
     replace: {
-      // We encode our mustachio variables so that our assemble(handlebars) task won’t get confused.
+      // Premailer escapes URLs, so our mustachio variables for URLs get fully escaped, and the
+      // URL variables need to be converted from %7B%7Bsomething%7D%7D to {{something}}
       variableSyntax: {
-        src: [path.distGlob],
+        src: [path.distTextGlob],
         overwrite: true,
         replacements: [
-          { from: '&#123;&#123;', to: '{{' },
-          { from: '&#125;&#125;', to: '}}' }
+          { from: '%7B%7B', to: '{{' },
+          { from: '%7D%7D', to: '}}' },
+          { from: '%7D%7D%22', to: '}}' }
         ]
       },
       // Add some additional attributes that grunt inline removed
       styleBlock: {
-        src: [path.distGlob],
+        src: [path.distHtmlGlob],
         overwrite: true,
         replacements: [
           {
@@ -196,7 +201,7 @@ module.exports = function(grunt) {
 
     spamcheck: {
       emails: {
-        src: [path.distGlob]
+        src: [path.distHtmlGlob]
       }
     },
 
@@ -219,12 +224,12 @@ module.exports = function(grunt) {
       },
       // run "grunt postmark:emails" - Sends all of the emails. Be careful not to spam PM if you have a bunch of emails.
       emails: {
-        src: [path.distGlob]
+        src: [path.distHtmlGlob]
       },
       // run "grunt postmark:litmus" - Add a litmus test address here.
       litmus: {
         to: '',
-        src: [path.distGlob]
+        src: [path.distHtmlGlob]
       }
     }
 
