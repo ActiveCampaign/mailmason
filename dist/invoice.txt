@@ -1,0 +1,48 @@
+{{preheader}}
+
+[[ Product Name ]] ( https://example.com )
+
+************
+Hi {{name}},
+************
+
+Thanks for using [[ Product Name ]]. This is an invoice for your purchase. Please submit payment by {{due_date}}.
+
+* Amount Due: {{total}}
+* Due By: {{due_date}}
+
+Pay this Invoice ( {{action_url}} )
+
+{{invoice_id}}
+--------------
+
+{{date}}
+--------
+
+Description
+
+Amount
+
+{{#each invoice_details}}
+
+{{description}}
+{{amount}}
+
+{{/each}}
+
+Total
+
+{{total}}
+
+If you have any questions or concerns about this invoice, you can simply reply to this email or reach out to our support team for clarification.
+
+Cheers,
+The team at [[ Product Name ]]
+
+© 2016 [[ Product Name ]]. All rights reserved.
+
+[[ Company Name, LLC ]]
+
+1234 Street Rd.
+
+Suite 1234

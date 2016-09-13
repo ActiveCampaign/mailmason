@@ -1,6 +1,6 @@
 {{preheader}}
 
-[[ Product Name ]] ( # )
+[[ Product Name ]] ( https://example.com )
 
 ************
 Hi {{name}},
@@ -10,11 +10,11 @@ Thanks for signing up for [product name]. We’re very excited to have you on bo
 
 To get started using [product name], please confirm your account below:
 
-Danger Button ( %7B%7Baction_url%7D%7D )
+Danger Button ( {{action_url}} )
 
-Success button ( %7B%7Baction_url%7D%7D )
+Success button ( {{action_url}} )
 
-Default button ( %7B%7Baction_url%7D%7D )
+Default button ( {{action_url}} )
 
 Thanks,
 [sender name] and the [product name] Team

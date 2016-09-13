@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Welcome to [product name], {{name}}!</title>
+    <title>Please pay {{total}} due for {{product_name }}</title>
     <style>
     /* Base ------------------------------ */
     
@@ -306,63 +306,60 @@
                 <table class="email-body_inner" align="center" width="570" cellpadding="0" cellspacing="0" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 0 auto; padding: 0; width: 570px;">
                   <tr>
                     <td class="content-cell" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; padding: 35px;">
-                      <hr style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;" />
-                      <h1 style="box-sizing: border-box; color: #2F3133; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 19px; font-weight: bold; margin-top: 0;" align="left">Escaped Handlebars Brackets</h1> \{{ something }} gives you {{ something }}
-                      <hr style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;" />
-                      <h1 style="box-sizing: border-box; color: #2F3133; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 19px; font-weight: bold; margin-top: 0;" align="left">Header 1</h1>
-                      <h2 style="box-sizing: border-box; color: #2F3133; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; font-weight: bold; margin-top: 0;" align="left">Header 2</h2>
-                      <h2 style="box-sizing: border-box; color: #2F3133; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; font-weight: bold; margin-top: 0;" align="left">Header 3</h2>
-                      <hr style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;" />
-                      <p style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 1.5em; margin-top: 0;" align="left">Transactional email is fun for the whole family! You can design it, write it, code it, and test it. And test it. And test it. And send it. And find a bug.</p>
-                      <p style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 1.5em; margin-top: 0;" align="left">This paragraph has some <b style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">bold text</b> and <strong style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">strong text</strong> along with <i style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">italicized text</i> and <em style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">emphasized text</em>.</p>
-                      <hr style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;" />
-                      <ul style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
-                        <li style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">Unordered list item 1</li>
-                        <li style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">Unordered list item 2</li>
-                        <li style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">Unordered list item 3</li>
+                      <h1 style="box-sizing: border-box; color: #2F3133; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 19px; font-weight: bold; margin-top: 0;" align="left">Hi {{name}},</h1>
+                      <p style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 1.5em; margin-top: 0;" align="left">Thanks for using [[ Product Name ]]. This is an invoice for your purchase. Please submit payment by {{due_date}}.</p>
+                      <ul class="attribute-list" style="background: #EDEFF2; box-sizing: border-box; display: block; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; list-style: none; margin: 0 0 21px; padding: 16px;">
+                        <li style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;"><strong style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">Amount Due:</strong> {{total}}</li>
+                        <li style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;"><strong style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">Due By:</strong> {{due_date}}</li>
                       </ul>
-                      <ol style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
-                        <li style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">Ordered list item 1</li>
-                        <li style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">Ordered list item 2</li>
-                        <li style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">Ordered list item 3</li>
-                      </ol>
-                      <hr style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;" />
                       <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 30px auto; padding: 0; text-align: center; width: 100%;">
                         <tr>
                           <td align="center" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
                             <div style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
-                              <a href="{{action_url}}" class="button button--red" style="-webkit-text-size-adjust: none; background: #FF6136; border-radius: 3px; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16); box-sizing: border-box; color: #FFF; display: inline-block; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 15px; line-height: 45px; mso-hide: all; text-align: center; text-decoration: none; width: 200px;">Danger Button</a>
-                            </div>
-                            <br />
-                            <div style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
-                              <a href="{{action_url}}" class="button button--green" style="-webkit-text-size-adjust: none; background: #22BC66; border-radius: 3px; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16); box-sizing: border-box; color: #FFF; display: inline-block; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 15px; line-height: 45px; mso-hide: all; text-align: center; text-decoration: none; width: 200px;">Success button</a>
-                            </div>
-                            <br />
-                            <div style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
-                              <a href="{{action_url}}" class="button button--" style="-webkit-text-size-adjust: none; background: #3869D4; border-radius: 3px; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16); box-sizing: border-box; color: #FFF; display: inline-block; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 15px; line-height: 45px; mso-hide: all; text-align: center; text-decoration: none; width: 200px;">Default button</a>
+                              <a href="{{action_url}}" class="button button--green" style="-webkit-text-size-adjust: none; background: #22BC66; border-radius: 3px; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16); box-sizing: border-box; color: #FFF; display: inline-block; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 15px; line-height: 45px; mso-hide: all; text-align: center; text-decoration: none; width: 200px;">Pay this Invoice</a>
                             </div>
                           </td>
                         </tr>
                       </table>
-                      <hr style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;" />
-                      <ul class="attribute-list" style="background: #EDEFF2; box-sizing: border-box; display: block; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; list-style: none; margin: 0 0 21px; padding: 16px;">
-                        <li style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;"><strong style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">Login Page:</strong> {{login_url}}</li>
-                        <li style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;"><strong style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">Your Username:</strong> {{username}}</li>
-                      </ul>
-                      <hr style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;" />
-                      <p style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 1.5em; margin-top: 0;" align="left">Thanks,
-                        <br />[[ Sender Name ]] and the [[ Product Name ]] Team</p>
-                      <p style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 1.5em; margin-top: 0;" align="left"><strong style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">P.S.</strong> Need help getting started? Check out our help documentation. Or, just reply to this email with any questions or issues you have. The [[ Product Name ]] support team is always excited to help you.</p>
-                      <hr style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;" />
-                      <table class="body-sub" style="border-top-color: #EDEFF2; border-top-style: solid; border-top-width: 1px; box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; margin-top: 25px; padding-top: 25px;">
+                      <table class="purchase-wrapper" width="100%" cellpadding="0" cellspacing="0" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 0; padding: 35px 0; width: 100%;">
                         <tr>
                           <td style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
-                            <p class="sub" style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 12px; line-height: 1.5em; margin-top: 0;" align="left">If you’re having trouble clicking the confirm account button, copy and paste the URL below into your web browser.
-                            </p>
-                            <p class="sub" style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 12px; line-height: 1.5em; margin-top: 0;" align="left"><a href="{{action_url}}" style="box-sizing: border-box; color: #3869D4; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">{{action_url}}</a></p>
+                            <h3 style="box-sizing: border-box; color: #2F3133; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 14px; font-weight: bold; margin-top: 0;" align="left">{{invoice_id}}</h3></td>
+                          <td style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
+                            <h3 class="align-right" style="box-sizing: border-box; color: #2F3133; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 14px; font-weight: bold; margin-top: 0;" align="right">{{date}}</h3></td>
+                        </tr>
+                        <tr>
+                          <td colspan="2" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
+                            <table class="purchase-table" width="100%" cellpadding="0" cellspacing="0" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 0; padding: 25px 0 0; width: 100%;">
+                              <tr>
+                                <th style="border-bottom-color: #EDEFF2; border-bottom-style: solid; border-bottom-width: 1px; box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; padding-bottom: 8px;">
+                                  <p style="box-sizing: border-box; color: #9BA2AB; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 12px; line-height: 1.5em; margin: 0;" align="left">Description</p>
+                                </th>
+                                <th style="border-bottom-color: #EDEFF2; border-bottom-style: solid; border-bottom-width: 1px; box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; padding-bottom: 8px;">
+                                  <p class="align-right" style="box-sizing: border-box; color: #9BA2AB; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 12px; line-height: 1.5em; margin: 0;" align="right">Amount</p>
+                                </th>
+                              </tr>
+                              {{#each invoice_details}}
+                              <tr>
+                                <td width="80%" style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 15px; line-height: 18px; padding: 10px 0;">{{description}}</td>
+                                <td class="align-right" width="20%" style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 15px; line-height: 18px; padding: 10px 0;" align="right">{{amount}}</td>
+                              </tr>
+                              {{/each}}
+                              <tr>
+                                <td width="80%" class="total-cell" valign="middle" style="border-top-color: #EDEFF2; border-top-style: solid; border-top-width: 1px; box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 15px; line-height: 18px; padding: 10px 0;">
+                                  <p class="total-cell_label" style="box-sizing: border-box; color: #2F3133; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; font-weight: bold; line-height: 1.5em; margin: 0; padding: 0 15px 0 0;" align="right">Total</p>
+                                </td>
+                                <td width="20%" class="total-cell" valign="middle" style="border-top-color: #EDEFF2; border-top-style: solid; border-top-width: 1px; box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 15px; line-height: 18px; padding: 10px 0;">
+                                  <p style="box-sizing: border-box; color: #2F3133; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; font-weight: bold; line-height: 1.5em; margin: 0;" align="right">{{total}}</p>
+                                </td>
+                              </tr>
+                            </table>
                           </td>
                         </tr>
                       </table>
+                      <p style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 1.5em; margin-top: 0;" align="left">If you have any questions or concerns about this invoice, you can simply reply to this email or reach out to our support team for clarification.</p>
+                      <p style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 1.5em; margin-top: 0;" align="left">Cheers,
+                        <br />The team at [[ Product Name ]]</p>
                     </td>
                   </tr>
                 </table>

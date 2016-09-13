@@ -82,10 +82,10 @@
 
 /* Data table ------------------------------ */
 
-.invoice-wrapper {
+.purchase-wrapper {
   @include table-scale($padding: 35px 0);
 }
-.invoice-table {
+.purchase-table {
   @include table-scale($padding: 25px 0 0 0);
 
   th {

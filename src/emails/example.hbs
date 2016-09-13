@@ -16,6 +16,11 @@ subject: Welcome to [product name], {{name}}!
           <td class="content-cell">
 
             <hr>
+            <h1>Escaped Handlebars Brackets</h1>
+
+            \&#123;&#123; something }} gives you \{{ something }}
+
+            <hr>
             <h1>Header 1</h1>
             <h2>Header 2</h2>
             <h2>Header 3</h2>
@@ -52,8 +57,8 @@ subject: Welcome to [product name], {{name}}!
 
             <hr>
             <ul class="attribute-list">
-              <li><strong>Login Page:</strong> &#123;&#123;login_url&#125;&#125;</li>
-              <li><strong>Your Username:</strong> &#123;&#123;username&#125;&#125;</li>
+              <li><strong>Login Page:</strong> \{{login_url}}</li>
+              <li><strong>Your Username:</strong> \{{username}}</li>
             </ul>
 
             <hr>
@@ -68,7 +73,7 @@ subject: Welcome to [product name], {{name}}!
                 <td>
                   <p class="sub">If you’re having trouble clicking the confirm account button, copy and paste the URL below into your web browser.
                   </p>
-                  <p class="sub"><a href="#">&#123;&#123;action_url&#125;&#125;</a></p>
+                  <p class="sub"><a href="\{{action_url}}">\{{action_url}}</a></p>
                 </td>
               </tr>
             </table>

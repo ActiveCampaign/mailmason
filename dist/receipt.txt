@@ -1,16 +1,16 @@
 {{preheader}}
 
-[[ Product Name ]] ( # )
+[[ Product Name ]] ( https://example.com )
 
 ************
 Hi {{name}},
 ************
 
-Thanks for ordering from [[ Product Name ]]. This email serves as a receipt for your purchase. No payment is due with this receipt.
+Thanks for using [[ Product Name ]]. This email serves as a receipt for your purchase. No payment is due with this receipt.
 
 Please retain this email receipt for your records. Also, on your statement this purchase will appear as “[[ Credit Card Statement Name ]]”.
 
-{{invoice_id}}
+{{receipt_id}}
 --------------
 
 {{date}}
@@ -20,7 +20,7 @@ Description
 
 Amount
 
-{{#each invoice_details}}
+{{#each receipt_details}}
 
 {{description}}
 {{amount}}
@@ -32,7 +32,7 @@ Total
 {{total}}
 
 Cheers,
-The team at [product name]
+The team at [[ Product Name ]]
 
 P.S. Please reply to this email if you want to ask a question or just say hi.
 

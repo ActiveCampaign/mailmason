@@ -105,7 +105,7 @@ a {
   padding: 16px; }
 
 /* Data table ------------------------------ */
-.invoice-wrapper {
+.purchase-wrapper {
   width: 100%;
   margin: 0;
   padding: 35px 0;
@@ -113,21 +113,21 @@ a {
   -premailer-cellpadding: 0;
   -premailer-cellspacing: 0; }
 
-.invoice-table {
+.purchase-table {
   width: 100%;
   margin: 0;
   padding: 25px 0 0 0;
   -premailer-width: 100%;
   -premailer-cellpadding: 0;
   -premailer-cellspacing: 0; }
-  .invoice-table th {
+  .purchase-table th {
     padding-bottom: 8px;
     border-bottom: 1px solid #EDEFF2; }
-    .invoice-table th p {
+    .purchase-table th p {
       margin: 0;
       color: #9BA2AB;
       font-size: 12px; }
-  .invoice-table td {
+  .purchase-table td {
     padding: 10px 0;
     color: #74787E;
     font-size: 15px;

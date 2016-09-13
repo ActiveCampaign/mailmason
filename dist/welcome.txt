@@ -1,6 +1,6 @@
 {{preheader}}
 
-[[ Product Name ]] ( # )
+[[ Product Name ]] ( https://example.com )
 
 ******************
 Welcome, {{name}}!
@@ -10,7 +10,7 @@ Thanks for signing up for [[ Product Name ]]. We’re thrilled to have you on bo
 
 To get the most out of [[ Product Name ]], do this primary next step:
 
-Do this Next ( %7B%7Baction_url%7D%7D )
+Do this Next ( {{action_url}} )
 
 For future reference, here's your login information:
 
@@ -22,16 +22,16 @@ You've started a {{trial_length}} day trial, here are the details of your trial.
 * Trial Start Date: {{trial_start_date}}
 * Trial End Date: {{trial_end_date}}
 
-If you have any questions at all feel free to email our customer success team ( %7B%7Bsupport_email%7D%7D ) anytime. (We're lighting quick at replying.) We also offer live chat ( %7B%7Blive_chat_url%7D%7D ) during business hours.
+If you have any questions at all feel free to email our customer success team ( {{support_email}} ) anytime. (We're lighting quick at replying.) We also offer live chat ( {{live_chat_url}} ) during business hours.
 
 Thanks,
 [[ Sender Name ]] and the [[ Product Name ]] Team
 
-P.S. Need immediate help getting started? Check out our help documentation ( %7B%7Bhelp_url%7D%7D ). Or, just reply to this email with any questions or issues you have. The [[ Product Name ]] support team is always excited to help you.
+P.S. Need immediate help getting started? Check out our help documentation ( {{help_url}} ). Or, just reply to this email with any questions or issues you have. The [[ Product Name ]] support team is always excited to help you.
 
 If you’re having trouble clicking the button above, copy and paste the URL below into your web browser.
 
-{{action_url}} ( %7B%7Baction_url%7D%7D )
+{{action_url}} ( {{action_url}} )
 
 © 2016 [[ Product Name ]]. All rights reserved.
 
