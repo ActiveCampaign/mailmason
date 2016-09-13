@@ -1,0 +1,42 @@
+---
+layout: no_preheader.hbs
+subject: Choose a new password for [product name]
+---
+<table class="email-content" width="100%" cellpadding="0" cellspacing="0">
+
+  <!-- Email Body -->
+  <tr>
+    <td class="email-body" width="100%" cellpadding="0" cellspacing="0">
+      <table class="email-body_inner" align="center" width="570" cellpadding="0" cellspacing="0">
+
+        <!-- Body content -->
+        <tr>
+          <td class="content-cell">
+
+            \{{body}}<br>
+
+            \{{#attachment_details}}
+            <ul class="attribute-list">
+              \{{#each . }}
+              <li><a href="\{{attachmenet_url}}">\{{attachment_name}}</a> <span>(\{{attachment_size}} \{{attachment_type}})</span></li>
+              \{{/each}}
+            </ul>
+            \{{/attachment_details}}
+
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<table class="email-footer" align="center" width="570" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="content-cell">
+      <p>By \{{commenter_name}} at \{{timestamp}}</p>
+      <p class="sub"><a href="\{{action_url}}">View the comment</a> or <a href="\{{notifciations_url}}">Manage  notifications</a></p>
+    </td>
+  </tr>
+</table>
+
+
