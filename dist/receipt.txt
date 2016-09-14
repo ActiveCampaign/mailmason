@@ -1,3 +1,5 @@
+This is a receipt for \{{total}}. No payment is due with this receipt.
+
 [Product Name] ( https://example.com )
 
 ************

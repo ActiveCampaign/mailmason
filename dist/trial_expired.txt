@@ -1,3 +1,5 @@
+Your trial period for {{product_name}} has recently expired.
+
 [Product Name] ( https://example.com )
 
 ************
