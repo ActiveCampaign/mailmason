@@ -132,6 +132,21 @@
       margin: 0 0 21px;
       padding: 16px;
     }
+    /* Option list ------------------------------ */
+    
+    .option-list {
+      background-color: #EDEFF2;
+      display: block;
+      list-style-type: none;
+      margin: 0 0 21px;
+      padding: 16px 16px 1px 16px;
+    }
+    
+    .option-list li {
+      list-style-type: disc;
+      display: block;
+      margin-bottom: 16px;
+    }
     /* Data table ------------------------------ */
     
     .purchase-wrapper {
@@ -291,14 +306,14 @@
       -webkit-text-size-adjust: none;
     }
     </style>
-    <span class="preheader" style="box-sizing: border-box; display: none !important; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">{{preheader}}</span>
+    <span class="preheader" style="box-sizing: border-box; display: none !important; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">This is example text for the preheader set via the YAML front-matter for each email.</span>
     <table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 0; padding: 0; width: 100%;" bgcolor="#F2F4F6">
       <tr>
         <td align="center" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
           <table class="email-content" width="100%" cellpadding="0" cellspacing="0" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 0; padding: 0; width: 100%;">
             <tr>
               <td class="email-masthead" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; padding: 25px 0;" align="center">
-                <a href="https://example.com" class="email-masthead_name" style="box-sizing: border-box; color: #bbbfc3; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; font-weight: bold; text-decoration: none; text-shadow: 0 1px 0 white;">[[ Product Name ]]</a>
+                <a href="https://example.com" class="email-masthead_name" style="box-sizing: border-box; color: #bbbfc3; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; font-weight: bold; text-decoration: none; text-shadow: 0 1px 0 white;">[Product Name]</a>
               </td>
             </tr>
             <tr>
@@ -309,13 +324,16 @@
                       <hr style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;" />
                       <h1 style="box-sizing: border-box; color: #2F3133; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 19px; font-weight: bold; margin-top: 0;" align="left">Escaped Handlebars Brackets</h1> \{{ something }} gives you {{ something }}
                       <hr style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;" />
+                      <h1 style="box-sizing: border-box; color: #2F3133; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 19px; font-weight: bold; margin-top: 0;" align="left">Headers</h1>
                       <h1 style="box-sizing: border-box; color: #2F3133; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 19px; font-weight: bold; margin-top: 0;" align="left">Header 1</h1>
                       <h2 style="box-sizing: border-box; color: #2F3133; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; font-weight: bold; margin-top: 0;" align="left">Header 2</h2>
                       <h2 style="box-sizing: border-box; color: #2F3133; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; font-weight: bold; margin-top: 0;" align="left">Header 3</h2>
                       <hr style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;" />
+                      <h1 style="box-sizing: border-box; color: #2F3133; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 19px; font-weight: bold; margin-top: 0;" align="left">Paragraphs &amp; Formatting</h1>
                       <p style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 1.5em; margin-top: 0;" align="left">Transactional email is fun for the whole family! You can design it, write it, code it, and test it. And test it. And test it. And send it. And find a bug.</p>
                       <p style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 1.5em; margin-top: 0;" align="left">This paragraph has some <b style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">bold text</b> and <strong style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">strong text</strong> along with <i style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">italicized text</i> and <em style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">emphasized text</em>.</p>
                       <hr style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;" />
+                      <h1 style="box-sizing: border-box; color: #2F3133; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 19px; font-weight: bold; margin-top: 0;" align="left">Lists</h1>
                       <ul style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
                         <li style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">Unordered list item 1</li>
                         <li style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">Unordered list item 2</li>
@@ -327,6 +345,7 @@
                         <li style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">Ordered list item 3</li>
                       </ol>
                       <hr style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;" />
+                      <h1 style="box-sizing: border-box; color: #2F3133; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 19px; font-weight: bold; margin-top: 0;" align="left">Action Buttons</h1>
                       <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 30px auto; padding: 0; text-align: center; width: 100%;">
                         <tr>
                           <td align="center" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
@@ -345,15 +364,24 @@
                         </tr>
                       </table>
                       <hr style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;" />
+                      <h1 style="box-sizing: border-box; color: #2F3133; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 19px; font-weight: bold; margin-top: 0;" align="left">Attribute List</h1>
                       <ul class="attribute-list" style="background: #EDEFF2; box-sizing: border-box; display: block; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; list-style: none; margin: 0 0 21px; padding: 16px;">
                         <li style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;"><strong style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">Login Page:</strong> {{login_url}}</li>
                         <li style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;"><strong style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">Your Username:</strong> {{username}}</li>
                       </ul>
                       <hr style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;" />
-                      <p style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 1.5em; margin-top: 0;" align="left">Thanks,
-                        <br />[[ Sender Name ]] and the [[ Product Name ]] Team</p>
-                      <p style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 1.5em; margin-top: 0;" align="left"><strong style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">P.S.</strong> Need help getting started? Check out our help documentation. Or, just reply to this email with any questions or issues you have. The [[ Product Name ]] support team is always excited to help you.</p>
+                      <h1 style="box-sizing: border-box; color: #2F3133; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 19px; font-weight: bold; margin-top: 0;" align="left">Option List</h1>
+                      <ul class="option-list" style="background: #EDEFF2; box-sizing: border-box; display: block; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; list-style: none; margin: 0 0 21px; padding: 16px 16px 1px;">
+                        <li style="box-sizing: border-box; display: block; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; list-style: disc; margin-bottom: 16px;"><strong style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">Login Page:</strong> {{login_url}}</li>
+                        <li style="box-sizing: border-box; display: block; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; list-style: disc; margin-bottom: 16px;"><strong style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">Your Username:</strong> {{username}}</li>
+                      </ul>
                       <hr style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;" />
+                      <h1 style="box-sizing: border-box; color: #2F3133; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 19px; font-weight: bold; margin-top: 0;" align="left">Example Closing</h1>
+                      <p style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 1.5em; margin-top: 0;" align="left">Thanks,
+                        <br />[Sender Name] and the [Product Name] Team</p>
+                      <p style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 1.5em; margin-top: 0;" align="left"><strong style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">P.S.</strong> Need help getting started? Check out our help documentation. Or, just reply to this email with any questions or issues you have. The [Product Name] support team is always excited to help you.</p>
+                      <hr style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;" />
+                      <h1 style="box-sizing: border-box; color: #2F3133; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 19px; font-weight: bold; margin-top: 0;" align="left">Sub-text</h1>
                       <table class="body-sub" style="border-top-color: #EDEFF2; border-top-style: solid; border-top-width: 1px; box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; margin-top: 25px; padding-top: 25px;">
                         <tr>
                           <td style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
@@ -373,9 +401,9 @@
                 <table class="email-footer" align="center" width="570" cellpadding="0" cellspacing="0" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 0 auto; padding: 0; text-align: center; width: 570px;">
                   <tr>
                     <td class="content-cell" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; padding: 35px;">
-                      <p class="sub center" style="box-sizing: border-box; color: #AEAEAE; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 12px; line-height: 1.5em; margin-top: 0;" align="center">© 2016 [[ Product Name ]]. All rights reserved.</p>
+                      <p class="sub center" style="box-sizing: border-box; color: #AEAEAE; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 12px; line-height: 1.5em; margin-top: 0;" align="center">© 2016 [Product Name]. All rights reserved.</p>
                       <p class="sub center" style="box-sizing: border-box; color: #AEAEAE; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 12px; line-height: 1.5em; margin-top: 0;" align="center">
-                        [[ Company Name, LLC ]]
+                        [Company Name, LLC]
                         <br />1234 Street Rd.
                         <br />Suite 1234
                       </p>

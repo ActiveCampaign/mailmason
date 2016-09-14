@@ -58,11 +58,11 @@ module.exports = function(grunt) {
         layoutdir: path.layouts,
         partials: path.partials,
         flatten: true,
-        sender_name: "[[ Sender Name ]]",
-        product_name: "[[ Product Name ]]",
+        sender_name: "[Sender Name]",
+        product_name: "[Product Name]",
         product_url: "https://example.com",
-        credit_card_statement_name: "[[ Credit Card Statement Name ]]",
-        formal_name: "[[ Company Name, LLC ]]",
+        credit_card_statement_name: "[Credit Card Statement Name]",
+        formal_name: "[Company Name, LLC]",
         address_line_1: "1234 Street Rd." ,
         address_line_2: "Suite 1234",
         city: "Cityville",
@@ -177,7 +177,8 @@ module.exports = function(grunt) {
         replacements: [
           { from: '%7B%7B', to: '{{' },
           { from: '%7D%7D', to: '}}' },
-          { from: '%7D%7D%22', to: '}}' }
+          { from: '%7D%7D%22', to: '}}' },
+          { from: '%20}}', to: '}}' }
         ]
       },
       // Add some additional attributes that grunt inline removed

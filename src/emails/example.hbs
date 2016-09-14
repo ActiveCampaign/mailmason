@@ -1,6 +1,7 @@
 ---
 layout: layout.hbs
 subject: Welcome to [product name], {{name}}!
+preheader: This is example text for the preheader set via the YAML front-matter for each email.
 ---
 <table class="email-content" width="100%" cellpadding="0" cellspacing="0">
 
@@ -21,16 +22,19 @@ subject: Welcome to [product name], {{name}}!
             \&#123;&#123; something }} gives you \{{ something }}
 
             <hr>
+            <h1>Headers</h1>
             <h1>Header 1</h1>
             <h2>Header 2</h2>
             <h2>Header 3</h2>
 
             <hr>
+            <h1>Paragraphs &amp; Formatting</h1>
             <p>Transactional email is fun for the whole family! You can design it, write it, code it, and test it. And test it. And test it. And send it. And find a bug.</p>
 
             <p>This paragraph has some <b>bold text</b> and <strong>strong text</strong> along with <i>italicized text</i> and <em>emphasized text</em>.</p>
 
             <hr>
+            <h1>Lists</h1>
             <ul>
               <li>Unordered list item 1</li>
               <li>Unordered list item 2</li>
@@ -45,6 +49,7 @@ subject: Welcome to [product name], {{name}}!
 
             <hr>
             <!-- Action -->
+            <h1>Action Buttons</h1>
             <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0">
               <tr>
                 <td align="center">
@@ -56,17 +61,27 @@ subject: Welcome to [product name], {{name}}!
             </table>
 
             <hr>
+            <h1>Attribute List</h1>
             <ul class="attribute-list">
               <li><strong>Login Page:</strong> \{{login_url}}</li>
               <li><strong>Your Username:</strong> \{{username}}</li>
             </ul>
 
             <hr>
+            <h1>Option List</h1>
+            <ul class="option-list">
+              <li><strong>Login Page:</strong> \{{login_url}}</li>
+              <li><strong>Your Username:</strong> \{{username}}</li>
+            </ul>
+
+            <hr>
+            <h1>Example Closing</h1>
             <p>Thanks,<br>{{sender_name }} and the {{product_name }} Team</p>
             <p><strong>P.S.</strong> Need help getting started? Check out our help documentation. Or, just reply to this email with any questions or issues you have. The {{product_name }} support team is always excited to help you.</p>
 
 
             <hr>
+            <h1>Sub-text</h1>
             <!-- Sub copy -->
             <table class="body-sub">
               <tr>

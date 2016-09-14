@@ -79,6 +79,21 @@
   }
 }
 
+/* Option list ------------------------------ */
+
+.option-list {
+  background-color: $c-slate-lighter;
+  display: block;
+  list-style-type: none;
+  margin: 0 0 21px;
+  padding: 16px 16px 1px 16px;
+  li {
+    list-style-type: disc;
+    display: block;
+    margin-bottom: 16px;
+  }
+}
+
 
 /* Data table ------------------------------ */
 

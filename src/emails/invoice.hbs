@@ -1,6 +1,7 @@
 ---
 layout: layout.hbs
 subject: Please pay {{total}} due for {{product_name }}
+preheader: This is an invoice for your purchase. Please submit payment by {{due_date}}
 ---
 <table class="email-content" width="100%" cellpadding="0" cellspacing="0">
 
@@ -16,7 +17,7 @@ subject: Please pay {{total}} due for {{product_name }}
           <td class="content-cell">
 
             <h1>Hi \{{name}},</h1>
-            <p>Thanks for using {{product_name }}. This is an invoice for your purchase. Please submit payment by \{{due_date}}.</p>
+            <p>Thanks for using {{product_name}}. This is an invoice for your purchase. Please submit payment by \{{due_date}}.</p>
 
             <ul class="attribute-list">
               <li><strong>Amount Due:</strong> \{{total}}</li>
@@ -61,7 +62,7 @@ subject: Please pay {{total}} due for {{product_name }}
 
             <p>If you have any questions or concerns about this invoice, you can simply reply to this email or reach out to our support team for clarification.</p>
 
-            <p>Cheers,<br>The team at {{product_name }}</p>
+            <p>Cheers,<br>The team at {{product_name}}</p>
 
           </td>
         </tr>

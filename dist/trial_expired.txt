@@ -1,33 +1,30 @@
-{{preheader}}
-
-[[ Product Name ]] ( https://example.com )
+[Product Name] ( https://example.com )
 
 ************
 Hi {{name}},
 ************
 
-Thanks for signing up for [product name]. We’re very excited to have you on board.
+Thanks for trying up for [Product Name]. Your trial period just expired, and since you've created a fair amount of data on your account, so we've included information on several options for you to consider.
 
-To get started using [product name], please confirm your account below:
+Upgrade your account ( {{action_url}} )
 
-Danger Button ( {{action_url}} )
+If you're not ready to upgrade to a paying account, you have a few other options that can help…
 
-Success button ( {{action_url}} )
+* Restart your trial If you didn't get a chance to try it out fully or just need a little more time to evaluate it, just let us know. Just reply to this email, and we'll set you up with a fresh trial period.
+* Share some feedback If [Product Name] isn't right for you, let us know what you were looking for and we might be able to suggest some alternative products that might be a better fit.
+* Export your data ( {{export_url}} ) If [Product Name] wasn't a good fit, you can export your data for use elsewhere.
+* Close your account ( {{close_account_url}} ) You can also close your account and delete your data. Or, do nothing and we'll clean up for you in a couple of months. Don't worry, we'll send you another heads up before that happens, though.
 
-Default button ( {{action_url}} )
+Regardless of your choice, we just want to say thanks for trying out [Product Name]. We know it's time consuming, so we appreciate you giving us a chance.
 
 Thanks,
-[sender name] and the [product name] Team
+[Sender Name] and the [Product Name] Team
 
-P.S. Need help getting started? Check out our help documentation. Or, just reply to this email with any questions or issues you have. The [product name] support team is always excited to help you.
+P.S. If you have any questions or need any help, please don't hesitate to reach out. You can reply to this email or join us on live chat during business hours.
 
-If you’re having trouble clicking the confirm account button, copy and paste the URL below into your web browser.
+© 2016 [Product Name]. All rights reserved.
 
-{{action_url}} ( # )
-
-© 2016 [[ Product Name ]]. All rights reserved.
-
-[[ Company Name, LLC ]]
+[Company Name, LLC]
 
 1234 Street Rd.
 

@@ -64,14 +64,14 @@
         // Build the wide iframe preview for wide view of the template
         var wide_preview = document.createElement("iframe");
         wide_preview.setAttribute('width', '800')
-        wide_preview.setAttribute('height', '600')
+        wide_preview.setAttribute('height', '800')
         wide_preview.setAttribute('src', "dist/" + key + ".html")
         previews.appendChild(wide_preview);
 
         // Build the wide iframe preview for narrow view of the template
         var narrow_preview = document.createElement("iframe");
         narrow_preview.setAttribute('width', '480')
-        narrow_preview.setAttribute('height', '600')
+        narrow_preview.setAttribute('height', '800')
         narrow_preview.setAttribute('src', "dist/" + key + ".html")
         previews.appendChild(narrow_preview);
 

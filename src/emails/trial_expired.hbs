@@ -1,6 +1,6 @@
 ---
 layout: layout.hbs
-subject: Welcome to [product name], {{name}}!
+subject: Your [product name] trial has expired
 ---
 <table class="email-content" width="100%" cellpadding="0" cellspacing="0">
 
@@ -16,33 +16,30 @@ subject: Welcome to [product name], {{name}}!
           <td class="content-cell">
 
             <h1>Hi \{{name}},</h1>
-            <p>Thanks for signing up for [product name]. We’re very excited to have you on board.</p>
-            <p>To get started using [product name], please confirm your account below:</p>
+            <p>Thanks for trying up for {{product_name}}. Your trial period just expired, and since you've created a fair amount of data on your account, so we've included information on several options for you to consider.</p>
 
             <!-- Action -->
             <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0">
               <tr>
                 <td align="center">
-                  {{> button color="red" label="Danger Button"}}<br>
-                  {{> button color="green" label="Success button"}}<br>
-                  {{> button test="hi" label="Default button"}}
+                  {{> button color="green" label="Upgrade your account"}}
                 </td>
               </tr>
             </table>
 
-            <p>Thanks,<br>[sender name] and the [product name] Team</p>
-            <p><strong>P.S.</strong> Need help getting started? Check out our help documentation. Or, just reply to this email with any questions or issues you have. The [product name] support team is always excited to help you.</p>
+            <p>If you're not ready to upgrade to a paying account, you have a few other options that can help&hellip;</p>
 
-            <!-- Sub copy -->
-            <table class="body-sub">
-              <tr>
-                <td>
-                  <p class="sub">If you’re having trouble clicking the confirm account button, copy and paste the URL below into your web browser.
-                  </p>
-                  <p class="sub"><a href="#">\{{action_url}}</a></p>
-                </td>
-              </tr>
-            </table>
+            <ul class="option-list">
+              <li><strong>Restart your trial</strong> If you didn't get a chance to try it out fully or just need a little more time to evaluate it, just let us know. Just reply to this email, and we'll set you up with a fresh trial period.</li>
+              <li><strong>Share some feedback</strong> If {{product_name}} isn't right for you, let us know what you were looking for and we might be able to suggest some alternative products that might be a better fit.</li>
+              <li><strong><a href="\{{export_url}}">Export your data</a></strong> If {{product_name }} wasn't a good fit, you can export your data for use elsewhere.</li>
+              <li><strong><a href="\{{close_account_url}}">Close your account</a></strong> You can also close your account and delete your data. Or, do nothing and we'll clean up for you in a couple of months. Don't worry, we'll send you another heads up before that happens, though.</li>
+            </ul>
+
+            <p>Regardless of your choice, we just want to say thanks for trying out {{product_name}}. We know it's time consuming, so we appreciate you giving us a chance.</p>
+
+            <p>Thanks,<br>{{sender_name}} and the {{product_name}} Team</p>
+            <p><strong>P.S.</strong> If you have any questions or need any help, please don't hesitate to reach out. You can reply to this email or join us on live chat during business hours.</p>
 
           </td>
         </tr>

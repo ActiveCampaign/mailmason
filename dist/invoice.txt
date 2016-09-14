@@ -1,12 +1,12 @@
-{{preheader}}
+This is an invoice for your purchase. Please submit payment by {{due_date}}
 
-[[ Product Name ]] ( https://example.com )
+[Product Name] ( https://example.com )
 
 ************
 Hi {{name}},
 ************
 
-Thanks for using [[ Product Name ]]. This is an invoice for your purchase. Please submit payment by {{due_date}}.
+Thanks for using [Product Name]. This is an invoice for your purchase. Please submit payment by {{due_date}}.
 
 * Amount Due: {{total}}
 * Due By: {{due_date}}
@@ -37,11 +37,11 @@ Total
 If you have any questions or concerns about this invoice, you can simply reply to this email or reach out to our support team for clarification.
 
 Cheers,
-The team at [[ Product Name ]]
+The team at [Product Name]
 
-© 2016 [[ Product Name ]]. All rights reserved.
+© 2016 [Product Name]. All rights reserved.
 
-[[ Company Name, LLC ]]
+[Company Name, LLC]
 
 1234 Street Rd.
 

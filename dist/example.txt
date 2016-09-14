@@ -1,12 +1,16 @@
-{{preheader}}
+This is example text for the preheader set via the YAML front-matter for each email.
 
-[[ Product Name ]] ( https://example.com )
+[Product Name] ( https://example.com )
 
 ***************************
 Escaped Handlebars Brackets
 ***************************
 
 \{{ something }} gives you {{ something }}
+
+*******
+Headers
+*******
 
 ********
 Header 1
@@ -20,9 +24,17 @@ Header 2
 Header 3
 --------
 
+***************************
+Paragraphs & Formatting
+***************************
+
 Transactional email is fun for the whole family! You can design it, write it, code it, and test it. And test it. And test it. And send it. And find a bug.
 
 This paragraph has some bold text and strong text along with italicized text and emphasized text.
+
+*****
+Lists
+*****
 
 * Unordered list item 1
 * Unordered list item 2
@@ -32,27 +44,50 @@ This paragraph has some bold text and strong text along with italicized text and
 * Ordered list item 2
 * Ordered list item 3
 
+**************
+Action Buttons
+**************
+
 Danger Button ( {{action_url}} )
 
 Success button ( {{action_url}} )
 
 Default button ( {{action_url}} )
 
+**************
+Attribute List
+**************
+
 * Login Page: {{login_url}}
 * Your Username: {{username}}
 
-Thanks,
-[[ Sender Name ]] and the [[ Product Name ]] Team
+***********
+Option List
+***********
 
-P.S. Need help getting started? Check out our help documentation. Or, just reply to this email with any questions or issues you have. The [[ Product Name ]] support team is always excited to help you.
+* Login Page: {{login_url}}
+* Your Username: {{username}}
+
+***************
+Example Closing
+***************
+
+Thanks,
+[Sender Name] and the [Product Name] Team
+
+P.S. Need help getting started? Check out our help documentation. Or, just reply to this email with any questions or issues you have. The [Product Name] support team is always excited to help you.
+
+********
+Sub-text
+********
 
 If you’re having trouble clicking the confirm account button, copy and paste the URL below into your web browser.
 
 {{action_url}} ( {{action_url}} )
 
-© 2016 [[ Product Name ]]. All rights reserved.
+© 2016 [Product Name]. All rights reserved.
 
-[[ Company Name, LLC ]]
+[Company Name, LLC]
 
 1234 Street Rd.
 

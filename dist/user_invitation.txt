@@ -1,33 +1,39 @@
-{{preheader}}
+[Product Name] ( https://example.com )
 
-[[ Product Name ]] ( https://example.com )
+*************
+Hi, {{name}}!
+*************
 
-************
-Hi {{name}},
-************
+Thanks for signing up for [Product Name]. We’re thrilled to have you on board.
 
-Welcome to [[ Product Name ]]. We’re very excited to have you on board.
+To get the most out of [Product Name], do this primary next step:
 
-To get started using [[ Product Name ]], please confirm your account below:
+Do this Next ( {{action_url}} )
 
-Danger Button ( {{action_url}} )
+For future reference, here's your login information:
 
-Success button ( {{action_url}} )
+* Login Page: {{login_url}}
+* Your Username: {{username}}
 
-Default button ( {{action_url}} )
+You've started a {{trial_length}} day trial, here are the details of your trial. You can upgrade to a paying account any time.
+
+* Trial Start Date: {{trial_start_date}}
+* Trial End Date: {{trial_end_date}}
+
+If you have any questions at all feel free to email our customer success team ( {{support_email}} ) anytime. (We're lighting quick at replying.) We also offer live chat ( {{live_chat_url}} ) during business hours.
 
 Thanks,
-[[ Sender Name ]] and the [[ Product Name ]] Team
+[Sender Name] and the [Product Name] Team
 
-P.S. Need help getting started? Check out our help documentation. Or, just reply to this email with any questions or issues you have. The [[ Product Name ]] support team is always excited to help you.
+P.S. Need immediate help getting started? Check out our help documentation ( {{help_url}} ). Or, just reply to this email with any questions or issues you have. The [Product Name] support team is always excited to help you.
 
-If you’re having trouble clicking the confirm account button, copy and paste the URL below into your web browser.
+If you’re having trouble clicking the button above, copy and paste the URL below into your web browser.
 
-{{action_url}} ( # )
+{{action_url}} ( {{action_url}} )
 
-© 2016 [[ Product Name ]]. All rights reserved.
+© 2016 [Product Name]. All rights reserved.
 
-[[ Company Name, LLC ]]
+[Company Name, LLC]
 
 1234 Street Rd.
 
