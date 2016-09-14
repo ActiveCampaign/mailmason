@@ -4,7 +4,7 @@ subject: Thanks for purchasing from {{product_name}}. This is a receipt for {{to
 ---
 <table class="email-content" width="100%" cellpadding="0" cellspacing="0">
 
-  {{> masthead}}
+  {{> masthead }}
 
   <!-- Email Body -->
   <tr>
@@ -17,7 +17,8 @@ subject: Thanks for purchasing from {{product_name}}. This is a receipt for {{to
 
             <h1>Hi \{{name}},</h1>
             <p>Thanks for using {{product_name}}. This email serves as a receipt for your purchase. No payment is due with this receipt.</p>
-            <p>Please retain this email receipt for your records. Also, on your statement this purchase will appear as “{{credit_card_statement_name}}”.</p>
+
+            <p>This purchase will appear as “{{credit_card_statement_name}}” on your credit card statement for your \{{credit_card_brand}} ending in \{{credit_card_last_four}}. Need to <a href="\{{billing_url}}">update your payment information</a>?</p>
 
             <table class="purchase-wrapper" width="100%" cellpadding="0" cellspacing="0">
               <tr>
@@ -46,8 +47,29 @@ subject: Thanks for purchasing from {{product_name}}. This is a receipt for {{to
               </tr>
             </table>
 
+            <p>If you have any questions or concerns about this receipt, you can reply to this email or reach out to our <a href="\{{support_url}}">support team</a> for clarification.</p>
+
             <p>Cheers,<br>The team at {{product_name}}</p>
-            <p><strong>P.S.</strong> Please reply to this email if you want to ask a question or just say hi.</p>
+
+            <!-- Action -->
+            <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td align="center">
+                  {{> button color="blue" label="Download as PDF" }}
+                </td>
+              </tr>
+            </table>
+
+            <!-- Sub copy -->
+            <table class="body-sub">
+              <tr>
+                <td>
+                  <p class="sub">Need a printable copy for your records?</strong> You can <a href="\{{action_url
+                  }}">download a PDF version</a>.</p>
+                  <p class="sub">Moved recently? Have a new credit card? You can easily <a href="\{{billing_url}}">update your billing information</a>.</p>
+                </td>
+              </tr>
+            </table>
 
           </td>
         </tr>
@@ -55,6 +77,6 @@ subject: Thanks for purchasing from {{product_name}}. This is a receipt for {{to
     </td>
   </tr>
 
-  {{> footer}}
+  {{> footer }}
 
 </table>

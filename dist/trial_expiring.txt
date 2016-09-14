@@ -12,8 +12,8 @@ Upgrade your account ( {{action_url}} )
 
 If you're not ready to upgrade to a paying account, you have a few other options that can help…
 
-* Extend your trial If you didn't get a chance to try it out fully or just need a little more time to evaluate it, just let us know. Just reply to this email, and we'll set you up with a fresh trial period.
-* Share some feedback If [Product Name] isn't right for you, let us know what you were looking for and we might be able to suggest some alternative products that might be a better fit.
+* Restart your trial ( {{trial_extension_url}} ) If you didn't get a chance to try it out fully or just need a little more time to evaluate it, just let us know. Just reply to this email, and we'll set you up with a fresh trial period.
+* Share some feedback ( {{feedback_url}} ) If [Product Name] isn't right for you, let us know what you were looking for and we might be able to suggest some alternative products that might be a better fit.
 * Export your data ( {{export_url}} ) If [Product Name] wasn't a good fit, you can export your data for use elsewhere.
 * Close your account ( {{close_account_url}} ) You can also close your account and delete your data. Or, do nothing and we'll clean up for you in a couple of months. Don't worry, we'll send you another heads up before that happens, though.
 

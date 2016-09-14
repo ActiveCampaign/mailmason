@@ -4,7 +4,7 @@ subject: Your [product name] trial is about to expire
 ---
 <table class="email-content" width="100%" cellpadding="0" cellspacing="0">
 
-  {{> masthead}}
+  {{> masthead }}
 
   <!-- Email Body -->
   <tr>
@@ -30,12 +30,7 @@ subject: Your [product name] trial is about to expire
 
             <p>If you're not ready to upgrade to a paying account, you have a few other options that can help&hellip;</p>
 
-            <ul class="option-list">
-              <li><strong>Extend your trial</strong> If you didn't get a chance to try it out fully or just need a little more time to evaluate it, just let us know. Just reply to this email, and we'll set you up with a fresh trial period.</li>
-              <li><strong>Share some feedback</strong> If {{product_name}} isn't right for you, let us know what you were looking for and we might be able to suggest some alternative products that might be a better fit.</li>
-              <li><strong><a href="\{{export_url}}">Export your data</a></strong> If {{product_name }} wasn't a good fit, you can export your data for use elsewhere.</li>
-              <li><strong><a href="\{{close_account_url}}">Close your account</a></strong> You can also close your account and delete your data. Or, do nothing and we'll clean up for you in a couple of months. Don't worry, we'll send you another heads up before that happens, though.</li>
-            </ul>
+            {{> trial_ending_options }}
 
             <p>Regardless of your choice, we just want to say thanks for trying out {{product_name}}. We know it's time consuming, so we appreciate you giving us a chance.</p>
 
@@ -48,6 +43,6 @@ subject: Your [product name] trial is about to expire
     </td>
   </tr>
 
-  {{> footer}}
+  {{> footer }}
 
 </table>

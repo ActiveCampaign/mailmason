@@ -5,7 +5,7 @@ preheader: Thanks for trying out {{product_name}}. We've pulled together some in
 ---
 <table class="email-content" width="100%" cellpadding="0" cellspacing="0">
 
-  {{> masthead}}
+  {{> masthead }}
 
   <!-- Email Body -->
   <tr>
@@ -48,16 +48,7 @@ preheader: Thanks for trying out {{product_name}}. We've pulled together some in
             <p>Thanks,<br>{{sender_name}} and the {{product_name}} Team</p>
             <p><strong>P.S.</strong> Need immediate help getting started? Check out our <a href="\{{help_url}}">help documentation</a>. Or, just reply to this email with any questions or issues you have. The {{product_name }} support team is always excited to help you.</p>
 
-            <!-- Sub copy -->
-            <table class="body-sub">
-              <tr>
-                <td>
-                  <p class="sub">If you’re having trouble clicking the button above, copy and paste the URL below into your web browser.
-                  </p>
-                  <p class="sub"><a href="\{{action_url}}">\{{action_url}}</a></p>
-                </td>
-              </tr>
-            </table>
+            {{> button_trouble }}
 
           </td>
         </tr>
@@ -65,6 +56,6 @@ preheader: Thanks for trying out {{product_name}}. We've pulled together some in
     </td>
   </tr>
 
-  {{> footer}}
+  {{> footer }}
 
 </table>
