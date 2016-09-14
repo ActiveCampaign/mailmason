@@ -4,28 +4,16 @@
 Hi, {{name}}!
 *************
 
-{{invite_sender_name}} [Product Name]. We’re thrilled to have you on board.
+{{invite_sender_name}} with {{invite_sender_organization_name}} has invited you to use [Product Name] to collaborate with them. Use the button below to set up your account and get started:
 
-To get the most out of [Product Name], do this primary next step:
+Set up account ( {{action_url}} )
 
-Do this Next ( {{action_url}} )
+If you have any questions for {{invite_sender_name}}, you can reply to this email and it will go right to them. Alternatively, feel free to contact our customer success team ( {{support_email}} ) anytime. (We're lighting quick at replying.) We also offer live chat ( {{live_chat_url}} ) during business hours.
 
-For future reference, here's your login information:
-
-* Login Page: {{login_url}}
-* Your Username: {{username}}
-
-You've started a {{trial_length}} day trial, here are the details of your trial. You can upgrade to a paying account any time.
-
-* Trial Start Date: {{trial_start_date}}
-* Trial End Date: {{trial_end_date}}
-
-If you have any questions at all feel free to email our customer success team ( {{support_email}} ) anytime. (We're lighting quick at replying.) We also offer live chat ( {{live_chat_url}} ) during business hours.
-
-Thanks,
+Welcome aboard,
 [Sender Name] and the [Product Name] Team
 
-P.S. Need immediate help getting started? Check out our help documentation ( {{help_url}} ). Or, just reply to this email with any questions or issues you have. The [Product Name] support team is always excited to help you.
+P.S. Need help getting started? Check out our help documentation ( {{help_url}} ).
 
 If you’re having trouble with the button above, copy and paste the URL below into your web browser.
 

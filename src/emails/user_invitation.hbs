@@ -16,36 +16,21 @@ subject: \{{invite_sender_name}} invited you to {{product_name}}
           <td class="content-cell">
 
             <h1>Hi, \{{name}}!</h1>
-            <p>\{{invite_sender_name}} {{product_name}}. We’re thrilled to have you on board.</p>
-            
-            <p>To get the most out of {{product_name}}, do this primary next step:</p>
+            <p>\{{invite_sender_name}} with \{{invite_sender_organization_name}} has invited you to use {{product_name}} to collaborate with them. Use the button below to set up your account and get started:</p>
 
             <!-- Action -->
             <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0">
               <tr>
                 <td align="center">
-                  {{> button test="hi" label="Do this Next"}}
+                  {{> button test="hi" label="Set up account"}}
                 </td>
               </tr>
             </table>
 
-            <p>For future reference, here's your login information:</p>
-            <ul class="attribute-list">
-              <li><strong>Login Page:</strong> \{{login_url}}</li>
-              <li><strong>Your Username:</strong> \{{username}}</li>
-            </ul>
+            <p>If you have any questions for \{{invite_sender_name}}, you can reply to this email and it will go right to them. Alternatively, feel free to <a href="mailto:\{{support_email}}">contact our customer success team</a> anytime. (We're lighting quick at replying.) We also offer <a href="\{{live_chat_url}}">live chat</a> during business hours.</p>
 
-            <p>You've started a \{{trial_length}} day trial, here are the details of your trial. You can upgrade to a paying account any time.</p>
-            <ul class="attribute-list">
-              <li><strong>Trial Start Date:</strong> \{{trial_start_date}}</li>
-              <li><strong>Trial End Date:</strong> \{{trial_end_date}}</li>
-            </ul>
-
-
-            <p>If you have any questions at all feel free to <a href="mailto:\{{support_email}}">email our customer success team</a> anytime. (We're lighting quick at replying.) We also offer <a href="\{{live_chat_url}}">live chat</a> during business hours.</p>
-
-            <p>Thanks,<br>{{sender_name}} and the {{product_name}} Team</p>
-            <p><strong>P.S.</strong> Need immediate help getting started? Check out our <a href="\{{help_url}}">help documentation</a>. Or, just reply to this email with any questions or issues you have. The {{product_name }} support team is always excited to help you.</p>
+            <p>Welcome aboard,<br>{{sender_name}} and the {{product_name}} Team</p>
+            <p><strong>P.S.</strong> Need help getting started? Check out our <a href="\{{help_url}}">help documentation</a>.</p>
 
             {{> button_trouble }}
 
