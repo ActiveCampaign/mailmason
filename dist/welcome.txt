@@ -1,4 +1,4 @@
-Thanks for trying out {{product_name}}. We've pulled together some information and resources for future reference for you.
+Thanks for trying out {{product_name}}. We've pulled together some information and resources to help you get started.
 
 [Product Name] ( https://example.com )
 

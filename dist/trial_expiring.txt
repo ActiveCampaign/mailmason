@@ -4,15 +4,15 @@
 Hi {{name}},
 ************
 
-Thanks for trying up for [Product Name]. Your trial period ends in 3 days, and we wanted to give you a heads up.
+Thanks for trying [Product Name]. Your trial period ends in 3 days, and we wanted to give you a heads up.
 
-You've created a fair amount of data on your account, so we've included information on several options for you to consider.
+You've created a fair amount of data on your account, so we've included information on several options for you to consider going forward.
 
 Upgrade your account ( {{action_url}} )
 
-If you're not ready to upgrade to a paying account, you have a few other options that can help…
+If you're not ready to upgrade to a paying account, you have a few other options available to you…
 
-* Restart your trial ( {{trial_extension_url}} ) If you didn't get a chance to try it out fully or just need a little more time to evaluate it, just let us know. Just reply to this email, and we'll set you up with a fresh trial period.
+* Restart your trial ( {{trial_extension_url}} ) If you didn't get a chance to try the product out fully or just need a little more time to evaluate it, just let us know. Just reply to this email, and we'll set you up with a fresh trial period.
 * Share some feedback ( {{feedback_url}} ) If [Product Name] isn't right for you, let us know what you were looking for and we might be able to suggest some alternative products that might be a better fit.
 * Export your data ( {{export_url}} ) If [Product Name] wasn't a good fit, you can export your data for use elsewhere.
 * Close your account ( {{close_account_url}} ) You can also close your account and delete your data. Or, do nothing and we'll clean up for you in a couple of months. Don't worry, we'll send you another heads up before that happens, though.
