@@ -4,16 +4,18 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt, {pattern: ['grunt-*', 'assemble']});
   require('time-grunt')(grunt);
 
+  grunt.loadNpmTasks('grunt-ftp-deploy');
+
   var path = {
-    cssSrc: 'src/stylesheets/global.scss',
-    cssDest: 'src/stylesheets/global.css',
-    emailSrc: 'src/emails/*.hbs',
+    css_src: 'src/stylesheets/global.scss',
+    css_dest: 'src/stylesheets/global.css',
+    email_src: 'src/emails/*.hbs',
     dist: 'dist/',
-    distHtmlGlob: 'dist/*.html',
-    distTextGlob: 'dist/*.txt',
+    dist_html_glob: 'dist/*.html',
+    dist_text_glob: 'dist/*.txt',
     layouts: 'src/layouts',
     partials: 'src/partials/*',
-    images: 'src/images'
+    images_src: 'src/images'
   };
 
   /* Configuration
@@ -21,15 +23,16 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-
+    secret: grunt.file.readJSON('secrets.json'),
+    var: grunt.file.readJSON('variables.json'),
 
     /* SASS
     ------------------------------------------------- */
 
     sass: {
       styles: {
-        src: path.cssSrc,
-        dest: path.cssDest
+        src: path.css_src,
+        dest: path.css_dest
       }
     },
 
@@ -42,8 +45,8 @@ module.exports = function(grunt) {
         browsers: ['last 6 versions', 'ie >= 9']
       },
       styles: {
-        src: path.cssDest,
-        dest: path.cssDest
+        src: path.css_dest,
+        dest: path.css_dest
       }
     },
 
@@ -69,13 +72,19 @@ module.exports = function(grunt) {
         state: "ST",
         country: "United States",
         phone: "123-456-7890",
+        use_images: true,
+        images_path: "https://assets.wildbit.com/postmark/templates/images/",
+        use_social_circles: false,
         twitter_url: "https://twitter.com/example",
-        facebook_url: "",
-        pinterest_url: "",
-        instagram_url: ""
+        facebook_url: "https://facebook.com",
+        pinterest_url: "https://pinterest.com",
+        instagram_url: "https://instagram.com",
+        google_plus_url: "https://google.com",
+        youtube_url: "https://youtube.com",
+        linkedin_url: "https://linkedin.com"
       },
       pages: {
-        src: [path.emailSrc],
+        src: [path.email_src],
         dest: path.dist
       }
     },
@@ -132,7 +141,7 @@ module.exports = function(grunt) {
         },
         files: [{
           expand: true,
-          src: [path.distHtmlGlob],
+          src: [path.dist_html_glob],
           dest: ''
         }]
       },
@@ -143,10 +152,25 @@ module.exports = function(grunt) {
         },
         files: [{
           expand: true,
-          src: [path.distHtmlGlob],
+          src: [path.dist_html_glob],
           dest: '',
           ext: '.txt'
         }]
+      }
+    },
+
+
+    'ftp-deploy': {
+      build: {
+        auth: {
+          host: "<%= var.ftp.host %>",
+          port: "<%= var.ftp.port %>",
+          username: "<%= secret.ftp.username %>",
+          password: "<%= secret.ftp.password %>"
+        },
+        src: "<%= var.ftp.src %>",
+        dest: "<%= var.ftp.dest %>",
+        exclusions: ['path/to/source/folder/**/.DS_Store', 'path/to/source/folder/**/Thumbs.db']
       }
     },
 
@@ -172,7 +196,7 @@ module.exports = function(grunt) {
       // Premailer escapes URLs, so our mustachio variables for URLs get fully escaped, and the
       // URL variables need to be converted from %7B%7Bsomething%7D%7D to {{something}}
       variableSyntax: {
-        src: [path.distTextGlob],
+        src: [path.dist_text_glob],
         overwrite: true,
         replacements: [
           { from: '%7B%7B', to: '{{' },
@@ -183,7 +207,7 @@ module.exports = function(grunt) {
       },
       // Add some additional attributes that grunt inline removed
       styleBlock: {
-        src: [path.distHtmlGlob],
+        src: [path.dist_html_glob],
         overwrite: true,
         replacements: [
           {
@@ -202,7 +226,7 @@ module.exports = function(grunt) {
 
     spamcheck: {
       emails: {
-        src: [path.distHtmlGlob]
+        src: [path.dist_html_glob]
       }
     },
 
@@ -214,10 +238,10 @@ module.exports = function(grunt) {
 
     postmark: {
       options: {
-        serverToken: 'SERVER_TOKEN', // Add your server token
-        from: 'FROM_ADDRESS', // Add your from address. Must be a valid sender signature.
-        to: 'TO_ADDRESS',
-        subject: 'PM TEMPLATE TEST'
+        serverToken: "<%= secret.postmark.server_token %>", // Add your server token
+        from: "<%= var.postmark.from %>", // Add your from address. Must be a valid sender signature.
+        to: "<%= var.postmark.to %>",
+        subject: "<%= var.postmark.subject %>",
       },
       // run "grunt postmark:welcome" - Sends just the welcome email
       welcome: {
@@ -225,12 +249,12 @@ module.exports = function(grunt) {
       },
       // run "grunt postmark:emails" - Sends all of the emails. Be careful not to spam PM if you have a bunch of emails.
       emails: {
-        src: [path.distHtmlGlob]
+        src: [path.dist_html_glob]
       },
       // run "grunt postmark:litmus" - Add a litmus test address here.
       litmus: {
         to: '',
-        src: [path.distHtmlGlob]
+        src: [path.dist_html_glob]
       }
     }
 
@@ -245,6 +269,7 @@ module.exports = function(grunt) {
   // Assets
   grunt.registerTask('html', ['assemble', 'inline', 'premailer', 'replace', 'prettify']);
   grunt.registerTask('css', ['sass', 'autoprefixer']);
+  grunt.registerTask('images', ['ftp-deploy']);
 
   // Testing
   grunt.registerTask('send', ['postmark:emails']);

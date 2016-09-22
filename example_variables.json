@@ -1,0 +1,15 @@
+// Create a copy of this file as 'variables.json'
+
+{
+  "ftp": {
+    "host": "12.34.56.79",      // Make sure to set this to your IP or domain
+    "port": "21",               // You're most likely using port 21 for FTP
+    "src": "src/images",        // The local directory from which you want to copy files
+    "dest": "/example/images"   // The target directory where the files should be uplaoded
+  },
+  "postmark": {
+    "from": "jane@example.com", // The from address to use to send the email through Postmark
+    "to": "jon@example.com",    // The email address to send your tests to
+    "subject": "Test Email"     // The subject for test emails
+  }
+}
