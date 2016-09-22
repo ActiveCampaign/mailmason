@@ -1,10 +1,10 @@
 {
-  "name": "postmark-email-templates",
-  "version": "0.0.1",
+  "name": "mailmason",
+  "version": "0.0.9",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/wildbit/postmark-build-templates"
+    "url": "https://github.com/wildbit/mailmason"
   },
   "scripts": {
     "start": "grunt watch",
