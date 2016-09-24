@@ -61,27 +61,29 @@ module.exports = function(grunt) {
         layoutdir: path.layouts,
         partials: path.partials,
         flatten: true,
-        sender_name: "[Sender Name]",
-        product_name: "[Product Name]",
-        product_url: "https://example.com",
-        credit_card_statement_name: "[Credit Card Statement Name]",
-        formal_name: "[Company Name, LLC]",
-        address_line_1: "1234 Street Rd." ,
-        address_line_2: "Suite 1234",
-        city: "Cityville",
-        state: "ST",
-        country: "United States",
-        phone: "123-456-7890",
-        use_images: true,
-        images_path: "https://assets.wildbit.com/postmark/templates/images/",
-        use_social_circles: false,
-        twitter_url: "https://twitter.com/example",
-        facebook_url: "https://facebook.com",
-        pinterest_url: "https://pinterest.com",
-        instagram_url: "https://instagram.com",
-        google_plus_url: "https://google.com",
-        youtube_url: "https://youtube.com",
-        linkedin_url: "https://linkedin.com"
+        sender_name: "<%= var.strings.sender_name %>",
+        product_name: "<%= var.strings.product_name %>",
+        product_url: "<%= var.strings.product_url %>",
+        credit_card_statement_name: "<%= var.strings.credit_card_statement_name %>",
+        formal_company_name: "<%= var.strings.formal_company_name %>",
+        address_line_1: "<%= var.strings.address_line_1 %>",
+        address_line_2: "<%= var.strings.address_line_2 %>",
+        city: "<%= var.strings.city %>",
+        state: "<%= var.strings.state %>",
+        country: "<%= var.strings.country %>",
+        phone: "<%= var.strings.phone %>",
+        images_url: "<%= var.images.images_url %>",
+        use_images: "<%= var.images.use_images %>",
+        logo_file: "<%= var.images.logo_file %>",
+        logo_width: "<%= var.images.logo_width %>",
+        use_social_circles: "<%= var.images.use_social_circles %>",
+        twitter_url: "<%= var.images.twitter_url %>",
+        facebook_url: "<%= var.images.facebook_url %>",
+        pinterest_url: "<%= var.images.pinterest_url %>",
+        instagram_url: "<%= var.images.instagram_url %>",
+        google_plus_url: "<%= var.images.google_plus_url %>",
+        youtube_url: "<%= var.images.youtube_url %>",
+        linkedin_url: "<%= var.images.linkedin_url %>"
       },
       pages: {
         src: [path.email_src],
@@ -202,7 +204,8 @@ module.exports = function(grunt) {
           { from: '%7B%7B', to: '{{' },
           { from: '%7D%7D', to: '}}' },
           { from: '%7D%7D%22', to: '}}' },
-          { from: '%20}}', to: '}}' }
+          { from: '%20}}', to: '}}' },
+          { from: '{{%20', to: '{{' }
         ]
       },
       // Add some additional attributes that grunt inline removed
@@ -253,7 +256,7 @@ module.exports = function(grunt) {
       },
       // run "grunt postmark:litmus" - Add a litmus test address here.
       litmus: {
-        to: '',
+        to: "<%= var.strings.litmus_email %>",
         src: [path.dist_html_glob]
       }
     }
