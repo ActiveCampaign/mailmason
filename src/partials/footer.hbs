@@ -3,9 +3,71 @@
     <table class="email-footer" align="center" width="570" cellpadding="0" cellspacing="0">
       <tr>
         <td class="content-cell">
-          <p class="sub center">&copy; 2016 {{product_name }}. All rights reserved.</p>
+          {{#if use_images}}
+          <table class="social-links" align="center" width="570" cellpadding="0" cellspacing="0">
+            <tr>
+              {{#if facebook_url}}
+              <td class="align-center">
+                <a href="{{ facebook_url }}" class="social-link">
+                  <img src="{{ images_url }}facebook{{#if use_social_circles}}_circle{{/if}}.png" alt="Facebook" class="social-image">
+                </a>
+              </td>
+              {{/if}}
+              {{#if twitter_url}}
+              <td class="align-center">
+                <a href="{{ twitter_url }}" class="social-link">
+                  <img src="{{ images_url }}twitter{{#if use_social_circles}}_circle{{/if}}.png" alt="Twitter" class="social-image">
+                </a>
+              </td>
+              {{/if}}
+              {{#if instagram_url}}
+              <td class="align-center">
+                <a href="{{ instagram_url }}" class="social-link">
+                  <img src="{{ images_url }}instagram{{#if use_social_circles}}_circle{{/if}}.png" alt="Instagram" class="social-image">
+                </a>
+              </td>
+              {{/if}}
+              {{#if linkedin_url}}
+              <td class="align-center">
+                <a href="{{ linkedin_url }}" class="social-link">
+                  <img src="{{ images_url }}linkedin{{#if use_social_circles}}_circle{{/if}}.png" alt="LinkedIn" class="social-image">
+                </a>
+              </td>
+              {{/if}}
+              {{#if dribbble_url}}
+              <td class="align-center">
+                <a href="{{ dribbble_url }}" class="social-link">
+                  <img src="{{ images_url }}dribbble{{#if use_social_circles}}_circle{{/if}}.png" alt="dribbble" class="social-image">
+                </a>
+              </td>
+              {{/if}}
+              {{#if youtube_url}}
+              <td class="align-center">
+                <a href="{{ youtube_url }}" class="social-link">
+                  <img src="{{ images_url }}youtube{{#if use_social_circles}}_circle{{/if}}.png" alt="YouTube" class="social-image">
+                </a>
+              </td>
+              {{/if}}
+              {{#if googleplus_url}}
+              <td class="align-center">
+                <a href="{{ google_plus_url }}" class="social-link">
+                  <img src="{{ images_url }}googleplus{{#if use_social_circles}}_circle{{/if}}.png" alt="Google+" class="social-image">
+                </a>
+              </td>
+              {{/if}}
+              {{#if pinterest_url}}
+              <td class="align-center">
+                <a href="{{ pinterest_url }}" class="social-link">
+                  <img src="{{ images_url }}pinterest{{#if use_social_circles}}_circle{{/if}}.png" alt="Pinterest" class="social-image">
+                </a>
+              </td>
+              {{/if}}
+            </tr>
+          </table>
+          {{/if}}
+          <p class="sub center">&copy; 2016 {{ product_name }}. All rights reserved.</p>
           <p class="sub center">
-            {{formal_name }}
+            {{ formal_company_name }}
             {{#if address_line_1 }}
             <br>{{address_line_1 }}
             {{/if}}

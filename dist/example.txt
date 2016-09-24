@@ -85,6 +85,12 @@ If you’re having trouble clicking the confirm account button, copy and paste t
 
 {{action_url}} ( {{action_url}} )
 
+Facebook ( Your%20Facebook%20URL )
+
+Twitter ( Your%20Twitter%20URL )
+
+Instagram ( Your%20Instagram%20URL )
+
 © 2016 [Product Name]. All rights reserved.
 
 [Company Name, LLC]

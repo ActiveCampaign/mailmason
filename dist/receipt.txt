@@ -42,6 +42,12 @@ Need a printable copy for your records? You can download a PDF version ( {{actio
 
 Moved recently? Have a new credit card? You can easily update your billing information ( {{billing_url}} ).
 
+Facebook ( Your%20Facebook%20URL )
+
+Twitter ( Your%20Twitter%20URL )
+
+Instagram ( Your%20Instagram%20URL )
+
 © 2016 [Product Name]. All rights reserved.
 
 [Company Name, LLC]

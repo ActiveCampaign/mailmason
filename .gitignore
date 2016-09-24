@@ -4,5 +4,5 @@ npm-debug.log
 .idea
 .ftppass
 .ruby-version
-secrets.json
 variables.json
+secrets.json
