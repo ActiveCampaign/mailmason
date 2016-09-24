@@ -24,7 +24,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     secret: grunt.file.readJSON('secrets.json'),
-    var: grunt.file.readJSON('variables.json'),
+    config: grunt.file.readJSON('config.json'),
 
     /* SASS
     ------------------------------------------------- */
@@ -61,29 +61,29 @@ module.exports = function(grunt) {
         layoutdir: path.layouts,
         partials: path.partials,
         flatten: true,
-        sender_name: "<%= var.strings.sender_name %>",
-        product_name: "<%= var.strings.product_name %>",
-        product_url: "<%= var.strings.product_url %>",
-        credit_card_statement_name: "<%= var.strings.credit_card_statement_name %>",
-        formal_company_name: "<%= var.strings.formal_company_name %>",
-        address_line_1: "<%= var.strings.address_line_1 %>",
-        address_line_2: "<%= var.strings.address_line_2 %>",
-        city: "<%= var.strings.city %>",
-        state: "<%= var.strings.state %>",
-        country: "<%= var.strings.country %>",
-        phone: "<%= var.strings.phone %>",
-        images_url: "<%= var.images.images_url %>",
-        use_images: "<%= var.images.use_images %>",
-        logo_file: "<%= var.images.logo_file %>",
-        logo_width: "<%= var.images.logo_width %>",
-        use_social_circles: "<%= var.images.use_social_circles %>",
-        twitter_url: "<%= var.images.twitter_url %>",
-        facebook_url: "<%= var.images.facebook_url %>",
-        pinterest_url: "<%= var.images.pinterest_url %>",
-        instagram_url: "<%= var.images.instagram_url %>",
-        google_plus_url: "<%= var.images.google_plus_url %>",
-        youtube_url: "<%= var.images.youtube_url %>",
-        linkedin_url: "<%= var.images.linkedin_url %>"
+        sender_name: "<%= config.strings.sender_name %>",
+        product_name: "<%= config.strings.product_name %>",
+        product_url: "<%= config.strings.product_url %>",
+        credit_card_statement_name: "<%= config.strings.credit_card_statement_name %>",
+        formal_company_name: "<%= config.strings.formal_company_name %>",
+        address_line_1: "<%= config.strings.address_line_1 %>",
+        address_line_2: "<%= config.strings.address_line_2 %>",
+        city: "<%= config.strings.city %>",
+        state: "<%= config.strings.state %>",
+        country: "<%= config.strings.country %>",
+        phone: "<%= config.strings.phone %>",
+        images_url: "<%= config.images.images_url %>",
+        use_images: "<%= config.images.use_images %>",
+        logo_file: "<%= config.images.logo_file %>",
+        logo_width: "<%= config.images.logo_width %>",
+        use_social_circles: "<%= config.images.use_social_circles %>",
+        twitter_url: "<%= config.images.twitter_url %>",
+        facebook_url: "<%= config.images.facebook_url %>",
+        pinterest_url: "<%= config.images.pinterest_url %>",
+        instagram_url: "<%= config.images.instagram_url %>",
+        google_plus_url: "<%= config.images.google_plus_url %>",
+        youtube_url: "<%= config.images.youtube_url %>",
+        linkedin_url: "<%= config.images.linkedin_url %>"
       },
       pages: {
         src: [path.email_src],
@@ -165,13 +165,13 @@ module.exports = function(grunt) {
     'ftp-deploy': {
       build: {
         auth: {
-          host: "<%= var.ftp.host %>",
-          port: "<%= var.ftp.port %>",
+          host: "<%= config.ftp.host %>",
+          port: "<%= config.ftp.port %>",
           username: "<%= secret.ftp.username %>",
           password: "<%= secret.ftp.password %>"
         },
-        src: "<%= var.ftp.src %>",
-        dest: "<%= var.ftp.dest %>",
+        src: "<%= config.ftp.src %>",
+        dest: "<%= config.ftp.dest %>",
         exclusions: ['path/to/source/folder/**/.DS_Store', 'path/to/source/folder/**/Thumbs.db']
       }
     },
@@ -201,11 +201,11 @@ module.exports = function(grunt) {
         src: [path.dist_text_glob],
         overwrite: true,
         replacements: [
-          { from: '%7B%7B', to: '{{' },
-          { from: '%7D%7D', to: '}}' },
-          { from: '%7D%7D%22', to: '}}' },
-          { from: '%20}}', to: '}}' },
-          { from: '{{%20', to: '{{' }
+          { from: '%7B%7B', to: '{{ ' },
+          { from: '%7D%7D', to: ' }}' },
+          { from: '%7D%7D%22', to: ' }}' },
+          { from: '%20}}', to: ' }}' },
+          { from: '{{%20', to: '{{ ' }
         ]
       },
       // Add some additional attributes that grunt inline removed
@@ -242,9 +242,9 @@ module.exports = function(grunt) {
     postmark: {
       options: {
         serverToken: "<%= secret.postmark.server_token %>", // Add your server token
-        from: "<%= var.postmark.from %>", // Add your from address. Must be a valid sender signature.
-        to: "<%= var.postmark.to %>",
-        subject: "<%= var.postmark.subject %>",
+        from: "<%= config.postmark.from %>", // Add your from address. Must be a valid sender signature.
+        to: "<%= config.postmark.to %>",
+        subject: "<%= config.postmark.subject %>",
       },
       // run "grunt postmark:welcome" - Sends just the welcome email
       welcome: {
@@ -256,7 +256,7 @@ module.exports = function(grunt) {
       },
       // run "grunt postmark:litmus" - Add a litmus test address here.
       litmus: {
-        to: "<%= var.strings.litmus_email %>",
+        to: "<%= config.strings.litmus_email %>",
         src: [path.dist_html_glob]
       }
     }

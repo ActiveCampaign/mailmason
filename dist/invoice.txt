@@ -11,7 +11,7 @@ Thanks for using [Product Name]. This is an invoice for your purchase. Please su
 * Amount Due: {{total}}
 * Due By: {{due_date}}
 
-Pay this Invoice ( {{action_url}} )
+Pay this Invoice ( {{ action_url }} )
 
 {{invoice_id}}
 --------------
@@ -34,14 +34,14 @@ Total
 
 {{total}}
 
-If you have any questions or concerns about this invoice, you can simply reply to this email or reach out to our support team ( {{support_url}} ) for clarification.
+If you have any questions or concerns about this invoice, you can simply reply to this email or reach out to our support team ( {{ support_url }} ) for clarification.
 
 Cheers,
 The team at [Product Name]
 
 If you’re having trouble with the button above, copy and paste the URL below into your web browser.
 
-{{ action_url}} ( {{%20action_url}} )
+{{ action_url}} ( {{ %20action_url }} )
 
 Facebook ( Your%20Facebook%20URL )
 
