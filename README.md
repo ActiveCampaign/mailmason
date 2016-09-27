@@ -87,8 +87,15 @@ The distribution (`/dist/` folder) is generated from the source files in the `/s
 ```
 /src
   /emails - The individual emails that will be generated.
+    comment_notification.hbs
+    example.hbs
+    invoice.hbs
     receipt.hbs
-    resetpassword.hbs
+    reset_password.hbs
+    reset_password_alt.hbs
+    trial_expired.hbs
+    trial_expiring.hbs
+    user_inivitation.hbs
     welcome.hbs
   /layouts - The base layouts used for the emails.
     layout.hbs
