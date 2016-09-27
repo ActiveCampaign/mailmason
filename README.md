@@ -1,4 +1,6 @@
-# Postmark Transactional Email Build Templates
+# MailMason
+
+**A complete toolset to streamline building and updating a set of consistent transactional emails.**
 
 *Few tasks are more tedious than building a consistent set of well-tested and beautiful transactional email templates for your application.*
 
@@ -17,7 +19,6 @@ By default, the generated templates use [Mustachio](https://github.com/wildbit/m
 * [X] Enables easy sending of test emails through your Postmark account
 * [X] Enables easy batch testing against the [Postmark Spamcheck API](http://spamcheck.postmarkapp.com)
 * [X] Enables easy batch testing through [Litmus](http://litmus.com)
-
 ## Installation
 
 1) Install [node version manager](https://github.com/creationix/nvm)
