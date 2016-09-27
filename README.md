@@ -71,9 +71,9 @@ Watches the `src` directory for changes and builds to `dist`.
 
 ## Configuration
 
-There are two primary configuration files for MailMason: `secrets.json` and `variables.json`. By default these files are ignored using `.gitignore`. Examples of these files are included at `example_secrets.json` and `example_variables.jason`. You can copy these files and rename them to create your own. The specific secrets and configurable values are documented within these files.
+There are two primary configuration files for MailMason: `secrets.json` and `config.json`. By default these files are ignored using `.gitignore`. Examples of these files are included at `example_secrets.json` and `example_config.json`. You can copy these files and rename them to create your own. The specific secrets and configurable values are documented within these files.
 
-If you project is shared among team members, you may want to to update your `.gitignore` to recognize `variables.json` so that each member of your team isn't forced to recreate it.
+If you project is shared among team members, you may want to to update your `.gitignore` to recognize `config.json` so that each member of your team isn't forced to recreate it.
 
 ### About Assets (i.e. images)
 
