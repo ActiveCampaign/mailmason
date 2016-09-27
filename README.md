@@ -69,7 +69,19 @@ npm start
 ```
 Watches the `src` directory for changes and builds to `dist`. 
 
+## Configuration
+
+There are two primary configuration files for MailMason: `secrets.json` and `variables.json`. By default these files are ignored using `.gitignore`. Examples of these files are included at `example_secrets.json` and `example_variables.jason`. You can copy these files and rename them to create your own. The specific secrets and configurable values are documented within these files.
+
+If you project is shared among team members, you may want to to update your `.gitignore` to recognize `variables.json` so that each member of your team isn't forced to recreate it.
+
+### About Assets (i.e. images)
+
+Postmark doesn't currently provide hosting for images in templates. (It's on our roadmap, though.) So for the time being, if you'd like your emails to use images, you'll need to host these assets somewhere publicly available.
+
 ## Usage
+
+The repository includes some automation to help with building and testing. 
 
 Check out `Gruntfile.js` for more details on how each task works.
 
