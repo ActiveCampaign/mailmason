@@ -33,8 +33,7 @@ a {
   padding: 0;
   -premailer-width: 100%;
   -premailer-cellpadding: 0;
-  -premailer-cellspacing: 0;
-  background-color: #ffffff; }
+  -premailer-cellspacing: 0; }
 
 /* Masthead ----------------------- */
 .email-masthead {
@@ -59,14 +58,15 @@ a {
   -premailer-cellspacing: 0;
   border-top: 1px solid #EDEFF2;
   border-bottom: 1px solid #EDEFF2;
-  background-color: #FFF; }
+  background-color: #FFFFFF; }
   .email-body_inner {
     width: 570px;
     margin: 0 auto;
     padding: 0;
     -premailer-width: 570px;
     -premailer-cellpadding: 0;
-    -premailer-cellspacing: 0; }
+    -premailer-cellspacing: 0;
+    background-color: #FFFFFF; }
 
 .email-footer {
   width: 570px;

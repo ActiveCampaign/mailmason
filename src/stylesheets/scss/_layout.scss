@@ -6,7 +6,6 @@
 }
 .email-content {
   @include table-scale();
-  background-color: #ffffff;
 }
 
 
@@ -35,10 +34,11 @@
   @include table-scale();
   border-top: 1px solid $c-slate-lighter;
   border-bottom: 1px solid $c-slate-lighter;
-  background-color: #FFF;
+  background-color: #FFFFFF;
 
   &_inner {
     @include table-scale($width: 570px, $margin: 0 auto);
+    background-color: #FFFFFF;
   }
 }
 
