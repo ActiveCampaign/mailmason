@@ -248,7 +248,7 @@ module.exports = function(grunt) {
       },
       // run "grunt postmark:welcome" - Sends just the welcome email
       welcome: {
-        src: 'dist/welcome.html'
+        src: 'dist/example.html'
       },
       // run "grunt postmark:emails" - Sends all of the emails. Be careful not to spam PM if you have a bunch of emails.
       emails: {
