@@ -118,10 +118,36 @@
   text-align: center;
   padding-top: 25px;
   padding-bottom: 10px;
-  
+
   h2 {
     display: inline;
   }
+}
+
+/* Discount Code ------------------------------ */
+
+.body-discount {
+  @include table-scale($padding: 24px);
+
+  background-color: $c-slate-lighter;
+
+  h1, p {
+    text-align: center;
+  }
+
+  p {
+    font-size: 90%;
+  }
+
+  .discount-code {
+    background-color: #FFFFFF;
+    border: 2px dashed $c-slate-light;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
 }
 
 /* Social Icons ------------------------------ */

@@ -142,6 +142,27 @@ a {
   .related-heading h2 {
     display: inline; }
 
+/* Discount Code ------------------------------ */
+.body-discount {
+  width: 100%;
+  margin: 0;
+  padding: 24px;
+  -premailer-width: 100%;
+  -premailer-cellpadding: 0;
+  -premailer-cellspacing: 0;
+  background-color: #EDEFF2; }
+  .body-discount h1, .body-discount p {
+    text-align: center; }
+  .body-discount p {
+    font-size: 90%; }
+  .body-discount .discount-code {
+    background-color: #FFFFFF;
+    border: 2px dashed #9BA2AB;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    padding: 16px;
+    margin-bottom: 16px; }
+
 /* Social Icons ------------------------------ */
 .social-links {
   width: auto; }

@@ -43,9 +43,9 @@ The team at [Product Name]
 You may also like...
 --------------------
 
-Related Item #1 ( # )
+{{ item_one_name }} ( # )
 
-Related Item #2 ( # )
+{{ item_two_name }} ( # )
 
 If you’re having trouble with the button above, copy and paste the URL below into your web browser.
 

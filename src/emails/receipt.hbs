@@ -21,6 +21,8 @@ preheader: This is a receipt for \{{total}}. No payment is due with this receipt
 
             <p>This purchase will appear as “{{credit_card_statement_name}}” on your credit card statement for your \{{credit_card_brand}} ending in \{{credit_card_last_four}}. Need to <a href="\{{billing_url}}">update your payment information</a>?</p>
 
+            {{> discount }}
+
             <table class="purchase-wrapper" width="100%" cellpadding="0" cellspacing="0">
               <tr>
                 <td><h3>\{{receipt_id}}</h3></td>
@@ -61,7 +63,6 @@ preheader: This is a receipt for \{{total}}. No payment is due with this receipt
               </tr>
             </table>
 
-            <!-- Related Items -->
             {{> related_items }}
 
             <!-- Sub copy -->

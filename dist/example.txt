@@ -77,6 +77,32 @@ Thanks,
 
 P.S. Need help getting started? Check out our help documentation. Or, just reply to this email with any questions or issues you have. The [Product Name] support team is always excited to help you.
 
+*************
+Discount Code
+*************
+
+**************************
+10% off your next purchase
+**************************
+
+Thanks for your support! As one of our favorite customers, we made up this extra special discount code for your next purchase if used by {{expiration_date}}.
+
+random_string_of_text
+
+Use this discount now... ( {{ action_url }} )
+
+*************
+Related Items
+*************
+
+--------------------
+You may also like...
+--------------------
+
+{{ item_one_name }} ( # )
+
+{{ item_two_name }} ( # )
+
 ********
 Sub-text
 ********
