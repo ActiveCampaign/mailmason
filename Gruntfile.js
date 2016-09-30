@@ -241,8 +241,8 @@ module.exports = function(grunt) {
 
     postmark: {
       options: {
-        serverToken: "<%= secret.postmark.server_token %>", // Add your server token
-        from: "<%= config.postmark.from %>", // Add your from address. Must be a valid sender signature.
+        serverToken: "<%= secret.postmark.server_token %>",
+        from: "<%= config.postmark.from %>",
         to: "<%= config.postmark.to %>",
         subject: "<%= config.postmark.subject %>",
       },

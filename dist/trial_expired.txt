@@ -1,4 +1,4 @@
-Your trial period for {{product_name}} has recently expired.
+Your trial period for {{product_name}} has recently expired. What would you like us to do?
 
 [Product Name] ( https://example.com )
 
@@ -24,11 +24,11 @@ Thanks,
 
 P.S. If you have any questions or need any help, please don't hesitate to reach out. You can reply to this email or join us on live chat during business hours.
 
-Facebook ( Your%20Facebook%20URL )
+Facebook ( https://facebook.com/example )
 
-Twitter ( Your%20Twitter%20URL )
+Twitter ( https://twitter.com/example )
 
-Instagram ( Your%20Instagram%20URL )
+Instagram ( https://instagram.com/example )
 
 © 2016 [Product Name]. All rights reserved.
 

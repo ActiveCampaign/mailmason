@@ -1,4 +1,4 @@
-This is a receipt for \{{total}}. No payment is due with this receipt.
+This is a receipt for \{{total}} for your purchase on {{ purchase_date }}. No payment is due with this receipt.
 
 [Product Name] ( https://example.com )
 
@@ -60,11 +60,11 @@ Need a printable copy for your records? You can download a PDF version ( {{ acti
 
 Moved recently? Have a new credit card? You can easily update your billing information ( {{ billing_url }} ).
 
-Facebook ( Your%20Facebook%20URL )
+Facebook ( https://facebook.com/example )
 
-Twitter ( Your%20Twitter%20URL )
+Twitter ( https://twitter.com/example )
 
-Instagram ( Your%20Instagram%20URL )
+Instagram ( https://instagram.com/example )
 
 © 2016 [Product Name]. All rights reserved.
 
