@@ -94,6 +94,35 @@
   }
 }
 
+/* Related Items ------------------------------ */
+
+.related-wrapper {
+  @include table-scale($padding: 25px 0 0 0);
+
+  img {
+    display: block;
+    padding-bottom: 10px;
+  }
+
+  .related-item {
+    align: center; 
+    padding: 10px 0;
+    color: $c-slate;
+    font-size: 15px;
+    line-height: 18px;
+  }
+}
+
+.related-heading {
+  border-top: 1px solid $c-slate-lighter;
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 10px;
+  
+  h2 {
+    display: inline;
+  }
+}
 
 /* Social Icons ------------------------------ */
 

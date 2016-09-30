@@ -39,6 +39,14 @@ If you have any questions or concerns about this invoice, you can simply reply t
 Cheers,
 The team at [Product Name]
 
+--------------------
+You may also like...
+--------------------
+
+Related Item #1 ( # )
+
+Related Item #2 ( # )
+
 If you’re having trouble with the button above, copy and paste the URL below into your web browser.
 
 {{ action_url}} ( {{ %20action_url }} )

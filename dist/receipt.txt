@@ -38,6 +38,14 @@ The team at [Product Name]
 
 Download as PDF ( {{ action_url }} )
 
+--------------------
+You may also like...
+--------------------
+
+Related Item #1 ( # )
+
+Related Item #2 ( # )
+
 Need a printable copy for your records? You can download a PDF version ( {{ action_url%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20 }} ).
 
 Moved recently? Have a new credit card? You can easily update your billing information ( {{ billing_url }} ).
