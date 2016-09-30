@@ -31,7 +31,8 @@ a {
   padding: 0;
   -premailer-width: 100%;
   -premailer-cellpadding: 0;
-  -premailer-cellspacing: 0; }
+  -premailer-cellspacing: 0;
+  background-color: #ffffff; }
 
 /* Masthead ----------------------- */
 .email-masthead {
