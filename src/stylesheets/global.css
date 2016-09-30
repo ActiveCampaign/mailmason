@@ -14,6 +14,8 @@ body {
 
 a {
   color: #3869D4; }
+  a img {
+    border: none; }
 
 /* Layout ------------------------------ */
 .email-wrapper {

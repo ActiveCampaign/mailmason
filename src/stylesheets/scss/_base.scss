@@ -15,4 +15,8 @@ body {
 }
 a {
   color: $c-blue;
+
+  img {
+    border: none;
+  }
 }
