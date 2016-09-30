@@ -107,6 +107,10 @@
     padding-bottom: 10px;
   }
 
+  strong {
+    display: block;
+  }
+
   .related-item {
     align: center; 
     padding: 10px 0;
@@ -145,6 +149,7 @@
   .discount-code {
     background-color: #FFFFFF;
     border: 2px dashed $c-slate-light;
+    display: block;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     padding: 16px;

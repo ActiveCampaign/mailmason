@@ -12,6 +12,9 @@ body {
   color: #74787E;
   -webkit-text-size-adjust: none; }
 
+p, ul, ol, blockquote {
+  line-height: 1.4; }
+
 a {
   color: #3869D4; }
   a img {
@@ -132,6 +135,8 @@ a {
   .related-wrapper img {
     display: block;
     padding-bottom: 10px; }
+  .related-wrapper strong {
+    display: block; }
   .related-wrapper .related-item {
     align: center;
     padding: 10px 0;
@@ -163,6 +168,7 @@ a {
   .body-discount .discount-code {
     background-color: #FFFFFF;
     border: 2px dashed #9BA2AB;
+    display: block;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     padding: 16px;

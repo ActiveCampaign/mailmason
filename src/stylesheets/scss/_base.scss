@@ -13,6 +13,11 @@ body {
   color: $c-slate;
   -webkit-text-size-adjust: none;
 }
+
+p, ul, ol, blockquote {
+  line-height: 1.4;
+}
+
 a {
   color: $c-blue;
 
