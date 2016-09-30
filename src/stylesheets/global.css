@@ -113,11 +113,13 @@ a {
   display: block;
   list-style-type: none;
   margin: 0 0 21px;
-  padding: 16px 16px 1px 16px; }
+  padding: 16px 16px 1px 16px;
+  text-align: left; }
   .option-list li {
-    list-style-type: disc;
+    list-style-type: none;
     display: block;
-    margin-bottom: 16px; }
+    margin-bottom: 16px;
+    text-align: left; }
 
 /* Related Items ------------------------------ */
 .related-wrapper {

@@ -48,11 +48,11 @@ Lists
 Action Buttons
 **************
 
-Danger Button
+Danger Button ( {{ action_url }} )
 
-( {{ action_url }} )Success button
+Success button ( {{ action_url }} )
 
-( {{ action_url }} )Default button ( {{ action_url }} )
+Default button ( {{ action_url }} )
 
 **************
 Attribute List
