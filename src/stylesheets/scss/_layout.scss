@@ -149,11 +149,13 @@
   .discount-code {
     background-color: #FFFFFF;
     border: 2px dashed $c-slate-light;
+    color: $c-slate;
     display: block;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     padding: 16px;
     margin-bottom: 16px;
+    text-decoration: none;
   }
 
 }

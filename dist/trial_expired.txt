@@ -8,7 +8,7 @@ Hi {{name}},
 
 Thanks for trying [Product Name]. Your trial period just expired, and since you've created a fair amount of data on your account, we've included information on several options for you to consider going forward.
 
-Upgrade your account ( {{ action_url }} )
+Upgrade your account ( %5C{{ action_url }} )
 
 If you're not ready to upgrade to a paying account, you have a few other options available to you…
 

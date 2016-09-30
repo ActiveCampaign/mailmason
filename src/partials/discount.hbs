@@ -5,8 +5,8 @@
       <div class="discount-container">
         <h1>10% off your next purchase</h1>
         <p>Thanks for your support! As one of our favorite customers, we made up this extra special discount code for your next purchase if used by \{{expiration_date}}.</p>
-        <div class="discount-code">random_string_of_text</div>
-        {{> button color="green" label="Use this discount now..." }}
+        <a href="\{{ discount_url }}" class="discount-code">random_string_of_text</a>
+        {{> button color="green" label="Use this discount now..." target_url="\{{discount_url}}" }}
       </div>
     </td>
   </tr>

@@ -10,7 +10,7 @@ Thanks for signing up for [Product Name]. We’re thrilled to have you on board.
 
 To get the most out of [Product Name], do this primary next step:
 
-Do this Next ( {{ action_url }} )
+Do this Next ( %5C{{ action_url }} )
 
 For future reference, here's your login information:
 

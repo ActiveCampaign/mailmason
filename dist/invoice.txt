@@ -11,7 +11,7 @@ Thanks for using [Product Name]. This is an invoice for your purchase. Please su
 * Amount Due: {{total}}
 * Due By: {{due_date}}
 
-Pay this Invoice ( {{ action_url }} )
+Pay this Invoice ( %5C{{ action_url }} )
 
 {{invoice_id}}
 --------------

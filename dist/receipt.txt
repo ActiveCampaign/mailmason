@@ -16,9 +16,9 @@ This purchase will appear as “[Credit Card Statement Name]” on your credit c
 
 Thanks for your support! As one of our favorite customers, we made up this extra special discount code for your next purchase if used by {{expiration_date}}.
 
-random_string_of_text
+random_string_of_text ( {{ %20discount_url%20 }} )
 
-Use this discount now... ( {{ action_url }} )
+Use this discount now... ( %5C{{ discount_url }} )
 
 {{receipt_id}}
 --------------
@@ -46,7 +46,7 @@ If you have any questions or concerns about this receipt, you can reply to this 
 Cheers,
 The team at [Product Name]
 
-Download as PDF ( {{ action_url }} )
+Download as PDF ( %5C{{ action_url }} )
 
 --------------------
 You may also like...
