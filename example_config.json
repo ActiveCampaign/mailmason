@@ -51,7 +51,7 @@
     // True if you want to use images, false if you don't.
     // If you disallow images, the masthead will just use the product name
     // in large bold text
-    "use_images'": false,
+    "use_images": false,
 
     // If you use images in you remails, you'll need to host the images
     // somewhere. Adding image hosting to Postmark templates is on the roadmap,
