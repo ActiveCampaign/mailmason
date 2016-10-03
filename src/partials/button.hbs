@@ -1,12 +1,16 @@
-<div>
-  <!--[if mso]>
-    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="\{{action_url}}" style="height:45px;v-text-anchor:middle;width:200px;" arcsize="7%" stroke="f" fill="t" fillcolor="#556270">
-    <w:anchorlock/>
-      <center>
-  <![endif]-->
-        <a href="{{ target_url }}" class="button button--{{color}}">{{label}}
-  <!--[if mso]>
-    </center>
-  </v:roundrect>
-<![endif]-->
-</div>
+<!-- Border based button
+     https://litmus.com/blog/a-guide-to-bulletproof-buttons-in-email-design -->
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="{{#if align}}{{align}}{{else}}center{{/if}}">
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <a href="{{target_url}}" class="button button--{{color}}" target="_blank">{{label}}</a>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
