@@ -138,8 +138,7 @@ module.exports = function(grunt) {
       },
       html: {
         options: {
-          removeComments: true,
-          preserveStyles: true
+          removeComments: true
         },
         files: [{
           expand: true,
