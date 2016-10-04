@@ -27,6 +27,7 @@
     ol,
     blockquote {
       line-height: 1.4;
+      text-align: left;
     }
     
     a {
@@ -421,7 +422,7 @@
                     <td class="content-cell" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; padding: 35px;">
                       {{body}}
                       <br /> {{#attachment_details}}
-                      <ul class="attribute-list" style="background: #EDEFF2; box-sizing: border-box; display: block; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; line-height: 1.4; list-style: none; margin: 0 0 21px; padding: 16px;">
+                      <ul class="attribute-list" style="background: #EDEFF2; box-sizing: border-box; display: block; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; line-height: 1.4; list-style: none; margin: 0 0 21px; padding: 16px; text-align: left;">
                         {{#each . }}
                         <li style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;"><a href="{{attachmenet_url}}" style="box-sizing: border-box; color: #3869D4; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">{{attachment_name}}</a> <span style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">({{attachment_size}} {{attachment_type}})</span></li>
                         {{/each}}

@@ -13,7 +13,8 @@ body {
   -webkit-text-size-adjust: none; }
 
 p, ul, ol, blockquote {
-  line-height: 1.4; }
+  line-height: 1.4;
+  text-align: left; }
 
 a {
   color: #3869D4; }
