@@ -1,4 +1,4 @@
-<img src="http://assets.wildbit.com/wildibt/repos/mailmason/mailmason.png" alt="MailMason" width="148" height="149">
+<img src="http://assets.wildbit.com/wildbit/repos/mailmason/mailmason.png" alt="MailMason" width="148" height="149">
 
 # MailMason
 
