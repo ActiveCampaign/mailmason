@@ -49,7 +49,7 @@ You may also like...
 
 If you’re having trouble with the button above, copy and paste the URL below into your web browser.
 
-{{ action_url}} ( {{ %20action_url }} )
+{{action_url}} ( )
 
 Facebook ( https://facebook.com/example )
 

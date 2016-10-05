@@ -1,4 +1,4 @@
-This is a receipt for \{{total}} for your purchase on {{ purchase_date }}. No payment is due with this receipt.
+This is a receipt for your recent purchase on {{ purchase_date }}. No payment is due with this receipt.
 
 [Product Name] ( https://example.com )
 
