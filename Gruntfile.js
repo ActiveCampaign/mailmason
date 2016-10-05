@@ -23,6 +23,11 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+
+    /* secrets.json and config.json simplify variable management to keep the
+       common changes centralized to key files instead of being littered
+       throughout the Gruntfile.
+    ================================================= */
     secret: grunt.file.readJSON('secrets.json'),
     config: grunt.file.readJSON('config.json'),
 
