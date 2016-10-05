@@ -249,8 +249,8 @@ module.exports = function(grunt) {
       welcome: {
         src: 'dist/welcome.html'
       },
-      // run "grunt postmark:emails" - Sends all of the emails. Be careful not to spam PM if you have a bunch of emails.
-      emails: {
+      // run "grunt postmark:flood" - Sends all of the emails. Be careful not to spam PM if you have a bunch of emails.
+      flood: {
         src: [path.dist_html_glob]
       },
       // run "grunt postmark:litmus" - Add a litmus test address here.

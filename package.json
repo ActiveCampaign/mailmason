@@ -12,6 +12,8 @@
     "css": "grunt css",
     "images": "grunt images",
     "spamcheck": "grunt spamcheck",
+    "litmus": "grunt postmark:litmus",
+    "flood": "grunt postmark:flood"
     "build": "grunt"
   },
   "devDependencies": {
