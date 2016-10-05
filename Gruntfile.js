@@ -26,7 +26,7 @@ module.exports = function(grunt) {
 
     /* secrets.json and config.json simplify variable management to keep the
        common changes centralized to key files instead of being littered
-       throughout the Gruntfile.
+       throughout the Gruntfile. This also makes it easy to .gitignore secrets
     ================================================= */
     secret: grunt.file.readJSON('secrets.json'),
     config: grunt.file.readJSON('config.json'),
