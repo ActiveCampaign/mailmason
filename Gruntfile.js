@@ -274,7 +274,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['css', 'html']);
 
   // Assets
-  grunt.registerTask('html', ['assemble', 'inline', 'premailer', 'replace', 'prettify']);
+  grunt.registerTask('html', ['assemble', 'inline', 'premailer:txt', 'replace', 'prettify']);
   grunt.registerTask('css', ['sass', 'autoprefixer']);
   grunt.registerTask('images', ['ftp-deploy']);
 
