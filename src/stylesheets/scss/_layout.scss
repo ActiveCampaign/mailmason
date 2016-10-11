@@ -137,6 +137,7 @@
   @include table-scale($padding: 24px);
 
   background-color: $c-slate-lighter;
+  border: 2px dashed $c-slate-light;
 
   h1, p {
     text-align: center;
@@ -144,18 +145,6 @@
 
   p {
     font-size: 90%;
-  }
-
-  .discount-code {
-    background-color: #FFFFFF;
-    border: 2px dashed $c-slate-light;
-    color: $c-slate;
-    display: block;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    padding: 16px;
-    margin-bottom: 16px;
-    text-decoration: none;
   }
 
 }

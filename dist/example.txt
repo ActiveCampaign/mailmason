@@ -81,13 +81,11 @@ P.S. Need help getting started? Check out our help documentation. Or, just reply
 Discount Code
 *************
 
-**************************
-10% off your next purchase
-**************************
+***************************
+10% off your next purchase!
+***************************
 
-Thanks for your support! As one of our favorite customers, we made up this extra special discount code for your next purchase if used by {{expiration_date}}.
-
-random_string_of_text ( {{ %20discount_url%20 }} )
+Thanks for your support! Here's a coupon for 10% off your next purchase if used by {{expiration_date}}.
 
 Use this discount now... ( http://example.com )
 
@@ -99,9 +97,9 @@ Related Items
 You may also like...
 --------------------
 
-{{ item_one_name }} ( # )
+{{ item_one_name }} ( )
 
-{{ item_two_name }} ( # )
+{{ item_two_name }} ( )
 
 ********
 Sub-text

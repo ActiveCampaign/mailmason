@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Welcome to {{product_name}}, {{name}}!</title>
-    <!-- CSS can be found here. -->
+    <!-- CSS is collapsed by default -->
     <style>
     /* Base ------------------------------ */
     
@@ -211,6 +211,7 @@
       -premailer-cellpadding: 0;
       -premailer-cellspacing: 0;
       background-color: #EDEFF2;
+      border: 2px dashed #9BA2AB;
     }
     
     .body-discount h1,
@@ -220,18 +221,6 @@
     
     .body-discount p {
       font-size: 90%;
-    }
-    
-    .body-discount .discount-code {
-      background-color: #FFFFFF;
-      border: 2px dashed #9BA2AB;
-      color: #74787E;
-      display: block;
-      font-family: 'Courier New', Courier, monospace;
-      font-weight: bold;
-      padding: 16px;
-      margin-bottom: 16px;
-      text-decoration: none;
     }
     /* Social Icons ------------------------------ */
     
@@ -529,9 +518,8 @@
                         <tr>
                           <td align="center">
                             <div class="discount-container">
-                              <h1>10% off your next purchase</h1>
-                              <p>Thanks for your support! As one of our favorite customers, we made up this extra special discount code for your next purchase if used by {{expiration_date}}.</p>
-                              <a href="{{ discount_url }}" class="discount-code">random_string_of_text</a>
+                              <h1>10% off your next purchase!</h1>
+                              <p>Thanks for your support! Here's a coupon for 10% off your next purchase if used by {{expiration_date}}.</p>
                               <!-- Border based button
                          https://litmus.com/blog/a-guide-to-bulletproof-buttons-in-email-design -->
                               <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -562,13 +550,13 @@
                         </tr>
                         <tr>
                           <td class="related-item" align="center">
-                            <a href="#">
+                            <a href="">
                               <img src="https://assets.wildbit.com/postmark/templates/images/related_placeholder.png" width="180">
                               <strong>{{ item_one_name }}</strong>
                             </a>
                           </td>
                           <td class="related-item" align="center">
-                            <a href="#">
+                            <a href="">
                               <img src="https://assets.wildbit.com/postmark/templates/images/related_placeholder.png" width="180">
                               <strong>{{ item_two_name }}</strong>
                             </a>
