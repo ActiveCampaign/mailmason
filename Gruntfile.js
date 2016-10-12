@@ -11,8 +11,10 @@ module.exports = function(grunt) {
     css_dest: 'src/stylesheets/global.css',
     email_src: 'src/emails/*.hbs',
     dist: 'dist/',
+    dist_test: 'dist_test/',
     dist_html_glob: 'dist/*.html',
     dist_text_glob: 'dist/*.txt',
+    dist_test_html_glob: 'dist_test/*.html',
     layouts: 'src/layouts',
     partials: 'src/partials/*',
     images_src: 'src/images'
@@ -147,7 +149,7 @@ module.exports = function(grunt) {
         },
         files: [{
           expand: true,
-          src: [path.dist_html_glob],
+          src: [path.dist_test_html_glob],
           dest: ''
         }]
       },
@@ -226,6 +228,23 @@ module.exports = function(grunt) {
     },
 
 
+    /* Copy
+       This is mainly used to copy compiled templates to a new directory for the CSS to be inlined before being tested.
+       See: https://github.com/gruntjs/grunt-contrib-copy
+     ------------------------------------------------- */
+
+    copy: {
+      testTemplates: {
+        files: [{
+          expand: true,
+          src: [path.dist_html_glob],
+          dest: path.dist_test,
+          flatten: true
+        }]
+      }
+    },
+
+
     /* Spamcheck
        Sends all of our HTML files through Postmark’s spamcheck API.
        See: https://github.com/derekrushforth/grunt-spamcheck
@@ -240,7 +259,8 @@ module.exports = function(grunt) {
 
     /* Postmark
        Sends test emails through Postmark. Add and remove template targets as needed.
-       See: https://github.com/derekrushforth/grunt-postmark
+       Ensure that the CSS is always inlined before sending tests. This can be done with the 'testBuild' task below.
+       See: https://github.com/wildbit/grunt-postmark
     ------------------------------------------------- */
 
     postmark: {
@@ -252,16 +272,16 @@ module.exports = function(grunt) {
       },
       // run "grunt postmark:welcome" - Sends just the welcome email
       welcome: {
-        src: 'dist/welcome.html'
+        src: 'dist_test/welcome.html'
       },
-      // run "grunt postmark:flood" - Sends all of the emails. Be careful not to spam PM if you have a bunch of emails.
+      // run "npm run flood" - Sends all of the emails. Be careful not to spam PM if you have a bunch of emails.
       flood: {
-        src: [path.dist_html_glob]
+        src: [path.dist_test_html_glob]
       },
-      // run "grunt postmark:litmus" - Add a litmus test address here.
+      // run "npm run litmus" - Add a litmus test address here.
       litmus: {
         to: "<%= config.strings.litmus_email %>",
-        src: 'dist/example.html'
+        src: 'dist_test/example.html'
       }
     }
 
@@ -279,7 +299,10 @@ module.exports = function(grunt) {
   grunt.registerTask('images', ['ftp-deploy']);
 
   // Testing
-  grunt.registerTask('send', ['postmark:emails']);
   grunt.registerTask('spam', ['spamcheck']);
-  grunt.registerTask('litmus', ['postmark:litmus']);
+  grunt.registerTask('litmus', ['testBuild', 'postmark:litmus']);
+  grunt.registerTask('flood', ['testBuild', 'postmark:flood']);
+
+  // Before sending tests via Postmark, ensure that test builds with inlined CSS are generated
+  grunt.registerTask('testBuild', ['default', 'copy:testTemplates', 'premailer:html']);
 };
