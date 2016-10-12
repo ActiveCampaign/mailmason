@@ -26,7 +26,7 @@
     "grunt-contrib-watch": "^1.0.0",
     "grunt-ftp-deploy": "^0.1.10",
     "grunt-inline": "^0.3.4",
-    "grunt-postmark": "0.0.6",
+    "grunt-postmark": "0.0.7",
     "grunt-premailer": "^1.0.0",
     "grunt-prettify": "^0.4.0",
     "grunt-sass": "^1.0.0",
