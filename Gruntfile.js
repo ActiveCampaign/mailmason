@@ -247,7 +247,7 @@ module.exports = function(grunt) {
 
     /* Spamcheck
        Sends all of our HTML files through Postmark’s spamcheck API.
-       See: https://github.com/derekrushforth/grunt-spamcheck
+       See: https://github.com/wildbit/grunt-spamcheck
     ------------------------------------------------- */
 
     spamcheck: {
