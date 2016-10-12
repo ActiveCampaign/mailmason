@@ -31,7 +31,7 @@
     "grunt-prettify": "^0.4.0",
     "grunt-sass": "^1.0.0",
     "grunt-scss-lint": "^0.3.6",
-    "grunt-spamcheck": "0.1.0",
+    "grunt-spamcheck": "0.1.1",
     "grunt-text-replace": "^0.4.0",
     "load-grunt-tasks": "^3.2.0",
     "time-grunt": "^1.2.1"
