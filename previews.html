@@ -8,8 +8,8 @@
       var templates = {
         example: "Example",
         welcome: "Welcome",
-        reset_password: "Reset Password",
-        reset_password_alt: "Reset Password Alt",
+        password_reset: "Password Reset",
+        password_reset_help: "Password Reset Help",
         invoice: "Invoice",
         receipt: "Receipt",
         comment_notification: "Comment Notification",
@@ -17,6 +17,19 @@
         trial_expired: "Trial Expired",
         user_invitation: "User Invitation"
       };
+
+      var descriptions = {
+        example: "Examples of built-in elements and styles.",
+        welcome: "Send a welcome email to users after they sign up.",
+        password_reset: "Send users a link to reset their password.",
+        password_reset_help: "Help users reset their password if they can’t remember their email.",
+        invoice: "Request payment from a user.",
+        receipt: "Send a receipt to users after they made a purchase.",
+        comment_notification: "Comment Notification",
+        trial_expiring: "Let users know when their trial is about to expire.",
+        trial_expired: "Let users know when their expired trial.",
+        user_invitation: "Help users invite others to use your software."
+      }
     </script>
     <style>
       body {
@@ -83,6 +96,7 @@
         anchor.setAttribute('href', "#" + key);
         anchor.appendChild(document.createTextNode(templates[key]));
         list_item.appendChild(anchor);
+        list_item.appendChild(document.createTextNode(" - " + descriptions[key]));
         toc.appendChild(list_item);
 
         // Build the heading for the template
