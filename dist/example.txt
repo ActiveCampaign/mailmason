@@ -93,14 +93,6 @@ Use this discount now... ( http://example.com )
 Related Items
 *************
 
---------------------
-You may also like...
---------------------
-
-{{ item_one_name }} ( )
-
-{{ item_two_name }} ( )
-
 ********
 Sub-text
 ********
@@ -108,12 +100,6 @@ Sub-text
 If you’re having trouble clicking the confirm account button, copy and paste the URL below into your web browser.
 
 {{action_url}} ( {{ action_url }} )
-
-Facebook ( https://facebook.com/example )
-
-Twitter ( https://twitter.com/example )
-
-Instagram ( https://instagram.com/example )
 
 © 2016 [Product Name]. All rights reserved.
 

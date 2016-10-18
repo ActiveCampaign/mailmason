@@ -46,23 +46,9 @@ The team at [Product Name]
 
 Download as PDF ( %5C{{ action_url }} )
 
---------------------
-You may also like...
---------------------
-
-{{ item_one_name }} ( )
-
-{{ item_two_name }} ( )
-
 Need a printable copy for your records? You can download a PDF version ( {{ action_url%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20 }} ).
 
 Moved recently? Have a new credit card? You can easily update your billing information ( {{ billing_url }} ).
-
-Facebook ( https://facebook.com/example )
-
-Twitter ( https://twitter.com/example )
-
-Instagram ( https://instagram.com/example )
 
 © 2016 [Product Name]. All rights reserved.
 

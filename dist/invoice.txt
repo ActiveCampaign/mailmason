@@ -39,23 +39,9 @@ If you have any questions about this invoice, simply reply to this email or reac
 Cheers,
 The team at [Product Name]
 
---------------------
-You may also like...
---------------------
-
-{{ item_one_name }} ( )
-
-{{ item_two_name }} ( )
-
 If you’re having trouble with the button above, copy and paste the URL below into your web browser.
 
 {{action_url}} ( )
-
-Facebook ( https://facebook.com/example )
-
-Twitter ( https://twitter.com/example )
-
-Instagram ( https://instagram.com/example )
 
 © 2016 [Product Name]. All rights reserved.
 
