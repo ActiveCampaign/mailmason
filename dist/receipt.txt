@@ -39,7 +39,7 @@ Total
 
 {{total}}
 
-If you have any questions or concerns about this receipt, you can reply to this email or reach out to our support team ( {{ support_url }} ) for clarification.
+If you have any questions about this receipt, simply reply to this email or reach out to our support team ( {{ support_url }} ) for help.
 
 Cheers,
 The team at [Product Name]

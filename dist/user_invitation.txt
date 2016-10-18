@@ -10,10 +10,10 @@ Hi, {{name}}!
 
 Set up account ( {{ action_url }} )
 
-If you have any questions for {{invite_sender_name}}, you can reply to this email and it will go right to them. Alternatively, feel free to contact our customer success team ( ) anytime. (We're lighting quick at replying.) We also offer live chat ( ) during business hours.
+If you have any questions for {{invite_sender_name}}, you can reply to this email and it will go right to them. Alternatively, feel free to contact our customer success team ( ) anytime. (We're lightning quick at replying.) We also offer live chat ( ) during business hours.
 
 Welcome aboard,
-[Sender Name] and the [Product Name] Team
+The [Product Name] Team
 
 P.S. Need help getting started? Check out our help documentation ( ).
 

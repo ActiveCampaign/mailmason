@@ -6,7 +6,7 @@ This is an invoice for your purchase on {{ purchase_date }}. Please submit payme
 Hi {{name}},
 ************
 
-Thanks for using [Product Name]. This is an invoice for your purchase. Please submit payment by {{due_date}}.
+Thanks for using [Product Name]. This is an invoice for your recent purchase. Please pay by {{due_date}}.
 
 * Amount Due: {{total}}
 * Due By: {{due_date}}
@@ -34,7 +34,7 @@ Total
 
 {{total}}
 
-If you have any questions or concerns about this invoice, you can simply reply to this email or reach out to our support team ( {{ support_url }} ) for clarification.
+If you have any questions about this invoice, simply reply to this email or reach out to our support team ( {{ support_url }} ) for help.
 
 Cheers,
 The team at [Product Name]
