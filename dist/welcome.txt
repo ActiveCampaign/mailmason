@@ -15,9 +15,9 @@ Do this Next ( %5C{{ action_url }} )
 For reference, here's your login information:
 
 * Login Page: {{login_url}}
-* Your Username: {{username}}
+* Username: {{username}}
 
-You've started a {{trial_length}} day trial. You can upgrade to a paying account any time.
+You've started a {{trial_length}} day trial. You can upgrade to a paying account or cancel any time.
 
 * Trial Start Date: {{trial_start_date}}
 * Trial End Date: {{trial_end_date}}
