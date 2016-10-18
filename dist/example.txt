@@ -6,7 +6,9 @@ This is example text for the preheader set via the YAML front-matter for each em
 Escaped Handlebars Brackets
 ***************************
 
-\{{ something }} gives you {{ something }}
+Working with templates, you'll occasionally need to put some Mustachio ( https://github.com/wildbit/mustachio ) code in your Handlebars templates. To prevent the Handlebars processing from attempting to process your Mustachio code, you'll need to escape the curly braces by adding a backslash just before the opening curly braces.
+
+\{{ something }} will turn into {{ something }}
 
 *******
 Headers
@@ -58,15 +60,21 @@ Default button ( http://example.com )
 Attribute List
 **************
 
-* Login Page: {{login_url}}
-* Your Username: {{username}}
+If your email client baseline is sufficiently modern, you can achieve the same effects with list much more succinctly. We chose to use tables for these lists to accommodate Outlook 2007, 2010, and 2013.
+
+Login Page: {{login_url}}
+
+Username: {{username}}
 
 ***********
 Option List
 ***********
 
-* Login Page: {{login_url}}
-* Your Username: {{username}}
+For the most part, option lists are just like attribute lists. They just use line breaks to create some separation between the items.
+
+Restart your trial ( {{ trial_extension_url }} ) - If you didn't get a chance to fully try out the product or need a little more time to evaluate, just let us know. Simply reply to this email and we'll extend your trial period.
+
+Share feedback ( {{ feedback_url }} ) - If [Product Name] isn't right for you, let us know what you were looking for and we might be able to suggest some alternatives that might be a better fit.
 
 ***************
 Example Closing
@@ -96,6 +104,8 @@ Related Items
 ********
 Sub-text
 ********
+
+Sub-text is for any content that needs to be included at the bottom of the email but doesn't need to stand out. This can be good for disclaimers and text alternatives.
 
 If you’re having trouble clicking the confirm account button, copy and paste the URL below into your web browser.
 

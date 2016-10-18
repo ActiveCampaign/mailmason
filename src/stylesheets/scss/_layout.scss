@@ -70,31 +70,15 @@
 /* Attribute list ------------------------------ */
 
 .attribute-list {
-  background-color: $c-slate-lighter;
-  display: block;
-  list-style-type: none;
   margin: 0 0 21px;
-  padding: 16px;
-  li {
-
+  .attribute-list-container {
+    background-color: $c-slate-lighter;
+    padding: 16px;
   }
 }
 
-/* Option list ------------------------------ */
-
-.option-list {
-  background-color: $c-slate-lighter;
-  display: block;
-  list-style-type: none;
-  margin: 0 0 21px;
-  padding: 16px 16px 1px 16px;
-  text-align: left;
-  li {
-    list-style-type: none;
-    display: block;
-    margin-bottom: 16px;
-    text-align: left;
-  }
+.attribute-list-item {
+  padding: 0;
 }
 
 /* Related Items ------------------------------ */
