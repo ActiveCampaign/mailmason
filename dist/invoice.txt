@@ -8,8 +8,9 @@ Hi {{name}},
 
 Thanks for using [Product Name]. This is an invoice for your recent purchase.
 
-* Amount Due: {{total}}
-* Due By: {{due_date}}
+Amount Due: {{total}}
+
+Due By: {{due_date}}
 
 Pay this Invoice ( %5C{{ action_url }} )
 

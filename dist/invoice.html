@@ -409,10 +409,20 @@
                     <td class="content-cell">
                       <h1>Hi {{name}},</h1>
                       <p>Thanks for using [Product Name]. This is an invoice for your recent purchase.</p>
-                      <ul class="attribute-list">
-                        <li><strong>Amount Due:</strong> {{total}}</li>
-                        <li><strong>Due By:</strong> {{due_date}}</li>
-                      </ul>
+                      <table class="attribute-list" width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                          <td class="attribute-list-container">
+                            <table width="100%" cellpadding="0" cellspacing="0">
+                              <tr>
+                                <td class="attribute-list-item"><strong>Amount Due:</strong> {{total}}</td>
+                              </tr>
+                              <tr>
+                                <td class="attribute-list-item"><strong>Due By:</strong> {{due_date}}</td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
                       <!-- Action -->
                       <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0">
                         <tr>

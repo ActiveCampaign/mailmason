@@ -14,13 +14,15 @@ Do this Next ( %5C{{ action_url }} )
 
 For reference, here's your login information:
 
-* Login Page: {{login_url}}
-* Username: {{username}}
+Login Page: {{login_url}}
+
+Username: {{username}}
 
 You've started a {{trial_length}} day trial. You can upgrade to a paying account or cancel any time.
 
-* Trial Start Date: {{trial_start_date}}
-* Trial End Date: {{trial_end_date}}
+Trial Start Date: {{trial_start_date}}
+
+Trial End Date: {{trial_end_date}}
 
 If you have any questions, feel free to email our customer success team ( {{ support_email }} ). (We're lightning quick at replying.) We also offer live chat ( {{ live_chat_url }} ) during business hours.
 

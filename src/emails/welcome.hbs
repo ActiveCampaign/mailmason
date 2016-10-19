@@ -31,16 +31,37 @@ preheader: "Thanks for trying out {{product_name}}. We've pulled together some i
             </table>
 
             <p>For reference, here's your login information:</p>
-            <ul class="attribute-list">
-              <li><strong>Login Page:</strong> \{{login_url}}</li>
-              <li><strong>Username:</strong> \{{username}}</li>
-            </ul>
+            <table class="attribute-list" width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td class="attribute-list-container">
+                  <table width="100%" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td class="attribute-list-item"><strong>Login Page:</strong> \{{login_url}}</td>
+                    </tr>
+                    <tr>
+                      <td class="attribute-list-item"><strong>Username:</strong> \{{username}}</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
 
             <p>You've started a \{{trial_length}} day trial. You can upgrade to a paying account or cancel any time.</p>
-            <ul class="attribute-list">
-              <li><strong>Trial Start Date:</strong> \{{trial_start_date}}</li>
-              <li><strong>Trial End Date:</strong> \{{trial_end_date}}</li>
-            </ul>
+
+            <table class="attribute-list" width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td class="attribute-list-container">
+                  <table width="100%" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td class="attribute-list-item"><strong>Trial Start Date:</strong> \{{trial_start_date}}</td>
+                    </tr>
+                    <tr>
+                      <td class="attribute-list-item"><strong>Trial End Date:</strong> \{{trial_end_date}}</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
 
             <p>If you have any questions, feel free to <a href="mailto:\{{support_email}}">email our customer success team</a>. (We're lightning quick at replying.) We also offer <a href="\{{live_chat_url}}">live chat</a> during business hours.</p>
 
