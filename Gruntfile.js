@@ -281,7 +281,7 @@ module.exports = function(grunt) {
       // run "npm run litmus" - Add a litmus test address here.
       litmus: {
         to: "<%= config.strings.litmus_email %>",
-        src: 'dist_test/example.html'
+        src: 'dist_test/user_invitation.html'
       }
     }
 
