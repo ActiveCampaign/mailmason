@@ -220,7 +220,7 @@ module.exports = function(grunt) {
         overwrite: true,
         replacements: [
           {
-            from: '<style type="text/css">',
+            from: '<style>',
             to: '<style type="text/css" rel="stylesheet" media="all">'
           }
         ]
