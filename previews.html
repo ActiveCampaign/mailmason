@@ -36,7 +36,7 @@
         font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         padding: 24px;
         /* Width is just big enough to fit desktop and mobile views side-by-side */
-        width: 1288px;
+        width: 1128px;
       }
       a {
         color: #137FC9;
@@ -148,7 +148,7 @@
         
         // Build the wide iframe preview for wide view of the template
         var wide_preview = document.createElement("iframe");
-        wide_preview.setAttribute('width', '800')
+        wide_preview.setAttribute('width', '640')
         wide_preview.setAttribute('height', '800')
         wide_preview.setAttribute('src', "dist/" + key + ".html")
         previews.appendChild(wide_preview);
@@ -162,7 +162,7 @@
 
         // Build the wide iframe preview for wide view of the template
         var wide_preview = document.createElement("iframe");
-        wide_preview.setAttribute('width', '800')
+        wide_preview.setAttribute('width', '640')
         wide_preview.setAttribute('height', '400')
         wide_preview.setAttribute('src', "dist/" + key + ".txt")
         previews.appendChild(wide_preview);
