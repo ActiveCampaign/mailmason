@@ -39,13 +39,36 @@
         width: 1288px;
       }
       a {
-        color: #3869D4;
+        color: #137FC9;
+      }
+      a[href="#toc"] {
+        border-radius: 4px;
+        display: inline-block;
+        float: right;
+        font-size: 120%;
+        font-weight: bold;
+        margin-top: -24px;
+        padding: 4px 8px;
+        text-decoration: none;
+      }
+      a[href="#toc"]:after {
+        content: ' \21e7';
+        font-size: 120%;
+      }
+      a[href="#toc"]:hover {
+        background-color: #EFF5FC;
       }
       ol {
         line-height: 1.6;
       }
       h1, hr {
         clear: both;
+      }
+      h1 {
+        margin-bottom: 0;
+      }
+      p {
+        margin-top: 0;
       }
       hr {
         display: block;
@@ -112,10 +135,17 @@
 
         // Build the heading for the template
         var heading = document.createElement("h1");
+        var description = document.createElement("p");
+        var top_link = document.createElement("a");
+        top_link.setAttribute('href', "#toc");
+        top_link.appendChild(document.createTextNode('Back to Top'));
         heading.appendChild(document.createTextNode(templates[key]));
         heading.setAttribute('id', key);
+        description.appendChild(document.createTextNode(descriptions[key]));
         previews.appendChild(heading);
-
+        previews.appendChild(top_link);
+        previews.appendChild(description);
+        
         // Build the wide iframe preview for wide view of the template
         var wide_preview = document.createElement("iframe");
         wide_preview.setAttribute('width', '800')
