@@ -1,4 +1,4 @@
-Your trial period for {{product_name}} is about expired. Is there anything we can do to help?
+Your trial period for [Product Name] is about expired. Is there anything we can do to help?
 
 [Product Name] ( https://example.com )
 

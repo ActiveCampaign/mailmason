@@ -1,4 +1,4 @@
-{{invite_sender_name}} with {{invite_sender_organization_name}} has invited you to use {{product_name}} to collaborate with them.
+{{invite_sender_name}} with {{invite_sender_organization_name}} has invited you to use [Product Name] to collaborate with them.
 
 [Product Name] ( https://example.com )
 
