@@ -104,14 +104,13 @@ a {
   display: none !important; }
 
 /* Attribute list ------------------------------ */
-.attribute-list {
+.attributes {
   margin: 0 0 21px; }
-  .attribute-list .attribute-list-container {
+  .attributes_content {
     background-color: #EDEFF2;
     padding: 16px; }
-
-.attribute-list-item {
-  padding: 0; }
+  .attributes_item {
+    padding: 0; }
 
 /* Related Items ------------------------------ */
 .related {

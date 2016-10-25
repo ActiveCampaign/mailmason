@@ -17,13 +17,13 @@ preheader:
             \{{body}}<br><br>
 
             \{{#attachment_details}}
-            <table class="attribute-list" width="100%" cellpadding="0" cellspacing="0">
+            <table class="attributes" width="100%" cellpadding="0" cellspacing="0">
               <tr>
-                <td class="attribute-list-container">
+                <td class="attributes_content">
                   <table width="100%" cellpadding="0" cellspacing="0">
                     \{{#each . }}
                     <tr>
-                      <td class="attribute-list-item"><a href="\{{attachmenet_url}}">\{{attachment_name}}</a> <span>(\{{attachment_size}} \{{attachment_type}})</span></td>
+                      <td class="attributes_item"><a href="\{{attachmenet_url}}">\{{attachment_name}}</a> <span>(\{{attachment_size}} \{{attachment_type}})</span></td>
                     </tr>
                     \{{/each}}
                   </table>
@@ -43,7 +43,7 @@ preheader:
   <tr>
     <td class="content-cell">
       <p>By \{{commenter_name}} at \{{timestamp}}</p>
-      <p class="sub"><a href="\{{action_url}}">View the comment</a> or <a href="\{{notifciations_url}}">Manage  notifications</a></p>
+      <p class="sub"><a href="\{{action_url}}">View the comment</a> or <a href="\{{notifciations_url}}">Manage notifications</a></p>
     </td>
   </tr>
 </table>
