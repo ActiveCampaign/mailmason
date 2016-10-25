@@ -32,15 +32,15 @@ preheader: "Thanks for trying out <%= product_name %>. We’ve pulled together s
 
             <p>For reference, here's your login information:</p>
 
-            <table class="attribute-list" width="100%" cellpadding="0" cellspacing="0">
+            <table class="attributes" width="100%" cellpadding="0" cellspacing="0">
               <tr>
-                <td class="attribute-list-container">
+                <td class="attributes_content">
                   <table width="100%" cellpadding="0" cellspacing="0">
                     <tr>
-                      <td class="attribute-list-item"><strong>Login Page:</strong> \{{login_url}}</td>
+                      <td class="attributes_item"><strong>Login Page:</strong> \{{login_url}}</td>
                     </tr>
                     <tr>
-                      <td class="attribute-list-item"><strong>Username:</strong> \{{username}}</td>
+                      <td class="attributes_item"><strong>Username:</strong> \{{username}}</td>
                     </tr>
                   </table>
                 </td>
@@ -49,15 +49,15 @@ preheader: "Thanks for trying out <%= product_name %>. We’ve pulled together s
 
             <p>You've started a \{{trial_length}} day trial. You can upgrade to a paying account or cancel any time.</p>
 
-            <table class="attribute-list" width="100%" cellpadding="0" cellspacing="0">
+            <table class="attributes" width="100%" cellpadding="0" cellspacing="0">
               <tr>
-                <td class="attribute-list-container">
+                <td class="attributes_content">
                   <table width="100%" cellpadding="0" cellspacing="0">
                     <tr>
-                      <td class="attribute-list-item"><strong>Trial Start Date:</strong> \{{trial_start_date}}</td>
+                      <td class="attributes_item"><strong>Trial Start Date:</strong> \{{trial_start_date}}</td>
                     </tr>
                     <tr>
-                      <td class="attribute-list-item"><strong>Trial End Date:</strong> \{{trial_end_date}}</td>
+                      <td class="attributes_item"><strong>Trial End Date:</strong> \{{trial_end_date}}</td>
                     </tr>
                   </table>
                 </td>
@@ -67,7 +67,7 @@ preheader: "Thanks for trying out <%= product_name %>. We’ve pulled together s
             <p>If you have any questions, feel free to <a href="mailto:\{{support_email}}">email our customer success team</a>. (We're lightning quick at replying.) We also offer <a href="\{{live_chat_url}}">live chat</a> during business hours.</p>
 
             <p>Thanks,<br>{{sender_name}} and the {{product_name}} Team</p>
-            <p><strong>P.S.</strong> Need immediate help getting started? Check out our <a href="\{{help_url}}">help documentation</a>. Or, just reply to this email, the {{product_name }} support team is always ready to help!</p>
+            <p><strong>P.S.</strong> Need immediate help getting started? Check out our <a href="\{{help_url}}">help documentation</a>. Or, just reply to this email, the {{product_name}} support team is always ready to help!</p>
 
             {{> button_trouble }}
 
