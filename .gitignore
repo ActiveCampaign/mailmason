@@ -1,6 +1,9 @@
 .DS_Store
-node_modules
-npm-debug.log
 .idea
 .ftppass
 .ruby-version
+node_modules
+npm-debug.log
+config.json
+secrets.json
+dist_test

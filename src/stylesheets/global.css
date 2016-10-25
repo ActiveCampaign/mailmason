@@ -12,8 +12,14 @@ body {
   color: #74787E;
   -webkit-text-size-adjust: none; }
 
+p, ul, ol, blockquote {
+  line-height: 1.4;
+  text-align: left; }
+
 a {
   color: #3869D4; }
+  a img {
+    border: none; }
 
 /* Layout ------------------------------ */
 .email-wrapper {
@@ -56,14 +62,15 @@ a {
   -premailer-cellspacing: 0;
   border-top: 1px solid #EDEFF2;
   border-bottom: 1px solid #EDEFF2;
-  background-color: #FFF; }
+  background-color: #FFFFFF; }
   .email-body_inner {
     width: 570px;
     margin: 0 auto;
     padding: 0;
     -premailer-width: 570px;
     -premailer-cellpadding: 0;
-    -premailer-cellspacing: 0; }
+    -premailer-cellspacing: 0;
+    background-color: #FFFFFF; }
 
 .email-footer {
   width: 570px;
@@ -96,45 +103,103 @@ a {
 .preheader {
   display: none !important; }
 
-/* Data table ------------------------------ */
-.invoice-wrapper {
-  width: 100%;
-  margin: 0;
-  padding: 35px 0;
-  -premailer-width: 100%;
-  -premailer-cellpadding: 0;
-  -premailer-cellspacing: 0; }
+/* Attribute list ------------------------------ */
+.attributes {
+  margin: 0 0 21px; }
+  .attributes_content {
+    background-color: #EDEFF2;
+    padding: 16px; }
+  .attributes_item {
+    padding: 0; }
 
-.invoice-table {
+/* Related Items ------------------------------ */
+.related {
   width: 100%;
   margin: 0;
   padding: 25px 0 0 0;
   -premailer-width: 100%;
   -premailer-cellpadding: 0;
   -premailer-cellspacing: 0; }
-  .invoice-table th {
-    padding-bottom: 8px;
-    border-bottom: 1px solid #EDEFF2; }
-    .invoice-table th p {
-      margin: 0;
-      color: #9BA2AB;
-      font-size: 12px; }
-  .invoice-table td {
+  .related_item {
     padding: 10px 0;
     color: #74787E;
     font-size: 15px;
     line-height: 18px; }
+  .related_item-title {
+    display: block;
+    margin: .5em 0 0; }
+  .related_item-thumb {
+    display: block;
+    padding-bottom: 10px; }
+  .related_heading {
+    border-top: 1px solid #EDEFF2;
+    text-align: center;
+    padding: 25px 0 10px; }
 
-.total-cell {
-  padding-top: 15px;
-  border-top: 1px solid #EDEFF2; }
-  .total-cell p {
+/* Discount Code ------------------------------ */
+.discount {
+  width: 100%;
+  margin: 0;
+  padding: 24px;
+  -premailer-width: 100%;
+  -premailer-cellpadding: 0;
+  -premailer-cellspacing: 0;
+  background-color: #EDEFF2;
+  border: 2px dashed #9BA2AB; }
+  .discount_heading {
+    text-align: center; }
+  .discount_body {
+    text-align: center;
+    font-size: 15px; }
+
+/* Social Icons ------------------------------ */
+.social {
+  width: auto; }
+  .social td {
+    padding: 0;
+    width: auto; }
+  .social_icon {
+    height: 20px;
+    margin: 0 8px 10px 8px;
+    padding: 0; }
+
+/* Data table ------------------------------ */
+.purchase {
+  width: 100%;
+  margin: 0;
+  padding: 35px 0;
+  -premailer-width: 100%;
+  -premailer-cellpadding: 0;
+  -premailer-cellspacing: 0; }
+  .purchase_content {
+    width: 100%;
+    margin: 0;
+    padding: 25px 0 0 0;
+    -premailer-width: 100%;
+    -premailer-cellpadding: 0;
+    -premailer-cellspacing: 0; }
+  .purchase_item {
+    padding: 10px 0;
+    color: #74787E;
+    font-size: 15px;
+    line-height: 18px; }
+  .purchase_heading {
+    padding-bottom: 8px;
+    border-bottom: 1px solid #EDEFF2; }
+    .purchase_heading p {
+      margin: 0;
+      color: #9BA2AB;
+      font-size: 12px; }
+  .purchase_footer {
+    padding-top: 15px;
+    border-top: 1px solid #EDEFF2; }
+  .purchase_total {
     margin: 0;
     text-align: right;
     font-weight: bold;
     color: #2F3133; }
-  .total-cell_label {
-    padding: 0 15px 0 0; }
+    .purchase_total--label {
+      padding: 0 15px 0 0; }
 
 /* Utilities ------------------------------ */
 .align-right {
@@ -158,22 +223,29 @@ a {
 
 /* Buttons ------------------------------ */
 .button {
-  display: inline-block;
-  width: 200px;
   background-color: #3869D4;
-  border-radius: 3px;
+  border-top: 10px solid #3869D4;
+  border-right: 18px solid #3869D4;
+  border-bottom: 10px solid #3869D4;
+  border-left: 18px solid #3869D4;
+  display: inline-block;
   color: #FFF;
-  font-size: 15px;
-  line-height: 45px;
-  text-align: center;
   text-decoration: none;
+  border-radius: 3px;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16);
-  -webkit-text-size-adjust: none;
-  mso-hide: all; }
+  -webkit-text-size-adjust: none; }
   .button--green {
-    background-color: #22BC66; }
+    background-color: #22BC66;
+    border-top: 10px solid #22BC66;
+    border-right: 18px solid #22BC66;
+    border-bottom: 10px solid #22BC66;
+    border-left: 18px solid #22BC66; }
   .button--red {
-    background-color: #FF6136; }
+    background-color: #FF6136;
+    border-top: 10px solid #FF6136;
+    border-right: 18px solid #FF6136;
+    border-bottom: 10px solid #FF6136;
+    border-left: 18px solid #FF6136; }
 
 /* Type ------------------------------ */
 h1 {

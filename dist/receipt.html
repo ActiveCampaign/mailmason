@@ -1,10 +1,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Thanks for purchasing from [product name]. This is a receipt for {{total}}</title>
-    <style>
+    <title>Receipt for [Product Name]</title>
+    <!-- 
+    The style block is collapsed on page load to save you some scrolling.
+    Postmark automatically inlines all CSS properties for maximum email client 
+    compatibility. You can just update styles here, and Postmark does the rest.
+    -->
+    <style type="text/css" rel="stylesheet" media="all">
     /* Base ------------------------------ */
     
     *:not(br):not(tr):not(html) {
@@ -22,8 +27,20 @@
       -webkit-text-size-adjust: none;
     }
     
+    p,
+    ul,
+    ol,
+    blockquote {
+      line-height: 1.4;
+      text-align: left;
+    }
+    
     a {
       color: #3869D4;
+    }
+    
+    a img {
+      border: none;
     }
     /* Layout ------------------------------ */
     
@@ -74,7 +91,7 @@
       -premailer-cellspacing: 0;
       border-top: 1px solid #EDEFF2;
       border-bottom: 1px solid #EDEFF2;
-      background-color: #FFF;
+      background-color: #FFFFFF;
     }
     
     .email-body_inner {
@@ -84,6 +101,7 @@
       -premailer-width: 570px;
       -premailer-cellpadding: 0;
       -premailer-cellspacing: 0;
+      background-color: #FFFFFF;
     }
     
     .email-footer {
@@ -123,18 +141,23 @@
     .preheader {
       display: none !important;
     }
-    /* Data table ------------------------------ */
+    /* Attribute list ------------------------------ */
     
-    .invoice-wrapper {
-      width: 100%;
-      margin: 0;
-      padding: 35px 0;
-      -premailer-width: 100%;
-      -premailer-cellpadding: 0;
-      -premailer-cellspacing: 0;
+    .attributes {
+      margin: 0 0 21px;
     }
     
-    .invoice-table {
+    .attributes_content {
+      background-color: #EDEFF2;
+      padding: 16px;
+    }
+    
+    .attributes_item {
+      padding: 0;
+    }
+    /* Related Items ------------------------------ */
+    
+    .related {
       width: 100%;
       margin: 0;
       padding: 25px 0 0 0;
@@ -143,37 +166,116 @@
       -premailer-cellspacing: 0;
     }
     
-    .invoice-table th {
-      padding-bottom: 8px;
-      border-bottom: 1px solid #EDEFF2;
-    }
-    
-    .invoice-table th p {
-      margin: 0;
-      color: #9BA2AB;
-      font-size: 12px;
-    }
-    
-    .invoice-table td {
+    .related_item {
       padding: 10px 0;
       color: #74787E;
       font-size: 15px;
       line-height: 18px;
     }
     
-    .total-cell {
+    .related_item-title {
+      display: block;
+      margin: .5em 0 0;
+    }
+    
+    .related_item-thumb {
+      display: block;
+      padding-bottom: 10px;
+    }
+    
+    .related_heading {
+      border-top: 1px solid #EDEFF2;
+      text-align: center;
+      padding: 25px 0 10px;
+    }
+    /* Discount Code ------------------------------ */
+    
+    .discount {
+      width: 100%;
+      margin: 0;
+      padding: 24px;
+      -premailer-width: 100%;
+      -premailer-cellpadding: 0;
+      -premailer-cellspacing: 0;
+      background-color: #EDEFF2;
+      border: 2px dashed #9BA2AB;
+    }
+    
+    .discount_heading {
+      text-align: center;
+    }
+    
+    .discount_body {
+      text-align: center;
+      font-size: 15px;
+    }
+    /* Social Icons ------------------------------ */
+    
+    .social {
+      width: auto;
+    }
+    
+    .social td {
+      padding: 0;
+      width: auto;
+    }
+    
+    .social_icon {
+      height: 20px;
+      margin: 0 8px 10px 8px;
+      padding: 0;
+    }
+    /* Data table ------------------------------ */
+    
+    .purchase {
+      width: 100%;
+      margin: 0;
+      padding: 35px 0;
+      -premailer-width: 100%;
+      -premailer-cellpadding: 0;
+      -premailer-cellspacing: 0;
+    }
+    
+    .purchase_content {
+      width: 100%;
+      margin: 0;
+      padding: 25px 0 0 0;
+      -premailer-width: 100%;
+      -premailer-cellpadding: 0;
+      -premailer-cellspacing: 0;
+    }
+    
+    .purchase_item {
+      padding: 10px 0;
+      color: #74787E;
+      font-size: 15px;
+      line-height: 18px;
+    }
+    
+    .purchase_heading {
+      padding-bottom: 8px;
+      border-bottom: 1px solid #EDEFF2;
+    }
+    
+    .purchase_heading p {
+      margin: 0;
+      color: #9BA2AB;
+      font-size: 12px;
+    }
+    
+    .purchase_footer {
       padding-top: 15px;
       border-top: 1px solid #EDEFF2;
     }
     
-    .total-cell p {
+    .purchase_total {
       margin: 0;
       text-align: right;
       font-weight: bold;
       color: #2F3133;
     }
     
-    .total-cell_label {
+    .purchase_total--label {
       padding: 0 15px 0 0;
     }
     /* Utilities ------------------------------ */
@@ -206,26 +308,33 @@
     /* Buttons ------------------------------ */
     
     .button {
-      display: inline-block;
-      width: 200px;
       background-color: #3869D4;
-      border-radius: 3px;
+      border-top: 10px solid #3869D4;
+      border-right: 18px solid #3869D4;
+      border-bottom: 10px solid #3869D4;
+      border-left: 18px solid #3869D4;
+      display: inline-block;
       color: #FFF;
-      font-size: 15px;
-      line-height: 45px;
-      text-align: center;
       text-decoration: none;
+      border-radius: 3px;
       box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16);
       -webkit-text-size-adjust: none;
-      mso-hide: all;
     }
     
     .button--green {
       background-color: #22BC66;
+      border-top: 10px solid #22BC66;
+      border-right: 18px solid #22BC66;
+      border-bottom: 10px solid #22BC66;
+      border-left: 18px solid #22BC66;
     }
     
     .button--red {
       background-color: #FF6136;
+      border-top: 10px solid #FF6136;
+      border-right: 18px solid #FF6136;
+      border-bottom: 10px solid #FF6136;
+      border-left: 18px solid #FF6136;
     }
     /* Type ------------------------------ */
     
@@ -270,90 +379,138 @@
     }
     </style>
   </head>
-  <body style="-webkit-text-size-adjust: none; box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; height: 100%; line-height: 1.4; margin: 0; width: 100% !important;" bgcolor="#F2F4F6">
-    <style type="text/css" rel="stylesheet" media="all">
-    body {
-      width: 100% !important;
-      height: 100%;
-      margin: 0;
-      line-height: 1.4;
-      background-color: #F2F4F6;
-      color: #74787E;
-      -webkit-text-size-adjust: none;
-    }
-    </style>
-    <span class="preheader" style="box-sizing: border-box; display: none !important; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">{{preheader}}</span>
-    <table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 0; padding: 0; width: 100%;" bgcolor="#F2F4F6">
+  <body>
+    <span class="preheader">This is a receipt for your recent purchase on {{ purchase_date }}. No payment is due with this receipt.</span>
+    <table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0">
       <tr>
-        <td align="center" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
-          <table class="email-content" width="100%" cellpadding="0" cellspacing="0" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 0; padding: 0; width: 100%;">
+        <td align="center">
+          <table class="email-content" width="100%" cellpadding="0" cellspacing="0">
             <tr>
-              <td class="email-masthead" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; padding: 25px 0;" align="center">
-                <a href="#" class="email-masthead_name" style="box-sizing: border-box; color: #bbbfc3; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; font-weight: bold; text-decoration: none; text-shadow: 0 1px 0 white;">[product name]</a>
+              <td class="email-masthead">
+                <a href="https://example.com" class="email-masthead_name">
+        [Product Name]
+      </a>
               </td>
             </tr>
+            <!-- Email Body -->
             <tr>
-              <td class="email-body" width="100%" cellpadding="0" cellspacing="0" style="-premailer-cellpadding: 0; -premailer-cellspacing: 0; border-bottom-color: #EDEFF2; border-bottom-style: solid; border-bottom-width: 1px; border-top-color: #EDEFF2; border-top-style: solid; border-top-width: 1px; box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 0; padding: 0; width: 100%;" bgcolor="#FFF">
-                <table class="email-body_inner" align="center" width="570" cellpadding="0" cellspacing="0" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 0 auto; padding: 0; width: 570px;">
+              <td class="email-body" width="100%" cellpadding="0" cellspacing="0">
+                <table class="email-body_inner" align="center" width="570" cellpadding="0" cellspacing="0">
+                  <!-- Body content -->
                   <tr>
-                    <td class="content-cell" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; padding: 35px;">
-                      <h1 style="box-sizing: border-box; color: #2F3133; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 19px; font-weight: bold; margin-top: 0;" align="left">Hi {{name}},</h1>
-                      <p style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 1.5em; margin-top: 0;" align="left">Thanks for ordering from [product name]. This email serves as a receipt for your purchase. No payment is due with this receipt.</p>
-                      <p style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 1.5em; margin-top: 0;" align="left">Please retain this email receipt for your records. Also, on your statement this purchase will appear as “[statement name]”.</p>
-                      <table class="invoice-wrapper" width="100%" cellpadding="0" cellspacing="0" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 0; padding: 35px 0; width: 100%;">
+                    <td class="content-cell">
+                      <h1>Hi {{name}},</h1>
+                      <p>Thanks for using [Product Name]. This email is the receipt for your purchase. No payment is due.</p>
+                      <p>This purchase will appear as “[Credit Card Statement Name]” on your credit card statement for your {{credit_card_brand}} ending in {{credit_card_last_four}}. Need to <a href="{{billing_url}}">update your payment information</a>?</p>
+                      <!-- Discount -->
+                      <table class="discount" align="center" width="100%" cellpadding="0" cellspacing="0">
                         <tr>
-                          <td style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
-                            <h3 style="box-sizing: border-box; color: #2F3133; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 14px; font-weight: bold; margin-top: 0;" align="left">{{invoice_id}}</h3></td>
-                          <td style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
-                            <h3 class="align-right" style="box-sizing: border-box; color: #2F3133; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 14px; font-weight: bold; margin-top: 0;" align="right">{{date}}</h3></td>
-                        </tr>
-                        <tr>
-                          <td colspan="2" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
-                            <table class="invoice-table" width="100%" cellpadding="0" cellspacing="0" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 0; padding: 25px 0 0; width: 100%;">
+                          <td align="center">
+                            <h1 class="discount_heading">10% off your next purchase!</h1>
+                            <p class="discount_body">Thanks for your support! Here's a coupon for 10% off your next purchase if used by {{expiration_date}}.</p>
+                            <!-- Border based button
+                       https://litmus.com/blog/a-guide-to-bulletproof-buttons-in-email-design -->
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
                               <tr>
-                                <th style="border-bottom-color: #EDEFF2; border-bottom-style: solid; border-bottom-width: 1px; box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; padding-bottom: 8px;">
-                                  <p style="box-sizing: border-box; color: #9BA2AB; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 12px; line-height: 1.5em; margin: 0;" align="left">Description</p>
-                                </th>
-                                <th style="border-bottom-color: #EDEFF2; border-bottom-style: solid; border-bottom-width: 1px; box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; padding-bottom: 8px;">
-                                  <p class="align-right" style="box-sizing: border-box; color: #9BA2AB; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 12px; line-height: 1.5em; margin: 0;" align="right">Amount</p>
-                                </th>
-                              </tr>
-                              {{#each invoice_details}}
-                              <tr>
-                                <td width="80%" style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 15px; line-height: 18px; padding: 10px 0;">{{description}}</td>
-                                <td class="align-right" width="20%" style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 15px; line-height: 18px; padding: 10px 0;" align="right">{{amount}}</td>
-                              </tr>
-                              {{/each}}
-                              <tr>
-                                <td width="80%" class="total-cell" valign="middle" style="border-top-color: #EDEFF2; border-top-style: solid; border-top-width: 1px; box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 15px; line-height: 18px; padding: 10px 0;">
-                                  <p class="total-cell_label" style="box-sizing: border-box; color: #2F3133; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; font-weight: bold; line-height: 1.5em; margin: 0; padding: 0 15px 0 0;" align="right">Total</p>
-                                </td>
-                                <td width="20%" class="total-cell" valign="middle" style="border-top-color: #EDEFF2; border-top-style: solid; border-top-width: 1px; box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 15px; line-height: 18px; padding: 10px 0;">
-                                  <p style="box-sizing: border-box; color: #2F3133; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; font-weight: bold; line-height: 1.5em; margin: 0;" align="right">{{total}}</p>
+                                <td align="center">
+                                  <table border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                      <td>
+                                        <a href="http://example.com" class="button button--green" target="_blank">Use this discount now...</a>
+                                      </td>
+                                    </tr>
+                                  </table>
                                 </td>
                               </tr>
                             </table>
                           </td>
                         </tr>
                       </table>
-                      <p style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 1.5em; margin-top: 0;" align="left">Cheers,
-                        <br />The team at [product name]</p>
-                      <p style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 1.5em; margin-top: 0;" align="left"><strong style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">P.S.</strong> Please reply to this email if you want to ask a question or just say hi.</p>
+                      <table class="purchase" width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                          <td>
+                            <h3>{{receipt_id}}</h3></td>
+                          <td>
+                            <h3 class="align-right">{{date}}</h3></td>
+                        </tr>
+                        <tr>
+                          <td colspan="2">
+                            <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
+                              <tr>
+                                <th class="purchase_heading">
+                                  <p>Description</p>
+                                </th>
+                                <th class="purchase_heading">
+                                  <p class="align-right">Amount</p>
+                                </th>
+                              </tr>
+                              {{#each receipt_details}}
+                              <tr>
+                                <td width="80%" class="purchase_item">{{description}}</td>
+                                <td class="align-right" width="20%" class="purchase_item">{{amount}}</td>
+                              </tr>
+                              {{/each}}
+                              <tr>
+                                <td width="80%" class="purchase_footer" valign="middle">
+                                  <p class="purchase_total purchase_total--label">Total</p>
+                                </td>
+                                <td width="20%" class="purchase_footer" valign="middle">
+                                  <p class="purchase_total">{{total}}</p>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                      <p>If you have any questions about this receipt, simply reply to this email or reach out to our <a href="{{support_url}}">support team</a> for help.</p>
+                      <p>Cheers,
+                        <br>The [Product Name] Team</p>
+                      <!-- Action -->
+                      <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                          <td align="center">
+                            <!-- Border based button
+                       https://litmus.com/blog/a-guide-to-bulletproof-buttons-in-email-design -->
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                              <tr>
+                                <td align="center">
+                                  <table border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                      <td>
+                                        <a href="{{action_url}}" class="button button--blue" target="_blank">Download as PDF</a>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                      <!-- Sub copy -->
+                      <table class="body-sub">
+                        <tr>
+                          <td>
+                            <p class="sub">Need a printable copy for your records?</strong> You can <a href="{{action_url}}">download a PDF version</a>.</p>
+                            <p class="sub">Moved recently? Have a new credit card? You can easily <a href="{{billing_url}}">update your billing information</a>.</p>
+                          </td>
+                        </tr>
+                      </table>
                     </td>
                   </tr>
                 </table>
               </td>
             </tr>
             <tr>
-              <td style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
-                <table class="email-footer" align="center" width="570" cellpadding="0" cellspacing="0" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 0 auto; padding: 0; text-align: center; width: 570px;">
+              <td>
+                <table class="email-footer" align="center" width="570" cellpadding="0" cellspacing="0">
                   <tr>
-                    <td class="content-cell" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; padding: 35px;">
-                      <p class="sub center" style="box-sizing: border-box; color: #AEAEAE; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 12px; line-height: 1.5em; margin-top: 0;" align="center">© 2016 [product name]. All rights reserved.</p>
-                      <p class="sub center" style="box-sizing: border-box; color: #AEAEAE; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 12px; line-height: 1.5em; margin-top: 0;" align="center">
-                        [product name]
-                        <br />[product address]
-                        <br />[product address line 2]
+                    <td class="content-cell" align="center">
+                      <p class="sub align-center">&copy; 2016 [Product Name]. All rights reserved.</p>
+                      <p class="sub align-center">
+                        [Company Name, LLC]
+                        <br>1234 Street Rd.
+                        <br>Suite 1234
                       </p>
                     </td>
                   </tr>

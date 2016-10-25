@@ -34,10 +34,11 @@
   @include table-scale();
   border-top: 1px solid $c-slate-lighter;
   border-bottom: 1px solid $c-slate-lighter;
-  background-color: #FFF;
+  background-color: #FFFFFF;
 
   &_inner {
     @include table-scale($width: 570px, $margin: 0 auto);
+    background-color: #FFFFFF;
   }
 }
 
@@ -66,16 +67,101 @@
   display: none !important;
 }
 
+/* Attribute list ------------------------------ */
+
+.attributes {
+  margin: 0 0 21px;
+
+  &_content {
+    background-color: $c-slate-lighter;
+    padding: 16px;
+  }
+  &_item {
+    padding: 0;
+  }
+}
+
+/* Related Items ------------------------------ */
+
+.related {
+  @include table-scale($padding: 25px 0 0 0);
+
+  // Items
+  &_item {
+    padding: 10px 0;
+    color: $c-slate;
+    font-size: 15px;
+    line-height: 18px;
+  }
+  &_item-title {
+    display: block;
+    margin: .5em 0 0;
+  }
+  &_item-thumb {
+    display: block;
+    padding-bottom: 10px;
+  }
+
+  &_heading {
+    border-top: 1px solid $c-slate-lighter;
+    text-align: center;
+    padding: 25px 0 10px;
+  }
+}
+
+/* Discount Code ------------------------------ */
+
+.discount {
+  @include table-scale($padding: 24px);
+
+  background-color: $c-slate-lighter;
+  border: 2px dashed $c-slate-light;
+
+  &_heading {
+    text-align: center;
+  }
+  &_body {
+    text-align: center;
+    font-size: 15px;
+  }
+}
+
+/* Social Icons ------------------------------ */
+
+.social {
+  width: auto;
+
+  td {
+    padding: 0;
+    width: auto;
+  }
+  &_icon {
+    height: 20px;
+    margin: 0 8px 10px 8px;
+    padding: 0;
+  }
+}
+
 
 /* Data table ------------------------------ */
 
-.invoice-wrapper {
+.purchase {
   @include table-scale($padding: 35px 0);
-}
-.invoice-table {
-  @include table-scale($padding: 25px 0 0 0);
 
-  th {
+  &_content {
+    @include table-scale($padding: 25px 0 0 0);
+  }
+
+  // Items
+  &_item {
+    padding: 10px 0;
+    color: $c-slate;
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  // Headings
+  &_heading {
     padding-bottom: 8px;
     border-bottom: 1px solid $c-slate-lighter;
 
@@ -85,29 +171,24 @@
       font-size: 12px;
     }
   }
-  td {
-    padding: 10px 0;
-    color: $c-slate;
-    font-size: 15px;
-    line-height: 18px;
+
+  // Footer
+  &_footer {
+    padding-top: 15px;
+    border-top: 1px solid $c-slate-lighter;
   }
-}
 
-.total-cell {
-  padding-top: 15px;
-  border-top: 1px solid $c-slate-lighter;
-
-  p {
+  &_total {
     margin: 0;
     text-align: right;
     font-weight: bold;
     color: $c-gray-dark;
-  }
-  &_label {
-    padding: 0 15px 0 0;
+
+    &--label {
+      padding: 0 15px 0 0;
+    }
   }
 }
-
 
 /* Utilities ------------------------------ */
 

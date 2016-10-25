@@ -1,0 +1,47 @@
+// 1. Copy this file to "config.json" for your own version that won't be
+//    tracked in source control.
+//
+// 2. Visit the following page for details:
+//    https://github.com/wildbit/mailmason/wiki/Getting-Started#configjson
+{
+  "postmark": {
+    "from": "jane@example.com", 
+    "to": "jon@example.com",    
+    "subject": "Test Email"
+  },
+  "strings": {
+    "sender_name": "[Jane from Acme]",
+    "product_name": "[Acme]",     
+    "product_url": "https://example.com", 
+    "credit_card_statement_name": "[Acme Affiliate Corporation, LLC]",
+    "formal_company_name": "[Acme, LLC]",              
+    "address_line_1": "1234 Street Rd.",
+    "address_line_2": "Suite 1234",
+    "city": "Cityville",
+    "state": "ST",
+    "country": "United States",
+    "phone": "123-456-7890",
+    "litmus_email": "something@litmus.com"
+  },
+  "images": {
+    "use_images": false,
+    "images_url": "https://example.com/example/images/",
+    "logo_file": "logo.png",
+    "logo_width": "186",
+    "use_social_circles": false,
+    "twitter_url": "",
+    "facebook_url": "",
+    "pinterest_url": "",
+    "instagram_url": "",
+    "google_plus_url": "",
+    "youtube_url": "",
+    "linkedin_url": "",
+    "dribbble_url": ""
+  },
+  "ftp": {
+    "host": "12.34.56.79",
+    "port": "21",
+    "src": "src/images",        
+    "dest": "/example/images"   
+  }  
+}

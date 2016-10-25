@@ -1,0 +1,48 @@
+---
+layout: layout.hbs
+subject: "Your <%= product_name %> trial has expired"
+preheader: "Your trial period for <%= product_name %> has recently expired. What would you like us to do?"
+---
+<table class="email-content" width="100%" cellpadding="0" cellspacing="0">
+
+  {{> masthead }}
+
+  <!-- Email Body -->
+  <tr>
+    <td class="email-body" width="100%" cellpadding="0" cellspacing="0">
+      <table class="email-body_inner" align="center" width="570" cellpadding="0" cellspacing="0">
+
+        <!-- Body content -->
+        <tr>
+          <td class="content-cell">
+
+            <h1>Your {{product_name}} trial expired</h1>
+            <p>Thanks for trying {{product_name}}. You've added a lot of data, so here are several options for you to consider going forward.</p>
+
+            <!-- Action -->
+            <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td align="center">
+                  {{> button color="green" label="Upgrade your account" target_url="{{action_url}}" }}
+                </td>
+              </tr>
+            </table>
+
+            <p>If you're not ready to upgrade to a paying account, you have a few other options available to you&hellip;</p>
+
+            {{> trial_ending_options }}
+
+            <p>Regardless of your choice, we want to say thank you for trying {{product_name}}. We know it's an investment of your time, and we appreciate you giving us a chance.</p>
+
+            <p>Thanks,<br>{{sender_name}} and the {{product_name}} Team</p>
+            <p><strong>P.S.</strong> If you have any questions or need any help, please don't hesitate to reach out. You can reply to this email or join us on live chat during business hours.</p>
+
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  {{> footer }}
+
+</table>

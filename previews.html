@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <title>Postmark Template Previews</title>
+    <script>
+      // The list of available templates for easy previewing
+      var templates = {
+        example: "Example",
+        welcome: "Welcome",
+        password_reset: "Password Reset",
+        password_reset_help: "Password Reset Help",
+        invoice: "Invoice",
+        receipt: "Receipt",
+        comment_notification: "Comment Notification",
+        trial_expiring: "Trial Expiring",
+        trial_expired: "Trial Expired",
+        user_invitation: "User Invitation"
+      };
+
+      var descriptions = {
+        example: "Examples of built-in elements and styles.",
+        welcome: "Send a welcome email to users after they sign up.",
+        password_reset: "Send users a link to reset their password.",
+        password_reset_help: "Help users reset their password if they can’t remember their email.",
+        invoice: "Request payment from a user.",
+        receipt: "Send a receipt to users after they made a purchase.",
+        comment_notification: "Notify users of new comments by other users.",
+        trial_expiring: "Let users know when their trial is about to expire.",
+        trial_expired: "Let users know when their expired trial.",
+        user_invitation: "Help users invite others to use your software."
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        padding: 24px;
+        /* Width is just big enough to fit desktop and mobile views side-by-side */
+        width: 1288px;
+      }
+      a {
+        color: #3869D4;
+      }
+      ol {
+        line-height: 1.6;
+      }
+      h1, hr {
+        clear: both;
+      }
+      hr {
+        display: block;
+        border-top: 1px solid #ccc;
+        border-bottom: none;
+        border-right: none;
+        border-left: none;
+        margin-top: 48px;
+        margin-bottom: 48px;
+      }
+      a.mailmason-logo {
+        float: right;
+      }
+      div.table-of-contents {
+        float: left;
+        padding-bottom: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <a href="https://github.com/wildbit/mailmason" class="mailmason-logo"><img src="http://assets.wildbit.com/wildbit/repos/mailmason/mailmason.png" alt="MailMason"></a>
+
+
+    <div class="table-of-contents">
+      <h1>MailMason Template Previews</h1>
+
+      <ol id="toc">
+        <!--
+          The table of contents is generated from the templates hash at the top
+          of the page using the JavaScript at the bottom of the page
+        -->
+      </ol>
+    </div>
+
+    <hr>
+
+    <div id="previews">
+      <!--
+        The previews are generated from the templates hash at the top
+        of the page using the JavaScript at the bottom of the page
+      -->
+    </div>
+
+    <script>
+      // This is the block of JavaScript that generates the TOC and previews
+
+      // Find the table of contents and previews area
+      var toc = document.getElementById("toc");
+      var previews = document.getElementById("previews");
+
+      // Iterate over the templates to generate the TOC and previews
+      for (var key in templates) {
+        console.log(key);
+
+        // Build the table of contents for the various templates
+        var list_item = document.createElement("li");
+        var anchor = document.createElement("a");
+        anchor.setAttribute('href', "#" + key);
+        anchor.appendChild(document.createTextNode(templates[key]));
+        list_item.appendChild(anchor);
+        list_item.appendChild(document.createTextNode(" - " + descriptions[key]));
+        toc.appendChild(list_item);
+
+        // Build the heading for the template
+        var heading = document.createElement("h1");
+        heading.appendChild(document.createTextNode(templates[key]));
+        heading.setAttribute('id', key);
+        previews.appendChild(heading);
+
+        // Build the wide iframe preview for wide view of the template
+        var wide_preview = document.createElement("iframe");
+        wide_preview.setAttribute('width', '800')
+        wide_preview.setAttribute('height', '800')
+        wide_preview.setAttribute('src', "dist/" + key + ".html")
+        previews.appendChild(wide_preview);
+
+        // Build the wide iframe preview for narrow view of the template
+        var narrow_preview = document.createElement("iframe");
+        narrow_preview.setAttribute('width', '480')
+        narrow_preview.setAttribute('height', '800')
+        narrow_preview.setAttribute('src', "dist/" + key + ".html")
+        previews.appendChild(narrow_preview);
+
+        // Build the wide iframe preview for wide view of the template
+        var wide_preview = document.createElement("iframe");
+        wide_preview.setAttribute('width', '800')
+        wide_preview.setAttribute('height', '400')
+        wide_preview.setAttribute('src', "dist/" + key + ".txt")
+        previews.appendChild(wide_preview);
+
+        // Build the wide iframe preview for narrow view of the template
+        var narrow_preview = document.createElement("iframe");
+        narrow_preview.setAttribute('width', '480')
+        narrow_preview.setAttribute('height', '400')
+        narrow_preview.setAttribute('src', "dist/" + key + ".txt")
+        previews.appendChild(narrow_preview);
+
+      };
+    </script>
+  </body>
+</html>

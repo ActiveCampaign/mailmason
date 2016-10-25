@@ -1,6 +1,11 @@
-<!-- Logo -->
 <tr>
   <td class="email-masthead">
-    <a href="#" class="email-masthead_name">[product name]</a>
+    <a href="{{ product_url }}" class="email-masthead_name">
+      {{#if use_images }}
+      <img src="{{ images_url }}{{ logo_file }}" alt="{{ product_name }}" width="{{ logo_width }}">
+      {{else}}
+      {{ product_name }}
+      {{/if}}
+    </a>
   </td>
 </tr>
