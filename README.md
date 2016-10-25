@@ -24,6 +24,28 @@ By default, the generated templates use [Mustachio](https://github.com/wildbit/m
 * [X] Enables easy batch testing through [Litmus](http://litmus.com)
 * [X] Enables easy uploading of image assets to your CDN so you can include images in your templates (but you don't have to)
 
-## All About MailMason
+## Visit the wiki for documentation and usage
 
 If you need help getting started or using MailMason, make sure to check out the [MailMason wiki](https://github.com/wildbit/mailmason/wiki).
+
+* [About](https://github.com/wildbit/mailmason/wiki/About)
+  * [What can it do?](https://github.com/wildbit/mailmason/wiki/About#what-can-it-do)
+  * [What templates are included?](https://github.com/wildbit/mailmason/wiki/About#what-templates-are-included)
+* [Getting Started](https://github.com/wildbit/mailmason/wiki/Getting-Started)
+  * [Setup](https://github.com/wildbit/mailmason/wiki/Getting-Started#setup)
+  * [Configuration](https://github.com/wildbit/mailmason/wiki/Getting-Started#configuration)
+    * [Secrets.json](https://github.com/wildbit/mailmason/wiki/Getting-Started#secretsjson)
+    * [Config.json](https://github.com/wildbit/mailmason/wiki/Getting-Started#secretsjson)
+    * [Images & Assets](https://github.com/wildbit/mailmason/wiki/Getting-Started#images--assets)
+    * [Social Images](https://github.com/wildbit/mailmason/wiki/Getting-Started#social-images)
+* [Project Structure](https://github.com/wildbit/mailmason/wiki/Project-Structure)
+  * [Emails](https://github.com/wildbit/mailmason/wiki/Project-Structure#emails)
+  * [Images](https://github.com/wildbit/mailmason/wiki/Project-Structure#images)
+  * [Layouts](https://github.com/wildbit/mailmason/wiki/Project-Structure#layouts)
+  * [Partials](https://github.com/wildbit/mailmason/wiki/Project-Structure#partials)
+  * [Stylesheets](https://github.com/wildbit/mailmason/wiki/Project-Structure#stylesheets)
+* [Usage](https://github.com/wildbit/mailmason/wiki/Usage)
+  * [Building](https://github.com/wildbit/mailmason/wiki/Usage#building)
+  * [Testing](https://github.com/wildbit/mailmason/wiki/Usage#testing)
+* [Development](https://github.com/wildbit/mailmason/wiki/Development)
+* [Templates](https://github.com/wildbit/mailmason/wiki/Templates)
