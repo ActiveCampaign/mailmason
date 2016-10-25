@@ -4,37 +4,63 @@
     <meta charset="utf-8">
     <title>Postmark Template Previews</title>
     <script>
-      // The list of available templates for easy previewing
       var templates = {
-        example: "Example",
-        welcome: "Welcome",
-        password_reset: "Password Reset",
-        password_reset_help: "Password Reset Help",
-        invoice: "Invoice",
-        receipt: "Receipt",
-        comment_notification: "Comment Notification",
-        trial_expiring: "Trial Expiring",
-        trial_expired: "Trial Expired",
-        user_invitation: "User Invitation"
-      };
-
-      var descriptions = {
-        example: "Examples of built-in elements and styles.",
-        welcome: "Send a welcome email to users after they sign up.",
-        password_reset: "Send users a link to reset their password.",
-        password_reset_help: "Help users reset their password if they can’t remember their email.",
-        invoice: "Request payment from a user.",
-        receipt: "Send a receipt to users after they made a purchase.",
-        comment_notification: "Notify users of new comments by other users.",
-        trial_expiring: "Let users know when their trial is about to expire.",
-        trial_expired: "Let users know when their expired trial.",
-        user_invitation: "Help users invite others to use your software."
+        "example": {
+          "name": "Example",
+          "description": "Examples of built-in elements and styles.",
+          "guide": "https://postmarkapp.com/guides/transactional-email-best-practices"
+        },
+        "welcome": {
+          "name": "Welcome",
+          "description": "Send a welcome email to users after they sign up.",
+          "guide": "https://postmarkapp.com/guides/welcome-email-best-practices"
+        },
+        "password_reset": {
+          "name": "Password Reset",
+          "description": "Send users a link to reset their password.",
+          "guide": "https://postmarkapp.com/guides/password-reset-email-best-practices"
+        },
+        "password_reset_help": {
+          "name": "Password Reset Help",
+          "description": "Help users reset their password if they can’t remember their email.",
+          "guide": "https://postmarkapp.com/guides/password-reset-email-best-practices"
+        },
+        "invoice": {
+          "name": "Invoice",
+          "description": "Request payment from a user.",
+          "guide": "https://postmarkapp.com/guides/receipt-and-invoice-email-best-practices"
+        },
+        "receipt": {
+          "name": "Receipt",
+          "description": "Send a receipt to users after they made a purchase.",
+          "guide": "https://postmarkapp.com/guides/receipt-and-invoice-email-best-practices"
+        },
+        "comment_notification": {
+          "name": "Comment Notification",
+          "description": "Notify users of new comments by other users.",
+          "guide": "https://postmarkapp.com/guides/comment-notification-email-best-practices"
+        },
+        "trial_expiring": {
+          "name": "Trial Expiring",
+          "description": "Let users know when their trial is about to expire.",
+          "guide": "https://postmarkapp.com/guides/trial-expiration-email-best-practices"
+        },
+        "trial_expired": {
+          "name": "Trial Expired",
+          "description": "Let users know when their expired trial.",
+          "guide": "https://postmarkapp.com/guides/trial-expiration-email-best-practices"
+        },
+        "user_invitation": {
+          "name": "User Invitation",
+          "description": "Help users invite others to use your software.",
+          "guide": "https://postmarkapp.com/guides/user-invitation-email-best-practices"
+        }
       }
     </script>
     <style>
       body {
         border-top: 8px solid #FEDF32;
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         padding: 24px;
         margin: 0;
         /* Width is just big enough to fit desktop and mobile views side-by-side */
@@ -46,22 +72,26 @@
       }
       a {
         color: #137FC9;
+        display: inline-block;
+        padding: 2px 4px;
+        text-decoration: none;
+        border-radius: 4px;
+      }
+      li a {
+        font-weight: bold;
       }
       a[href="#toc"] {
-        border-radius: 4px;
-        display: inline-block;
         float: right;
         font-size: 120%;
         font-weight: bold;
         margin-top: -24px;
         padding: 4px 8px;
-        text-decoration: none;
       }
       a[href="#toc"]:after {
-        content: ' \21e7';
+        content: " \21e7";
         font-size: 120%;
       }
-      a[href="#toc"]:hover {
+      a:hover {
         background-color: #EFF5FC;
       }
       ol {
@@ -134,51 +164,57 @@
         // Build the table of contents for the various templates
         var list_item = document.createElement("li");
         var anchor = document.createElement("a");
-        anchor.setAttribute('href', "#" + key);
-        anchor.appendChild(document.createTextNode(templates[key]));
+        anchor.setAttribute("href", "#" + key);
+        anchor.appendChild(document.createTextNode(templates[key]["name"]));
         list_item.appendChild(anchor);
-        list_item.appendChild(document.createTextNode(" - " + descriptions[key]));
+        list_item.appendChild(document.createTextNode(" - " + templates[key]["description"]));
         toc.appendChild(list_item);
 
         // Build the heading for the template
         var heading = document.createElement("h1");
         var description = document.createElement("p");
+        var guide_link = document.createElement("a");
         var top_link = document.createElement("a");
-        top_link.setAttribute('href', "#toc");
-        top_link.appendChild(document.createTextNode('Back to Top'));
-        heading.appendChild(document.createTextNode(templates[key]));
-        heading.setAttribute('id', key);
-        description.appendChild(document.createTextNode(descriptions[key]));
+        top_link.setAttribute("href", "#toc");
+        top_link.appendChild(document.createTextNode("Back to Top"));
+        guide_link.setAttribute("href", templates[key]["guide"]);
+        guide_link.setAttribute("target", "_blank");
+        guide_link.setAttribute("rel", "noopener noreferrer");
+        guide_link.appendChild(document.createTextNode("📖 View Best Practices Guide"));
+        heading.appendChild(document.createTextNode(templates[key]["name"]));
+        heading.setAttribute("id", key);
+        description.appendChild(document.createTextNode(templates[key]["description"]));
+        description.appendChild(guide_link)
         previews.appendChild(heading);
         previews.appendChild(top_link);
         previews.appendChild(description);
         
         // Build the wide iframe preview for wide view of the template
         var wide_preview = document.createElement("iframe");
-        wide_preview.setAttribute('width', '640')
-        wide_preview.setAttribute('height', '800')
-        wide_preview.setAttribute('src', "dist/" + key + ".html")
+        wide_preview.setAttribute("width", "640")
+        wide_preview.setAttribute("height", "800")
+        wide_preview.setAttribute("src", "dist/" + key + ".html")
         previews.appendChild(wide_preview);
 
         // Build the wide iframe preview for narrow view of the template
         var narrow_preview = document.createElement("iframe");
-        narrow_preview.setAttribute('width', '480')
-        narrow_preview.setAttribute('height', '800')
-        narrow_preview.setAttribute('src', "dist/" + key + ".html")
+        narrow_preview.setAttribute("width", "480")
+        narrow_preview.setAttribute("height", "800")
+        narrow_preview.setAttribute("src", "dist/" + key + ".html")
         previews.appendChild(narrow_preview);
 
         // Build the wide iframe preview for wide view of the template
         var wide_preview = document.createElement("iframe");
-        wide_preview.setAttribute('width', '640')
-        wide_preview.setAttribute('height', '400')
-        wide_preview.setAttribute('src', "dist/" + key + ".txt")
+        wide_preview.setAttribute("width", "640")
+        wide_preview.setAttribute("height", "400")
+        wide_preview.setAttribute("src", "dist/" + key + ".txt")
         previews.appendChild(wide_preview);
 
         // Build the wide iframe preview for narrow view of the template
         var narrow_preview = document.createElement("iframe");
-        narrow_preview.setAttribute('width', '480')
-        narrow_preview.setAttribute('height', '400')
-        narrow_preview.setAttribute('src', "dist/" + key + ".txt")
+        narrow_preview.setAttribute("width", "480")
+        narrow_preview.setAttribute("height", "400")
+        narrow_preview.setAttribute("src", "dist/" + key + ".txt")
         previews.appendChild(narrow_preview);
 
       };
