@@ -36,7 +36,11 @@
         font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         padding: 24px;
         /* Width is just big enough to fit desktop and mobile views side-by-side */
+      }
+      .container {
         width: 1128px;
+        margin-left: auto;
+        margin-right: auto;        
       }
       a {
         color: #137FC9;
@@ -90,27 +94,28 @@
   </head>
   <body>
     
-    <a href="https://github.com/wildbit/mailmason" class="mailmason-logo"><img src="http://assets.wildbit.com/wildbit/repos/mailmason/mailmason.png" alt="MailMason"></a>
+    <div class="container">
+      <a href="https://github.com/wildbit/mailmason" class="mailmason-logo"><img src="http://assets.wildbit.com/wildbit/repos/mailmason/mailmason.png" alt="MailMason"></a>
 
+      <div class="table-of-contents">
+        <h1>MailMason Template Previews</h1>
 
-    <div class="table-of-contents">
-      <h1>MailMason Template Previews</h1>
+        <ol id="toc">
+          <!--
+            The table of contents is generated from the templates hash at the top
+            of the page using the JavaScript at the bottom of the page
+          -->
+        </ol>
+      </div>
 
-      <ol id="toc">
+      <hr>
+
+      <div id="previews">
         <!--
-          The table of contents is generated from the templates hash at the top
+          The previews are generated from the templates hash at the top
           of the page using the JavaScript at the bottom of the page
         -->
-      </ol>
-    </div>
-
-    <hr>
-
-    <div id="previews">
-      <!--
-        The previews are generated from the templates hash at the top
-        of the page using the JavaScript at the bottom of the page
-      -->
+      </div>
     </div>
 
     <script>
