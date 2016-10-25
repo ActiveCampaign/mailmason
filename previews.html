@@ -25,7 +25,7 @@
         password_reset_help: "Help users reset their password if they can’t remember their email.",
         invoice: "Request payment from a user.",
         receipt: "Send a receipt to users after they made a purchase.",
-        comment_notification: "Comment Notification",
+        comment_notification: "Notify users of new comments by other users.",
         trial_expiring: "Let users know when their trial is about to expire.",
         trial_expired: "Let users know when their expired trial.",
         user_invitation: "Help users invite others to use your software."
@@ -56,21 +56,30 @@
         margin-top: 48px;
         margin-bottom: 48px;
       }
+      a.mailmason-logo {
+        float: right;
+      }
+      div.table-of-contents {
+        float: left;
+        padding-bottom: 24px;
+      }
     </style>
   </head>
   <body>
     
+    <a href="https://github.com/wildbit/mailmason" class="mailmason-logo"><img src="http://assets.wildbit.com/wildbit/repos/mailmason/mailmason.png" alt="MailMason"></a>
 
-    <a href="https://github.com/wildbit/mailmason"><img class="mailmason-logo" src="http://assets.wildbit.com/wildbit/repos/mailmason/mailmason.png" alt="MailMason" width="74" height="74"></a>
 
-    <h1>MailMason Template Previews</h1>
+    <div class="table-of-contents">
+      <h1>MailMason Template Previews</h1>
 
-    <ol id="toc">
-      <!--
-        The table of contents is generated from the templates hash at the top
-        of the page using the JavaScript at the bottom of the page
-      -->
-    </ol>
+      <ol id="toc">
+        <!--
+          The table of contents is generated from the templates hash at the top
+          of the page using the JavaScript at the bottom of the page
+        -->
+      </ol>
+    </div>
 
     <hr>
 
