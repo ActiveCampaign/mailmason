@@ -88,6 +88,7 @@ module.exports = function(grunt) {
         facebook_url: "<%= config.images.facebook_url %>",
         pinterest_url: "<%= config.images.pinterest_url %>",
         instagram_url: "<%= config.images.instagram_url %>",
+        dribbble_url: "<%= config.images.dribbble_url %>",
         google_plus_url: "<%= config.images.google_plus_url %>",
         youtube_url: "<%= config.images.youtube_url %>",
         linkedin_url: "<%= config.images.linkedin_url %>"
