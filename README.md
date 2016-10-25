@@ -1,6 +1,6 @@
 <img src="http://assets.wildbit.com/wildbit/repos/mailmason/mailmason.png" alt="MailMason" width="148" height="149" align="right">
 
-# MailMason
+<h1 style="margin-top: 0;">MailMason</h1>
 
 **A complete toolset to streamline building and updating a set of consistent transactional emails.**
 
