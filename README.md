@@ -22,6 +22,10 @@ By default, the generated templates use [Mustachio](https://github.com/wildbit/m
 * [X] Enables easy batch testing through [Litmus](http://litmus.com)
 * [X] Enables easy uploading of image assets to your CDN so you can include images in your templates (but you don't have to)
 
+## Interested in contributing?
+
+Read through our [guidelines for contributing](https://github.com/wildbit/mailmason/blob/template_updates/CONTRIBUTING.MD) to help make contributions quick and easy.
+
 ## Visit the wiki for documentation and usage
 
 If you need help getting started or using MailMason, make sure to check out the [MailMason wiki](https://github.com/wildbit/mailmason/wiki).
