@@ -2,6 +2,8 @@
 
 # MailMason
 
+<p>Brought to you by <a href="http://postmarkapp.com"><img src="http://assets.wildbit.com/postmark/misc/postmark.svg" alt="Postmark"></a></p>
+
 **A complete toolset to streamline building and updating a set of consistent transactional emails.**
 
 *Few tasks are more tedious than building a consistent set of well-tested and beautiful transactional email templates for your application.* Not any longer.
