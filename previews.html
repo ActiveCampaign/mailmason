@@ -65,20 +65,12 @@
         margin: 0;
         /* Width is just big enough to fit desktop and mobile views side-by-side */
       }
-      .container {
-        width: 1128px;
-        margin-left: auto;
-        margin-right: auto;        
-      }
       a {
         color: #137FC9;
         display: inline-block;
         padding: 2px 4px;
         text-decoration: none;
         border-radius: 4px;
-      }
-      li a {
-        font-weight: bold;
       }
       a[href="#toc"] {
         float: right;
@@ -88,7 +80,7 @@
         padding: 4px 8px;
       }
       a[href="#toc"]:after {
-        content: " \21e7";
+        content: "\0020\21e7";
         font-size: 120%;
       }
       a:hover {
@@ -115,6 +107,38 @@
         margin-top: 48px;
         margin-bottom: 48px;
       }
+      nav {
+        border-bottom: 1px solid #ccc;
+        display: block;
+        padding-bottom: 24px;
+        margin-bottom: 24px;
+      }
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      nav ul li:first-child {
+        border-right: 1px solid #ccc;
+        font-weight: bold;
+        padding-right: 16px;
+        margin-right: 8px;
+      }
+      nav li {
+        display: inline-block;
+      }
+      nav a {
+        font-weight: normal;
+        margin-right: 8px;
+      }
+      nav a:after {
+        content: " \0020\2197";
+      }
+      div.container {
+        width: 1128px;
+        margin-left: auto;
+        margin-right: auto;        
+      }
       a.mailmason-logo {
         float: right;
       }
@@ -127,6 +151,15 @@
   <body>
     
     <div class="container">
+      <nav>
+        <ul>
+          <li>MailMason</li>
+          <li><a href="https://github.com/wildbit/mailmason/wiki">Repository</a></li>
+          <li><a href="https://github.com/wildbit/mailmason/wiki">Documentation</a></li>
+          <li><a href="https://postmarkapp.com/why/templates">Postmark Templates</a></li>
+        </ul>
+      </nav>
+
       <a href="https://github.com/wildbit/mailmason" class="mailmason-logo"><img src="http://assets.wildbit.com/wildbit/repos/mailmason/mailmason.png" alt="MailMason"></a>
 
       <div class="table-of-contents">
