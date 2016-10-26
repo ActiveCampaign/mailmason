@@ -1,7 +1,9 @@
 // 1. Copy this file to "config.json" for your own version that won't be
 //    tracked in source control.
 //
-// 2. Visit the following page for details:
+// 2. Delete these comments from the configuration so Grunt doesn't get confused
+//
+// 3. Visit the following page for details:
 //    https://github.com/wildbit/mailmason/wiki/Getting-Started#configjson
 {
   "postmark": {
