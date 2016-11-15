@@ -30,7 +30,7 @@ module.exports = function(grunt) {
        common changes centralized to key files instead of being littered
        throughout the Gruntfile. This also makes it easy to .gitignore secrets
     ================================================= */
-    secret: grunt.file.readJSON('secrets.json'),
+    secret: grunt.file.exists('secrets.json') ? grunt.file.readJSON('secrets.json') : {},
     config: grunt.file.readJSON('config.json'),
 
     /* SASS
