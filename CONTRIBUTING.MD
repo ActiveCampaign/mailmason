@@ -17,7 +17,7 @@ Please, don't use the issue tracker for support questions. Check whether the #Ma
 
 ## Code of Conduct
 
-Before getting started, make sure to take a look at our [Code of Conduct](http://contributor-covenant.org/version/1/4/). If you are being harassed, notice that someone else is being harassed, or have any other concerns, please contact a member of the team or email conduct@wildbit.com immediately.
+Before getting started, make sure to take a look at our [Code of Conduct](http://wildbit.com/code-of-conduct-for-open-source). If you are being harassed, notice that someone else is being harassed, or have any other concerns, please contact a member of the team or email conduct@wildbit.com immediately.
 
 ## Quick Overview
 
