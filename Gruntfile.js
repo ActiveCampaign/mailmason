@@ -184,6 +184,27 @@ module.exports = function(grunt) {
     },
 
 
+    /* S3
+       Pushes image assets to an Amazon S3 bucket.
+       See: https://github.com/jpillora/grunt-aws
+    ------------------------------------------------- */
+
+    s3: {
+      options: {
+        accessKeyId: "<%= secret.s3.access_key_id %>",
+        secretAccessKey: "<%= secret.s3.secret_access_key %>",
+        bucket: "<%= config.s3.bucket %>",
+        region: "<%= config.s3.region %>",
+        overwrite: "<%= config.s3.overwrite %>"
+      },
+      build: {
+        cwd: "<%= config.s3.src %>",
+        src: "**",
+        exclusions: ["<%= config.s3.src %>/**/.DS_Store", "<%= config.s3.src %>/**/Thumbs.db"]
+      }
+    },
+
+
     /* Watch
        Watches all files in the src directory for changes.
     ------------------------------------------------- */
@@ -200,7 +221,7 @@ module.exports = function(grunt) {
     /* Replace
     ------------------------------------------------- */
 
-    
+
     replace: {
       // Premailer escapes URLs, so our mustachio variables for URLs get fully escaped, and the
       // URL variables need to be converted from %7B%7Bsomething%7D%7D to {{something}}
@@ -297,7 +318,8 @@ module.exports = function(grunt) {
   // Assets
   grunt.registerTask('html', ['assemble', 'inline', 'premailer:txt', 'replace', 'prettify']);
   grunt.registerTask('css', ['sass', 'autoprefixer']);
-  grunt.registerTask('images', ['ftp-deploy']);
+  grunt.registerTask('images-ftp', ['ftp-deploy']);
+  grunt.registerTask('images-s3', ['s3']);
 
   // Testing
   grunt.registerTask('spam', ['spamcheck']);
