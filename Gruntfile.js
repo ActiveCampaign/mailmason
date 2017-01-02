@@ -198,9 +198,8 @@ module.exports = function(grunt) {
         overwrite: "<%= config.s3.overwrite %>"
       },
       build: {
-        cwd: "<%= config.s3.src %>",
-        src: "**",
-        exclusions: ["<%= config.s3.src %>/**/.DS_Store", "<%= config.s3.src %>/**/Thumbs.db"]
+        cwd: path.images_src,
+        src: "**"
       }
     },
 

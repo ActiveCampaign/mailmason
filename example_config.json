@@ -49,7 +49,6 @@
   "s3": {
     "bucket": "",
     "region": "",
-    "overwrite": true,
-    "src": "src/images"
+    "overwrite": true
   }
 }
