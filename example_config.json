@@ -7,16 +7,16 @@
 //    https://github.com/wildbit/mailmason/wiki/Getting-Started#configjson
 {
   "postmark": {
-    "from": "jane@example.com", 
-    "to": "jon@example.com",    
+    "from": "jane@example.com",
+    "to": "jon@example.com",
     "subject": "Test Email"
   },
   "strings": {
     "sender_name": "[Jane from Acme]",
-    "product_name": "[Acme]",     
-    "product_url": "https://example.com", 
+    "product_name": "[Acme]",
+    "product_url": "https://example.com",
     "credit_card_statement_name": "[Acme Affiliate Corporation, LLC]",
-    "formal_company_name": "[Acme, LLC]",              
+    "formal_company_name": "[Acme, LLC]",
     "address_line_1": "1234 Street Rd.",
     "address_line_2": "Suite 1234",
     "city": "Cityville",
@@ -43,7 +43,12 @@
   "ftp": {
     "host": "12.34.56.79",
     "port": "21",
-    "src": "src/images",        
-    "dest": "/example/images"   
-  }  
+    "src": "src/images",
+    "dest": "/example/images"
+  },
+  "s3": {
+    "bucket": "",
+    "region": "",
+    "overwrite": true
+  }
 }
