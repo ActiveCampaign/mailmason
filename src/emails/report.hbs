@@ -1,0 +1,56 @@
+---
+layout: layout.hbs
+subject: Report from <%= product_name %>
+preheader: "This is a weekly report for {{ organization_name }}"
+---
+<table class="email-content" width="100%" cellpadding="0" cellspacing="0">
+
+  {{> masthead }}
+
+  <!-- Email Body -->
+  <tr>
+    <td class="email-body" width="100%" cellpadding="0" cellspacing="0">
+      <table class="email-body_inner" align="center" width="570" cellpadding="0" cellspacing="0">
+
+        <!-- Body content -->
+        <tr>
+          <td class="content-cell">
+
+            <h1>Hi \{{name}},</h1>
+            <p>Here is your weekly report for {{ organization_name }}.</p>
+
+            {{> chart parameter="cht=ls&chd=t:10,23,10,40,38,12,23&chs=500x200&chtt=Weekly User Report&chxt=y&chf=b0,lg,90,03a9f4,0,3f51b5,1" }}
+
+            <p>If you have any questions about this report, simply reply to this email or reach out to our <a href="\{{support_url}}">support team</a> for help.</p>
+
+            <p>Cheers,<br>The {{product_name}} Team</p>
+
+            <!-- Action -->
+            <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td align="center">
+                  {{> button color="blue" label="Download as PDF" target_url="{{action_url}}" }}
+                </td>
+              </tr>
+            </table>
+
+            {{> related_items }}
+
+            <!-- Sub copy -->
+            <table class="body-sub">
+              <tr>
+                <td>
+                  <p class="sub">Need a printable copy for your report?</strong> You can <a href="\{{action_url}}">download a PDF version</a>.</p>
+                </td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  {{> footer }}
+
+</table>
