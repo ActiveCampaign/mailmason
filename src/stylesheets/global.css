@@ -21,6 +21,9 @@ a {
   a img {
     border: none; }
 
+td {
+  word-break: break-word; }
+
 /* Layout ------------------------------ */
 .email-wrapper {
   width: 100%;
