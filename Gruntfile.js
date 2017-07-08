@@ -6,6 +6,13 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-ftp-deploy');
 
+  var secret = grunt.file.exists('secrets.json') ? grunt.file.readJSON('secrets.json') : {};
+  var config = Object.assign({
+    templates: {
+      file: 'templates.json'
+    }
+  }, grunt.file.readJSON('config.json'));
+
   var path = {
     css_src: 'src/stylesheets/global.scss',
     css_dest: 'src/stylesheets/global.css',
@@ -30,8 +37,8 @@ module.exports = function(grunt) {
        common changes centralized to key files instead of being littered
        throughout the Gruntfile. This also makes it easy to .gitignore secrets
     ================================================= */
-    secret: grunt.file.exists('secrets.json') ? grunt.file.readJSON('secrets.json') : {},
-    config: grunt.file.readJSON('config.json'),
+    secret: secret,
+    config: config,
 
     /* SASS
     ------------------------------------------------- */
@@ -304,13 +311,35 @@ module.exports = function(grunt) {
         to: "<%= config.strings.litmus_email %>",
         src: 'dist_test/user_invitation.html'
       }
-    }
+    },
 
+    'postmark-templates-generate': {
+      options: {
+        src: [path.email_src],
+        dist: path.dist,
+        outputFile: '<%= config.templates.output_file || config.templates.file %>'
+      }
+    },
+
+    'postmark-templates-output': {
+      options: {
+        outputFile: '<%= config.templates.output_file || config.templates.file %>',
+        cleanOutput: '<%= config.templates.clean_output %>'
+      }
+    },
+
+    'postmark-templates-upload': grunt.file.readJSON(
+      config.templates.output_file
+        ? config.templates.output_file
+        : config.templates.file
+    )
   });
 
 
   /* Tasks
   ================================================= */
+
+  grunt.loadTasks('tasks');
 
   grunt.registerTask('default', ['css', 'html']);
 
@@ -324,6 +353,9 @@ module.exports = function(grunt) {
   grunt.registerTask('spam', ['spamcheck']);
   grunt.registerTask('litmus', ['testBuild', 'postmark:litmus']);
   grunt.registerTask('flood', ['testBuild', 'postmark:flood']);
+
+  // Upload
+  grunt.registerTask('upload', ['default', 'postmark-templates-generate', 'postmark-templates-reload-templates', 'postmark-templates']);
 
   // Before sending tests via Postmark, ensure that test builds with inlined CSS are generated
   grunt.registerTask('testBuild', ['default', 'copy:testTemplates', 'premailer:html']);

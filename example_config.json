@@ -50,5 +50,8 @@
     "bucket": "",
     "region": "",
     "overwrite": true
+  },
+  "templates": {
+    "file": "templates.json"
   }
 }

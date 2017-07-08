@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Postmark Template Previews</title>
-    <script>
+    <script type="application/javascript">
       var templates = {
         "welcome": {
           "name": "Welcome",
@@ -54,6 +54,72 @@
           "name": "Example",
           "description": "Examples of built-in elements and styles.",
           "guide": "https://postmarkapp.com/guides/transactional-email-best-practices"
+        }
+      }
+  
+      // This is the block of JavaScript that generates the TOC and previews
+      function processTemplates (templates) {
+        // Find the table of contents and previews area
+        var toc = document.getElementById('toc')
+        var previews = document.getElementById('previews')
+  
+        // Iterate over the templates to generate the TOC and previews
+        for (var key in templates) {
+          // Build the table of contents for the various templates
+          var list_item = document.createElement('li')
+          var anchor = document.createElement('a')
+          anchor.setAttribute('href', '#' + key)
+          anchor.appendChild(document.createTextNode(templates[key]['Name'] || templates[key]['name']))
+          list_item.appendChild(anchor)
+          list_item.appendChild(document.createTextNode(' - ' + templates[key]['description']))
+          toc.appendChild(list_item)
+  
+          // Build the heading for the template
+          var heading = document.createElement('h1')
+          var description = document.createElement('p')
+          var guide_link = document.createElement('a')
+          var top_link = document.createElement('a')
+          top_link.setAttribute('href', '#toc')
+          top_link.appendChild(document.createTextNode('Back to Top'))
+          guide_link.setAttribute('href', templates[key]['guide'])
+          guide_link.setAttribute('target', '_blank')
+          guide_link.setAttribute('rel', 'noopener noreferrer')
+          guide_link.appendChild(document.createTextNode('📖 View Best Practices Guide'))
+          heading.appendChild(document.createTextNode(templates[key]['Name'] || templates[key]['name']))
+          heading.setAttribute('id', key)
+          description.appendChild(document.createTextNode(templates[key]['description']))
+          description.appendChild(guide_link)
+          previews.appendChild(heading)
+          previews.appendChild(top_link)
+          previews.appendChild(description)
+  
+          // Build the wide iframe preview for wide view of the template
+          var wide_preview = document.createElement('iframe')
+          wide_preview.setAttribute('width', '640')
+          wide_preview.setAttribute('height', '800')
+          wide_preview.setAttribute('src', 'dist/' + key + '.html')
+          previews.appendChild(wide_preview)
+  
+          // Build the wide iframe preview for narrow view of the template
+          var narrow_preview = document.createElement('iframe')
+          narrow_preview.setAttribute('width', '480')
+          narrow_preview.setAttribute('height', '800')
+          narrow_preview.setAttribute('src', 'dist/' + key + '.html')
+          previews.appendChild(narrow_preview)
+  
+          // Build the wide iframe preview for wide view of the template
+          var wide_preview = document.createElement('iframe')
+          wide_preview.setAttribute('width', '640')
+          wide_preview.setAttribute('height', '400')
+          wide_preview.setAttribute('src', 'dist/' + key + '.txt')
+          previews.appendChild(wide_preview)
+  
+          // Build the wide iframe preview for narrow view of the template
+          var narrow_preview = document.createElement('iframe')
+          narrow_preview.setAttribute('width', '480')
+          narrow_preview.setAttribute('height', '400')
+          narrow_preview.setAttribute('src', 'dist/' + key + '.txt')
+          previews.appendChild(narrow_preview)
         }
       }
     </script>
@@ -137,7 +203,7 @@
       div.container {
         width: 1128px;
         margin-left: auto;
-        margin-right: auto;        
+        margin-right: auto;
       }
       a.mailmason-logo {
         float: right;
@@ -149,7 +215,7 @@
     </style>
   </head>
   <body>
-    
+	
     <div class="container">
       <nav>
         <ul>
@@ -159,12 +225,12 @@
           <li><a href="https://postmarkapp.com/why/templates">Postmark Templates</a></li>
         </ul>
       </nav>
-
+  
       <a href="https://github.com/wildbit/mailmason" class="mailmason-logo"><img src="http://assets.wildbit.com/wildbit/repos/mailmason/mailmason.png" alt="MailMason"></a>
-
+  
       <div class="table-of-contents">
         <h1>MailMason Template Previews</h1>
-
+  
         <ol id="toc">
           <!--
             The table of contents is generated from the templates hash at the top
@@ -172,9 +238,9 @@
           -->
         </ol>
       </div>
-
+  
       <hr>
-
+  
       <div id="previews">
         <!--
           The previews are generated from the templates hash at the top
@@ -182,75 +248,24 @@
         -->
       </div>
     </div>
-
-    <script>
-      // This is the block of JavaScript that generates the TOC and previews
-
-      // Find the table of contents and previews area
-      var toc = document.getElementById("toc");
-      var previews = document.getElementById("previews");
-
-      // Iterate over the templates to generate the TOC and previews
-      for (var key in templates) {
-        console.log(key);
-
-        // Build the table of contents for the various templates
-        var list_item = document.createElement("li");
-        var anchor = document.createElement("a");
-        anchor.setAttribute("href", "#" + key);
-        anchor.appendChild(document.createTextNode(templates[key]["name"]));
-        list_item.appendChild(anchor);
-        list_item.appendChild(document.createTextNode(" - " + templates[key]["description"]));
-        toc.appendChild(list_item);
-
-        // Build the heading for the template
-        var heading = document.createElement("h1");
-        var description = document.createElement("p");
-        var guide_link = document.createElement("a");
-        var top_link = document.createElement("a");
-        top_link.setAttribute("href", "#toc");
-        top_link.appendChild(document.createTextNode("Back to Top"));
-        guide_link.setAttribute("href", templates[key]["guide"]);
-        guide_link.setAttribute("target", "_blank");
-        guide_link.setAttribute("rel", "noopener noreferrer");
-        guide_link.appendChild(document.createTextNode("📖 View Best Practices Guide"));
-        heading.appendChild(document.createTextNode(templates[key]["name"]));
-        heading.setAttribute("id", key);
-        description.appendChild(document.createTextNode(templates[key]["description"]));
-        description.appendChild(guide_link)
-        previews.appendChild(heading);
-        previews.appendChild(top_link);
-        previews.appendChild(description);
-        
-        // Build the wide iframe preview for wide view of the template
-        var wide_preview = document.createElement("iframe");
-        wide_preview.setAttribute("width", "640")
-        wide_preview.setAttribute("height", "800")
-        wide_preview.setAttribute("src", "dist/" + key + ".html")
-        previews.appendChild(wide_preview);
-
-        // Build the wide iframe preview for narrow view of the template
-        var narrow_preview = document.createElement("iframe");
-        narrow_preview.setAttribute("width", "480")
-        narrow_preview.setAttribute("height", "800")
-        narrow_preview.setAttribute("src", "dist/" + key + ".html")
-        previews.appendChild(narrow_preview);
-
-        // Build the wide iframe preview for wide view of the template
-        var wide_preview = document.createElement("iframe");
-        wide_preview.setAttribute("width", "640")
-        wide_preview.setAttribute("height", "400")
-        wide_preview.setAttribute("src", "dist/" + key + ".txt")
-        previews.appendChild(wide_preview);
-
-        // Build the wide iframe preview for narrow view of the template
-        var narrow_preview = document.createElement("iframe");
-        narrow_preview.setAttribute("width", "480")
-        narrow_preview.setAttribute("height", "400")
-        narrow_preview.setAttribute("src", "dist/" + key + ".txt")
-        previews.appendChild(narrow_preview);
-
-      };
+  
+    <script type="application/javascript">
+      (function () {
+        var xmlhttp = new XMLHttpRequest()
+  
+        xmlhttp.onreadystatechange = function () {
+          if (xmlhttp.readyState === XMLHttpRequest.DONE) {
+            var templatesForProcessing = xmlhttp.status < 300 && xmlhttp.status > 199
+                ? JSON.parse(xmlhttp.responseText)
+                : templates;
+            processTemplates(templatesForProcessing);
+          }
+        }
+  
+        xmlhttp.overrideMimeType('application/json');
+        xmlhttp.open('GET', './templates.json');
+        xmlhttp.send();
+      })();
     </script>
   </body>
 </html>
