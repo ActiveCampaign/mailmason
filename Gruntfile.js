@@ -317,22 +317,23 @@ module.exports = function(grunt) {
       options: {
         src: [path.email_src],
         dist: path.dist,
-        outputFile: '<%= config.templates.output_file || config.templates.file %>'
+        file: '<%= config.templates.file %>'
+      }
+    },
+
+    'postmark-templates-upload': {
+      options: {
+        ephemeralUploadResultsProperty: '<%= config.templates && config.templates.ephemeralUploadResultsProperty %>'
       }
     },
 
     'postmark-templates-output': {
       options: {
-        outputFile: '<%= config.templates.output_file || config.templates.file %>',
-        cleanOutput: '<%= config.templates.clean_output %>'
+        outputFile: '<%= config.templates && config.templates.output_file || config.templates && config.templates.file %>',
+        cleanOutput: '<%= config.templates && config.templates.clean_output %>',
+        ephemeralUploadResultsProperty: '<%= config.templates && config.templates.ephemeralUploadResultsProperty %>'
       }
     },
-
-    'postmark-templates-upload': grunt.file.readJSON(
-      config.templates.output_file
-        ? config.templates.output_file
-        : config.templates.file
-    )
   });
 
 
@@ -355,7 +356,7 @@ module.exports = function(grunt) {
   grunt.registerTask('flood', ['testBuild', 'postmark:flood']);
 
   // Upload
-  grunt.registerTask('upload', ['default', 'postmark-templates-generate', 'postmark-templates-reload-templates', 'postmark-templates']);
+  grunt.registerTask('upload', ['default', 'postmark-templates-generate', 'postmark-templates']);
 
   // Before sending tests via Postmark, ensure that test builds with inlined CSS are generated
   grunt.registerTask('testBuild', ['default', 'copy:testTemplates', 'premailer:html']);

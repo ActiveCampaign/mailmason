@@ -52,6 +52,8 @@
     "overwrite": true
   },
   "templates": {
-    "file": "templates.json"
+    "file": "templates.json",
+    "cleanOutput": true,
+    "ephemeralUploadResultsProperty": "postmark-templates-upload-results"
   }
 }

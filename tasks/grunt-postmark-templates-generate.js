@@ -12,24 +12,24 @@ module.exports = function (grunt) {
 
     var options = this.options();
     var templatePaths = grunt.file.expand(options.src);
-    var templateObjects = grunt.file.readJSON(grunt.config.get('config.templates.file'));
+    var templateObjects = grunt.file.readJSON(options.file);
 
     templatePaths.map(function (templatePath) {
       try {
         var templateFile = yaml.loadFront(grunt.file.read(templatePath));
         var templateName = path.basename(templatePath, '.hbs');
         var templateContents = {
-          Name: templateObjects[templateName] && templateObjects[templateName].name || templateName,
-          HtmlBody: grunt.file.read(path.join(options.dist, templateName + '.html')),
-          TextBody: grunt.file.read(path.join(options.dist, templateName + '.txt'))
+          name: templateObjects[templateName] && templateObjects[templateName].name || templateName,
+          htmlSrc: path.join(options.dist, templateName + '.html'),
+          textSrc: path.join(options.dist, templateName + '.txt')
         };
 
         if (templateFile.name) {
-          templateContents.Name = templateFile.name;
+          templateContents.name = templateFile.name;
         }
 
         if (templateFile.subject) {
-          templateContents.Subject = templateFile.subject;
+          templateContents.subject = templateFile.subject;
         }
 
         if (!templateObjects[templateName]) {
@@ -45,6 +45,6 @@ module.exports = function (grunt) {
       }
     });
 
-    grunt.file.write(grunt.config.get('config.templates.file'), JSON.stringify(templateObjects, null, 2));
+    grunt.config('postmark-templates-upload', templateObjects);
   });
 };
