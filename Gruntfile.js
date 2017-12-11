@@ -7,11 +7,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-ftp-deploy');
 
   var secret = grunt.file.exists('secrets.json') ? grunt.file.readJSON('secrets.json') : {};
-  var config = Object.assign({
-    templates: {
-      file: 'templates.json'
-    }
-  }, grunt.file.readJSON('config.json'));
+  var config = grunt.file.readJSON('config.json');
 
   var path = {
     css_src: 'src/stylesheets/global.scss',
@@ -317,7 +313,7 @@ module.exports = function(grunt) {
       options: {
         src: [path.email_src],
         dist: path.dist,
-        file: '<%= config.templates.file %>'
+        file: '<%= config.templates && config.templates.file %>'
       }
     },
 
