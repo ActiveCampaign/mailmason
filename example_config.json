@@ -50,5 +50,10 @@
     "bucket": "",
     "region": "",
     "overwrite": true
+  },
+  "templates": {
+    "file": "templates.json",
+    "cleanOutput": true,
+    "ephemeralUploadResultsProperty": "postmark-templates-upload-results"
   }
 }

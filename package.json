@@ -15,6 +15,7 @@
     "spamcheck": "grunt spamcheck",
     "litmus": "grunt litmus",
     "flood": "grunt flood",
+    "upload": "grunt upload",
     "build": "grunt"
   },
   "devDependencies": {
@@ -28,7 +29,7 @@
     "grunt-contrib-watch": "^1.0.0",
     "grunt-ftp-deploy": "^0.1.10",
     "grunt-inline": "^0.3.4",
-    "grunt-postmark": "0.0.7",
+    "grunt-postmark": "0.0.8",
     "grunt-premailer": "^1.0.0",
     "grunt-prettify": "^0.4.0",
     "grunt-sass": "^1.0.0",
@@ -36,6 +37,7 @@
     "grunt-spamcheck": "0.1.1",
     "grunt-text-replace": "^0.4.0",
     "load-grunt-tasks": "^3.2.0",
-    "time-grunt": "^1.2.1"
+    "time-grunt": "^1.2.1",
+    "yaml-front-matter": "^3.4.0"
   }
 }
