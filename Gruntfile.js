@@ -33,7 +33,6 @@ module.exports = function(grunt) {
       ? grunt.file.readJSON('secrets.json')
       : {},
     config: grunt.file.readJSON('config.json'),
-    templates: grunt.file.readJSON('templates.json'),
 
     /* SASS
     ------------------------------------------------- */
@@ -302,26 +301,6 @@ module.exports = function(grunt) {
       litmus: {
         to: '<%= config.strings.litmus_email %>',
         src: 'dist_test/user_invitation.html',
-      },
-    },
-
-    // Push templates from your local file system to Postmark
-    postmarkPushTemplates: {
-      options: {
-        serverToken: '<%= secret.postmark.server_token %>',
-      },
-      your_server: {
-        templates: '<%= templates %>',
-      },
-    },
-
-    // Download your templates from Postmark and generate a boilerplate config.
-    // The config can be used with the "postmarkPushTemplates" task
-    postmarkSetupTemplates: {
-      options: {
-        serverToken: '<%= secret.postmark.server_token %>',
-        configOutputFile: 'templates.json',
-        templateOutputDest: 'dist',
       },
     },
   })
