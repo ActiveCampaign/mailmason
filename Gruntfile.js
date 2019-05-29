@@ -7,15 +7,14 @@ module.exports = function(grunt) {
 
   var path = {
     css_src: 'src/stylesheets/',
-    css_dest: 'src/stylesheets/',
-    email_src: 'src/emails/*.hbs',
     dist: 'dist/',
     dist_test: 'dist_test/',
     dist_html_glob: 'dist/templates/*.html',
     dist_text_glob: 'dist/templates/*.txt',
     dist_test_html_glob: 'dist_test/*.html',
-    layouts: 'src/layouts',
-    partials: 'src/partials/*',
+    templates: 'src/templates/',
+    layouts: 'src/layouts/',
+    partials: 'src/partials/',
     images_src: 'src/images',
   }
 
@@ -38,17 +37,12 @@ module.exports = function(grunt) {
     ------------------------------------------------- */
 
     sass: {
-      basic: {
-        src: `${path.css_src}basic.scss`,
-        dest: `${path.css_dest}basic.css`,
-      },
-      basicFull: {
-        src: `${path.css_src}basic-full.scss`,
-        dest: `${path.css_dest}basic-full.css`,
-      },
-      plain: {
-        src: `${path.css_src}plain.scss`,
-        dest: `${path.css_dest}plain.css`,
+      styles: {
+        expand: true,
+        cwd: path.css_src,
+        ext: '.css',
+        src: ['*.scss'],
+        dest: `${path.dist}styles/`,
       },
     },
 
@@ -59,17 +53,12 @@ module.exports = function(grunt) {
       options: {
         browsers: ['last 6 versions', 'ie >= 9'],
       },
-      basic: {
-        src: `${path.css_src}basic.css`,
-        dest: `${path.css_dest}basic.css`,
-      },
-      basicFull: {
-        src: `${path.css_src}basic-full.css`,
-        dest: `${path.css_dest}basic-full.css`,
-      },
-      plain: {
-        src: `${path.css_src}plain.css`,
-        dest: `${path.css_dest}plain.css`,
+      styles: {
+        expand: true,
+        cwd: `${path.dist}styles/`,
+        ext: '.css',
+        src: ['*.css'],
+        dest: `${path.dist}styles/`,
       },
     },
 
@@ -81,7 +70,7 @@ module.exports = function(grunt) {
     assemble: {
       options: {
         layoutdir: path.layouts,
-        partials: path.partials,
+        partials: `${path.partials}*.hbs`,
         flatten: true,
         sender_name: '<%= config.strings.sender_name %>',
         product_name: '<%= config.strings.product_name %>',
@@ -109,13 +98,12 @@ module.exports = function(grunt) {
         youtube_url: '<%= config.images.youtube_url %>',
         linkedin_url: '<%= config.images.linkedin_url %>',
       },
-      pages: {
-        src: [path.email_src],
-        dest: `${path.dist}templates/`,
-      },
-      layouts: {
-        src: [`${path.layouts}/*.hbs`],
-        dest: `${path.dist}layouts/`,
+      all: {
+        expand: true,
+        cwd: 'src/',
+        ext: '.hbs',
+        src: ['templates/*.hbs', 'layouts/*.hbs'],
+        dest: path.dist,
       },
     },
 
@@ -127,10 +115,10 @@ module.exports = function(grunt) {
     inline: {
       html: {
         expand: true,
-        cwd: `${path.dist}templates/`,
+        cwd: path.dist,
         ext: '.html',
-        src: ['*.html'],
-        dest: `${path.dist}templates/`,
+        src: ['**/*.html'],
+        dest: path.dist,
       },
     },
 
@@ -147,7 +135,7 @@ module.exports = function(grunt) {
         expand: true,
         cwd: path.dist,
         ext: '.html',
-        src: ['*.html'],
+        src: ['**/*.html'],
         dest: path.dist,
       },
     },
