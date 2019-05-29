@@ -1,0 +1,13 @@
+/* Attribute list ------------------------------ */
+
+.attributes {
+  margin: 0 0 21px;
+
+  &_content {
+    background-color: $c-slate-lighter;
+    padding: 16px;
+  }
+  &_item {
+    padding: 0;
+  }
+}

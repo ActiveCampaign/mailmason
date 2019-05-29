@@ -1,0 +1,46 @@
+/* Data table ------------------------------ */
+
+.purchase {
+  @include table-scale($padding: 35px 0);
+
+  &_content {
+    @include table-scale($padding: 25px 0 0 0);
+  }
+
+  // Items
+  &_item {
+    padding: 10px 0;
+    color: $c-slate;
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  // Headings
+  &_heading {
+    padding-bottom: 8px;
+    border-bottom: 1px solid $c-slate-lighter;
+
+    p {
+      margin: 0;
+      color: $c-slate-light;
+      font-size: 12px;
+    }
+  }
+
+  // Footer
+  &_footer {
+    padding-top: 15px;
+    border-top: 1px solid $c-slate-lighter;
+  }
+
+  &_total {
+    margin: 0;
+    text-align: right;
+    font-weight: bold;
+    color: $c-gray-dark;
+
+    &--label {
+      padding: 0 15px 0 0;
+    }
+  }
+}

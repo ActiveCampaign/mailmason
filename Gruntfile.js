@@ -6,13 +6,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-ftp-deploy')
 
   var path = {
-    css_src: 'src/stylesheets/global.scss',
-    css_dest: 'src/stylesheets/global.css',
+    css_src: 'src/stylesheets/',
+    css_dest: 'src/stylesheets/',
     email_src: 'src/emails/*.hbs',
     dist: 'dist/',
     dist_test: 'dist_test/',
-    dist_html_glob: 'dist/*.html',
-    dist_text_glob: 'dist/*.txt',
+    dist_html_glob: 'dist/templates/*.html',
+    dist_text_glob: 'dist/templates/*.txt',
     dist_test_html_glob: 'dist_test/*.html',
     layouts: 'src/layouts',
     partials: 'src/partials/*',
@@ -38,9 +38,13 @@ module.exports = function(grunt) {
     ------------------------------------------------- */
 
     sass: {
-      styles: {
-        src: path.css_src,
-        dest: path.css_dest,
+      basic: {
+        src: `${path.css_src}basic.scss`,
+        dest: `${path.css_dest}basic.css`,
+      },
+      basicFull: {
+        src: `${path.css_src}basic-full.scss`,
+        dest: `${path.css_dest}basic-full.css`,
       },
     },
 
@@ -51,9 +55,13 @@ module.exports = function(grunt) {
       options: {
         browsers: ['last 6 versions', 'ie >= 9'],
       },
-      styles: {
-        src: path.css_dest,
-        dest: path.css_dest,
+      basic: {
+        src: `${path.css_src}basic.css`,
+        dest: `${path.css_dest}basic.css`,
+      },
+      basicFull: {
+        src: `${path.css_src}basic-full.css`,
+        dest: `${path.css_dest}basic-full.css`,
       },
     },
 
@@ -95,7 +103,11 @@ module.exports = function(grunt) {
       },
       pages: {
         src: [path.email_src],
-        dest: path.dist,
+        dest: `${path.dist}templates/`,
+      },
+      layouts: {
+        src: [`${path.layouts}/*.hbs`],
+        dest: `${path.dist}layouts/`,
       },
     },
 
@@ -107,10 +119,10 @@ module.exports = function(grunt) {
     inline: {
       html: {
         expand: true,
-        cwd: path.dist,
+        cwd: `${path.dist}templates/`,
         ext: '.html',
         src: ['*.html'],
-        dest: path.dist,
+        dest: `${path.dist}templates/`,
       },
     },
 

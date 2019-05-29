@@ -1,0 +1,93 @@
+body {
+  background-color: $c-gray-light;
+  color: $c-slate;
+}
+
+/* Layout ------------------------------ */
+
+.email-wrapper {
+  @include table-scale();
+  background-color: $c-gray-light;
+}
+.email-content {
+  @include table-scale();
+}
+
+
+/* Masthead ----------------------- */
+
+.email-masthead {
+  padding: 25px 0;
+  text-align: center;
+
+  &_logo {
+    width: 94px;
+  }
+  &_name {
+    font-size: 16px;
+    font-weight: bold;
+    color: $c-slate-alt;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(255,255,255,1);
+  }
+}
+
+
+/* Body ------------------------------ */
+
+.email-body {
+  @include table-scale();
+
+  &_inner {
+    @include table-scale($width: 570px, $margin: 0 auto);
+    background-color: #FFFFFF;
+  }
+}
+
+.email-footer {
+  @include table-scale($width: 570px, $margin: 0 auto);
+  text-align: center;
+
+  p {
+    color: $c-gray;
+  }
+}
+
+.body-action {
+  @include table-scale($margin: 30px auto);
+  text-align: center;
+}
+.body-sub {
+  margin-top: 25px;
+  padding-top: 25px;
+  border-top: 1px solid $c-slate-lighter;
+}
+.content-cell {
+  padding: 45px;
+}
+.preheader {
+  display: none !important;
+  visibility: hidden;
+  mso-hide: all;
+  font-size: 1px;
+  line-height: 1px;
+  max-height: 0;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+
+/*Media Queries ------------------------------ */
+
+@media only screen and (max-width: 600px) {
+  .email-body_inner,
+  .email-footer {
+    width: 100% !important;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .button {
+    width: 100% !important;
+  }
+}

@@ -4,24 +4,29 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <title>{{ subject }}</title>
+  <title></title>
   <!-- 
     The style block is collapsed on page load to save you some scrolling.
     Postmark automatically inlines all CSS properties for maximum email client 
     compatibility. You can just update styles here, and Postmark does the rest.
   -->
-  <link href="../src/stylesheets/global.css?__inline=true" media="all" rel="stylesheet" type="text/css" />
+  <link href="../../src/stylesheets/basic-full.css?__inline=true" media="all" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-  {{#if preheader}}<span class="preheader">{{ preheader }}</span>{{/if}}
+  
   <table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0">
     <tr>
       <td align="center">
         <table class="email-content" width="100%" cellpadding="0" cellspacing="0">
 
-          {{> masthead }}
-
+          <tr>
+            <td class="email-masthead">
+              <a href="https://example.com" class="email-masthead_name">
+                [Product Name]
+              </a>
+            </td>
+          </tr>
           <!-- Email Body -->
           <tr>
             <td class="email-body" width="100%" cellpadding="0" cellspacing="0">
@@ -30,15 +35,29 @@
                 <!-- Body content -->
                 <tr>
                   <td class="content-cell">
-                    {{ body }}
+                    
                   </td>
                 </tr>
               </table>
             </td>
           </tr>
 
-          {{> footer }}
-
+          <tr>
+            <td>
+              <table class="email-footer" align="center" width="570" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td class="content-cell" align="center">
+                    <p class="sub align-center">&copy; 2019 [Product Name]. All rights reserved.</p>
+                    <p class="sub align-center">
+                      [Company Name, LLC]
+                      <br>1234 Street Rd.
+                      <br>Suite 1234
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
         </table>
       </td>
     </tr>

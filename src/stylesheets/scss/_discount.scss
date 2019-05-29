@@ -1,0 +1,16 @@
+/* Discount Code ------------------------------ */
+
+.discount {
+  @include table-scale($padding: 24px);
+
+  background-color: $c-slate-lighter;
+  border: 2px dashed $c-slate-light;
+
+  &_heading {
+    text-align: center;
+  }
+  &_body {
+    text-align: center;
+    font-size: 15px;
+  }
+}
