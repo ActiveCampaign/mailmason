@@ -20,19 +20,20 @@
   "devDependencies": {
     "grunt": "^1.0.4",
     "grunt-assemble": "^0.6.3",
-    "grunt-autoprefixer": "^3.0.3",
+    "grunt-autoprefixer": "^3.0.4",
     "grunt-aws": "^0.7.1",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-watch": "^1.0.0",
+    "grunt-contrib-watch": "^1.1.0",
     "grunt-ftp-deploy": "^0.2.0",
-    "grunt-inline": "^0.3.4",
+    "grunt-inline": "^0.3.6",
     "grunt-postmark": "0.0.8",
-    "grunt-premailer": "^1.0.0",
+    "grunt-premailer": "^1.1.0",
     "grunt-prettify": "^0.4.0",
-    "grunt-sass": "^1.0.0",
+    "grunt-sass": "^3.0.2",
     "grunt-spamcheck": "0.1.1",
     "grunt-text-replace": "^0.4.0",
-    "load-grunt-tasks": "^3.2.0",
-    "time-grunt": "^1.2.1"
+    "load-grunt-tasks": "^5.0.0",
+    "node-sass": "^4.12.0",
+    "time-grunt": "^2.0.0"
   }
 }

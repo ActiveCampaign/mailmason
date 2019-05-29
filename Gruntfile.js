@@ -1,11 +1,10 @@
 module.exports = function(grunt) {
-  // Include modules
+  const sass = require('node-sass')
   require('load-grunt-tasks')(grunt, { pattern: ['grunt-*', 'assemble'] })
   require('time-grunt')(grunt)
-
   grunt.loadNpmTasks('grunt-ftp-deploy')
 
-  var path = {
+  const path = {
     css_src: 'src/stylesheets/',
     dist: 'dist/',
     dist_test: 'dist_test/',
@@ -37,6 +36,9 @@ module.exports = function(grunt) {
     ------------------------------------------------- */
 
     sass: {
+      options: {
+        implementation: sass,
+      },
       styles: {
         expand: true,
         cwd: path.css_src,
