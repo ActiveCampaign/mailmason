@@ -22,6 +22,9 @@ body {
   background-color: $c-gray-light;
   color: $c-slate;
 }
+p {
+  color: $c-slate;
+}
 
 .email-wrapper {
   @include table-scale();
@@ -67,7 +70,7 @@ body {
   text-align: center;
 
   p {
-    color: $c-gray;
+    color: $c-slate-alt;
   }
 }
 
