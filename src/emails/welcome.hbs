@@ -3,80 +3,56 @@ layout: layout.hbs
 subject: "Welcome to <%= product_name %>, {{name}}!"
 preheader: "Thanks for trying out <%= product_name %>. We’ve pulled together some information and resources to help you get started."
 ---
-<table class="email-content" width="100%" cellpadding="0" cellspacing="0">
+<h1>Welcome, \{{name}}!</h1>
+<p>Thanks for trying {{product_name}}. We’re thrilled to have you on board.</p>
+<p>To get the most out of {{product_name}}, do this primary next step:</p>
 
-  {{> masthead }}
-
-  <!-- Email Body -->
+<!-- Action -->
+<table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0">
   <tr>
-    <td class="email-body" width="100%" cellpadding="0" cellspacing="0">
-      <table class="email-body_inner" align="center" width="570" cellpadding="0" cellspacing="0">
+    <td align="center">
+      {{> button label="Do this Next" target_url="{{action_url}}" }}
+    </td>
+  </tr>
+</table>
 
-        <!-- Body content -->
+<p>For reference, here's your login information:</p>
+
+<table class="attributes" width="100%" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="attributes_content">
+      <table width="100%" cellpadding="0" cellspacing="0">
         <tr>
-          <td class="content-cell">
-
-            <h1>Welcome, \{{name}}!</h1>
-            <p>Thanks for trying {{product_name}}. We’re thrilled to have you on board.</p>
-            
-            <p>To get the most out of {{product_name}}, do this primary next step:</p>
-
-            <!-- Action -->
-            <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0">
-              <tr>
-                <td align="center">
-                  {{> button label="Do this Next" target_url="{{action_url}}" }}
-                </td>
-              </tr>
-            </table>
-
-            <p>For reference, here's your login information:</p>
-
-            <table class="attributes" width="100%" cellpadding="0" cellspacing="0">
-              <tr>
-                <td class="attributes_content">
-                  <table width="100%" cellpadding="0" cellspacing="0">
-                    <tr>
-                      <td class="attributes_item"><strong>Login Page:</strong> \{{login_url}}</td>
-                    </tr>
-                    <tr>
-                      <td class="attributes_item"><strong>Username:</strong> \{{username}}</td>
-                    </tr>
-                  </table>
-                </td>
-              </tr>
-            </table>
-
-            <p>You've started a \{{trial_length}} day trial. You can upgrade to a paying account or cancel any time.</p>
-
-            <table class="attributes" width="100%" cellpadding="0" cellspacing="0">
-              <tr>
-                <td class="attributes_content">
-                  <table width="100%" cellpadding="0" cellspacing="0">
-                    <tr>
-                      <td class="attributes_item"><strong>Trial Start Date:</strong> \{{trial_start_date}}</td>
-                    </tr>
-                    <tr>
-                      <td class="attributes_item"><strong>Trial End Date:</strong> \{{trial_end_date}}</td>
-                    </tr>
-                  </table>
-                </td>
-              </tr>
-            </table>
-
-            <p>If you have any questions, feel free to <a href="mailto:\{{support_email}}">email our customer success team</a>. (We're lightning quick at replying.) We also offer <a href="\{{live_chat_url}}">live chat</a> during business hours.</p>
-
-            <p>Thanks,<br>{{sender_name}} and the {{product_name}} Team</p>
-            <p><strong>P.S.</strong> Need immediate help getting started? Check out our <a href="\{{help_url}}">help documentation</a>. Or, just reply to this email, the {{product_name}} support team is always ready to help!</p>
-
-            {{> button_trouble }}
-
-          </td>
+          <td class="attributes_item"><strong>Login Page:</strong> \{{login_url}}</td>
+        </tr>
+        <tr>
+          <td class="attributes_item"><strong>Username:</strong> \{{username}}</td>
         </tr>
       </table>
     </td>
   </tr>
-
-  {{> footer }}
-
 </table>
+
+<p>You've started a \{{trial_length}} day trial. You can upgrade to a paying account or cancel any time.</p>
+
+<table class="attributes" width="100%" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="attributes_content">
+      <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+          <td class="attributes_item"><strong>Trial Start Date:</strong> \{{trial_start_date}}</td>
+        </tr>
+        <tr>
+          <td class="attributes_item"><strong>Trial End Date:</strong> \{{trial_end_date}}</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<p>If you have any questions, feel free to <a href="mailto:\{{support_email}}">email our customer success team</a>. (We're lightning quick at replying.) We also offer <a href="\{{live_chat_url}}">live chat</a> during business hours.</p>
+
+<p>Thanks,<br>{{sender_name}} and the {{product_name}} Team</p>
+<p><strong>P.S.</strong> Need immediate help getting started? Check out our <a href="\{{help_url}}">help documentation</a>. Or, just reply to this email, the {{product_name}} support team is always ready to help!</p>
+
+{{> button_trouble }}

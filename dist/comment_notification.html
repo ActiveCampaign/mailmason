@@ -1,4 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -396,6 +397,13 @@
       <tr>
         <td align="center">
           <table class="email-content" width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td class="email-masthead">
+                <a href="https://example.com" class="email-masthead_name">
+                [Product Name]
+              </a>
+              </td>
+            </tr>
             <!-- Email Body -->
             <tr>
               <td class="email-body" width="100%" cellpadding="0" cellspacing="0">
@@ -420,17 +428,27 @@
                         </tr>
                       </table>
                       {{/attachment_details}}
+                      <p>By {{commenter_name}} at {{timestamp}}</p>
+                      <p class="sub"><a href="{{action_url}}">View the comment</a> or <a href="{{notifications_url}}">Manage notifications</a></p>
                     </td>
                   </tr>
                 </table>
               </td>
             </tr>
-          </table>
-          <table class="email-footer" align="center" width="570" cellpadding="0" cellspacing="0">
             <tr>
-              <td class="content-cell">
-                <p>By {{commenter_name}} at {{timestamp}}</p>
-                <p class="sub"><a href="{{action_url}}">View the comment</a> or <a href="{{notifications_url}}">Manage notifications</a></p>
+              <td>
+                <table class="email-footer" align="center" width="570" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td class="content-cell" align="center">
+                      <p class="sub align-center">&copy; 2019 [Product Name]. All rights reserved.</p>
+                      <p class="sub align-center">
+                        [Company Name, LLC]
+                        <br>1234 Street Rd.
+                        <br>Suite 1234
+                      </p>
+                    </td>
+                  </tr>
+                </table>
               </td>
             </tr>
           </table>

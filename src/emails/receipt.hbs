@@ -3,84 +3,62 @@ layout: layout.hbs
 subject: Receipt for <%= product_name %>
 preheader: "This is a receipt for your recent purchase on {{ purchase_date }}. No payment is due with this receipt."
 ---
-<table class="email-content" width="100%" cellpadding="0" cellspacing="0">
+<h1>Hi \{{name}},</h1>
+<p>Thanks for using {{product_name}}. This email is the receipt for your purchase. No payment is due.</p>
 
-  {{> masthead }}
+<p>This purchase will appear as “{{credit_card_statement_name}}” on your credit card statement for your \{{credit_card_brand}} ending in \{{credit_card_last_four}}. Need to <a href="\{{billing_url}}">update your payment information</a>?</p>
 
-  <!-- Email Body -->
+{{> discount }}
+
+<table class="purchase" width="100%" cellpadding="0" cellspacing="0">
   <tr>
-    <td class="email-body" width="100%" cellpadding="0" cellspacing="0">
-      <table class="email-body_inner" align="center" width="570" cellpadding="0" cellspacing="0">
-
-        <!-- Body content -->
+    <td><h3>\{{receipt_id}}</h3></td>
+    <td><h3 class="align-right">\{{date}}</h3></td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
         <tr>
-          <td class="content-cell">
-
-            <h1>Hi \{{name}},</h1>
-            <p>Thanks for using {{product_name}}. This email is the receipt for your purchase. No payment is due.</p>
-
-            <p>This purchase will appear as “{{credit_card_statement_name}}” on your credit card statement for your \{{credit_card_brand}} ending in \{{credit_card_last_four}}. Need to <a href="\{{billing_url}}">update your payment information</a>?</p>
-
-            {{> discount }}
-
-            <table class="purchase" width="100%" cellpadding="0" cellspacing="0">
-              <tr>
-                <td><h3>\{{receipt_id}}</h3></td>
-                <td><h3 class="align-right">\{{date}}</h3></td>
-              </tr>
-              <tr>
-                <td colspan="2">
-                  <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
-                    <tr>
-                      <th class="purchase_heading"><p>Description</p></th>
-                      <th class="purchase_heading"><p class="align-right">Amount</p></th>
-                    </tr>
-                    \{{#each receipt_details}}
-                      <tr>
-                        <td width="80%" class="purchase_item">\{{description}}</td>
-                        <td class="align-right" width="20%" class="purchase_item">\{{amount}}</td>
-                      </tr>
-                    \{{/each}}
-                    <tr>
-                      <td width="80%" class="purchase_footer" valign="middle"><p class="purchase_total purchase_total--label">Total</p></td>
-                      <td width="20%" class="purchase_footer" valign="middle"><p class="purchase_total">\{{total}}</p></td>
-                    </tr>
-                  </table>
-                </td>
-              </tr>
-            </table>
-
-            <p>If you have any questions about this receipt, simply reply to this email or reach out to our <a href="\{{support_url}}">support team</a> for help.</p>
-
-            <p>Cheers,<br>The {{product_name}} Team</p>
-
-            <!-- Action -->
-            <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0">
-              <tr>
-                <td align="center">
-                  {{> button color="blue" label="Download as PDF" target_url="{{action_url}}" }}
-                </td>
-              </tr>
-            </table>
-
-            {{> related_items }}
-
-            <!-- Sub copy -->
-            <table class="body-sub">
-              <tr>
-                <td>
-                  <p class="sub">Need a printable copy for your records?</strong> You can <a href="\{{action_url}}">download a PDF version</a>.</p>
-                  <p class="sub">Moved recently? Have a new credit card? You can easily <a href="\{{billing_url}}">update your billing information</a>.</p>
-                </td>
-              </tr>
-            </table>
-
-          </td>
+          <th class="purchase_heading"><p>Description</p></th>
+          <th class="purchase_heading"><p class="align-right">Amount</p></th>
+        </tr>
+        \{{#each receipt_details}}
+          <tr>
+            <td width="80%" class="purchase_item">\{{description}}</td>
+            <td class="align-right" width="20%" class="purchase_item">\{{amount}}</td>
+          </tr>
+        \{{/each}}
+        <tr>
+          <td width="80%" class="purchase_footer" valign="middle"><p class="purchase_total purchase_total--label">Total</p></td>
+          <td width="20%" class="purchase_footer" valign="middle"><p class="purchase_total">\{{total}}</p></td>
         </tr>
       </table>
     </td>
   </tr>
-
-  {{> footer }}
-
 </table>
+
+<p>If you have any questions about this receipt, simply reply to this email or reach out to our <a href="\{{support_url}}">support team</a> for help.</p>
+
+<p>Cheers,<br>The {{product_name}} Team</p>
+
+<!-- Action -->
+<table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center">
+      {{> button color="blue" label="Download as PDF" target_url="{{action_url}}" }}
+    </td>
+  </tr>
+</table>
+
+{{> related_items }}
+
+<!-- Sub copy -->
+<table class="body-sub">
+  <tr>
+    <td>
+      <p class="sub">Need a printable copy for your records?</strong> You can <a href="\{{action_url}}">download a PDF version</a>.</p>
+      <p class="sub">Moved recently? Have a new credit card? You can easily <a href="\{{billing_url}}">update your billing information</a>.</p>
+    </td>
+  </tr>
+</table>
+          
