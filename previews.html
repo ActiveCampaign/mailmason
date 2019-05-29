@@ -98,6 +98,9 @@
       p {
         margin-top: 0;
       }
+      iframe {
+        border: 1px solid #ddd;
+      }
       hr {
         display: block;
         border-top: 1px solid #ccc;
@@ -160,7 +163,7 @@
         </ul>
       </nav>
 
-      <a href="https://github.com/wildbit/mailmason" class="mailmason-logo"><img src="http://assets.wildbit.com/wildbit/repos/mailmason/mailmason.png" alt="MailMason"></a>
+      <a href="https://github.com/wildbit/mailmason" class="mailmason-logo"><img src="http://assets.wildbit.com/wildbit/repos/mailmason/mailmason.png" alt="MailMason" width="150"></a>
 
       <div class="table-of-contents">
         <h1>MailMason Template Previews</h1>
@@ -223,10 +226,11 @@
         previews.appendChild(description);
         
         // Build the wide iframe preview for wide view of the template
-        var wide_preview = document.createElement("iframe");
+        var wide_preview = document.createElement("iframe")
         wide_preview.setAttribute("width", "640")
         wide_preview.setAttribute("height", "800")
         wide_preview.setAttribute("src", "dist/" + key + ".html")
+        wide_preview.setAttribute("frameBorder", 0)
         previews.appendChild(wide_preview);
 
         // Build the wide iframe preview for narrow view of the template
@@ -234,6 +238,7 @@
         narrow_preview.setAttribute("width", "480")
         narrow_preview.setAttribute("height", "800")
         narrow_preview.setAttribute("src", "dist/" + key + ".html")
+        narrow_preview.setAttribute("frameBorder", 0)
         previews.appendChild(narrow_preview);
 
         // Build the wide iframe preview for wide view of the template
@@ -241,6 +246,7 @@
         wide_preview.setAttribute("width", "640")
         wide_preview.setAttribute("height", "400")
         wide_preview.setAttribute("src", "dist/" + key + ".txt")
+        wide_preview.setAttribute("frameBorder", 0)
         previews.appendChild(wide_preview);
 
         // Build the wide iframe preview for narrow view of the template
@@ -248,6 +254,7 @@
         narrow_preview.setAttribute("width", "480")
         narrow_preview.setAttribute("height", "400")
         narrow_preview.setAttribute("src", "dist/" + key + ".txt")
+        narrow_preview.setAttribute("frameBorder", 0)
         previews.appendChild(narrow_preview);
 
       };
