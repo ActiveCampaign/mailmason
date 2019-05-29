@@ -128,9 +128,6 @@ module.exports = function(grunt) {
     ------------------------------------------------- */
 
     prettify: {
-      options: {
-        indent: '2',
-      },
       html: {
         expand: true,
         cwd: path.dist,
