@@ -46,6 +46,10 @@ module.exports = function(grunt) {
         src: `${path.css_src}basic-full.scss`,
         dest: `${path.css_dest}basic-full.css`,
       },
+      plain: {
+        src: `${path.css_src}plain.scss`,
+        dest: `${path.css_dest}plain.css`,
+      },
     },
 
     /* Autoprefixer
@@ -62,6 +66,10 @@ module.exports = function(grunt) {
       basicFull: {
         src: `${path.css_src}basic-full.css`,
         dest: `${path.css_dest}basic-full.css`,
+      },
+      plain: {
+        src: `${path.css_src}plain.css`,
+        dest: `${path.css_dest}plain.css`,
       },
     },
 

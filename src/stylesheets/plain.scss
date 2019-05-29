@@ -1,0 +1,109 @@
+// Global
+@import 'scss/variables';
+@import 'scss/mixins';
+@import 'scss/base';
+@import 'scss/typography';
+@import 'scss/utilities';
+
+// Components
+@import 'scss/button';
+@import 'scss/attributes';
+@import 'scss/related';
+@import 'scss/discount';
+@import 'scss/social';
+@import 'scss/purchase';
+
+
+// --------------------------------
+// Layout specific styles
+// --------------------------------
+
+body {
+  background-color: #FFF;
+  color: #000;
+}
+
+.email-wrapper {
+  @include table-scale();
+}
+.email-content {
+  @include table-scale();
+}
+
+
+/* Masthead ----------------------- */
+
+.email-masthead {
+  padding: 25px 0;
+  text-align: center;
+
+  &_logo {
+    width: 94px;
+  }
+  &_name {
+    font-size: 16px;
+    font-weight: bold;
+    color: $c-slate-alt;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(255,255,255,1);
+  }
+}
+
+
+/* Body ------------------------------ */
+
+.email-body {
+  @include table-scale();
+
+  &_inner {
+    @include table-scale($width: 570px, $margin: 0 auto);
+  }
+}
+
+.email-footer {
+  @include table-scale($width: 570px, $margin: 0 auto);
+  text-align: center;
+
+  p {
+    color: $c-slate-alt;
+  }
+}
+
+.body-action {
+  @include table-scale($margin: 30px auto);
+  text-align: center;
+}
+.body-sub {
+  margin-top: 25px;
+  padding-top: 25px;
+  border-top: 1px solid $c-slate-lighter;
+}
+.content-cell {
+  padding: 35px;
+}
+.preheader {
+  display: none !important;
+  visibility: hidden;
+  mso-hide: all;
+  font-size: 1px;
+  line-height: 1px;
+  max-height: 0;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+
+/*Media Queries ------------------------------ */
+
+@media only screen and (max-width: 600px) {
+  .email-body_inner,
+  .email-footer {
+    width: 100% !important;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .button {
+    width: 100% !important;
+  }
+}
