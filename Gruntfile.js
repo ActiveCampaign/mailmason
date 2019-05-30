@@ -8,8 +8,8 @@ module.exports = function(grunt) {
     css_src: 'src/stylesheets/',
     dist: 'dist/',
     dist_test: 'dist_test/',
-    dist_html_glob: 'dist/templates/*.html',
-    dist_text_glob: 'dist/templates/*.txt',
+    dist_html_glob: 'dist/templates/**/*.html',
+    dist_text_glob: 'dist/templates/**/*.txt',
     dist_test_html_glob: 'dist_test/*.html',
     templates: 'src/templates/',
     layouts: 'src/layouts/',
@@ -104,7 +104,7 @@ module.exports = function(grunt) {
         expand: true,
         cwd: 'src/',
         ext: '.hbs',
-        src: ['templates/*.hbs', 'layouts/*.hbs'],
+        src: ['templates/**/*.hbs', 'layouts/**/*.hbs'],
         dest: path.dist,
       },
     },
@@ -260,6 +260,16 @@ module.exports = function(grunt) {
      ------------------------------------------------- */
 
     copy: {
+      metadata: {
+        files: [
+          {
+            expand: true,
+            cwd: 'src',
+            src: ['**/meta.json'],
+            dest: path.dist,
+          },
+        ],
+      },
       testTemplates: {
         files: [
           {
@@ -324,6 +334,7 @@ module.exports = function(grunt) {
     'premailer:txt',
     'replace',
     'prettify',
+    'copy:metadata',
   ])
   grunt.registerTask('css', ['sass', 'autoprefixer'])
   grunt.registerTask('images-ftp', ['ftp-deploy'])

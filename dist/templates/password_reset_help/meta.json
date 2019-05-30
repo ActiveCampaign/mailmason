@@ -1,0 +1,5 @@
+{
+  "Name":"Password Reset Help",
+  "Alias":"password_reset_help",
+  "Subject":"Set up a new password for {{ product_name }}"
+}

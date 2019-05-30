@@ -1,0 +1,5 @@
+{
+  "Name":"Trial Expiring",
+  "Alias":"trial_expiring",
+  "Subject":"Your {{ product_name }} trial is about to expire"
+}

@@ -1,0 +1,5 @@
+{
+  "Name":"Receipt",
+  "Alias":"receipt",
+  "Subject":"Receipt for {{ product_name }}"
+}
