@@ -7,3 +7,4 @@ npm-debug.log
 config.json
 secrets.json
 dist_test
+push.sh

@@ -1,0 +1,1 @@
+POSTMARK_SERVER_TOKEN=token postmark templates push ./dist/templates

@@ -15,7 +15,8 @@
     "spamcheck": "grunt spamcheck",
     "litmus": "grunt litmus",
     "flood": "grunt flood",
-    "build": "grunt"
+    "build": "grunt",
+    "push": "sh push.sh"
   },
   "devDependencies": {
     "grunt": "^1.0.4",
@@ -34,6 +35,7 @@
     "grunt-text-replace": "^0.4.0",
     "load-grunt-tasks": "^5.0.0",
     "node-sass": "^4.12.0",
+    "postmark-cli": "^1.0.0",
     "time-grunt": "^2.0.0"
   }
 }
