@@ -16,7 +16,7 @@
     "litmus": "grunt litmus",
     "flood": "grunt flood",
     "build": "grunt",
-    "push": "sh push.sh"
+    "deploy": "grunt deploy"
   },
   "devDependencies": {
     "grunt": "^1.0.4",
@@ -31,6 +31,7 @@
     "grunt-premailer": "^1.1.0",
     "grunt-prettify": "^0.4.0",
     "grunt-sass": "^3.0.2",
+    "grunt-shell": "^3.0.1",
     "grunt-spamcheck": "0.1.1",
     "grunt-text-replace": "^0.4.0",
     "load-grunt-tasks": "^5.0.0",

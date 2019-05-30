@@ -320,6 +320,22 @@ module.exports = function(grunt) {
         src: 'dist_test/user_invitation.html',
       },
     },
+
+    /* Shell
+       Used for Pushing templates to Postmark via the postmark-cli tool. 
+       The reason we use Grunt to execute this is so that we can easily pass the server tokens in from the secrets.json.
+       See: https://github.com/sindresorhus/grunt-shell
+    ------------------------------------------------- */
+
+    shell: {
+      options: {
+        stderr: true,
+      },
+      postmarkPush: {
+        command:
+          'POSTMARK_SERVER_TOKEN=<%= secret.postmark.server_token %> postmark templates push ./dist/templates',
+      },
+    },
   })
 
   /* Tasks
@@ -339,6 +355,7 @@ module.exports = function(grunt) {
   grunt.registerTask('css', ['sass', 'autoprefixer'])
   grunt.registerTask('images-ftp', ['ftp-deploy'])
   grunt.registerTask('images-s3', ['s3'])
+  grunt.registerTask('deploy', ['default', 'shell:postmarkPush'])
 
   // Testing
   grunt.registerTask('spam', ['spamcheck'])
