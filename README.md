@@ -23,6 +23,7 @@ By default, the generated templates use [Mustachio](https://github.com/wildbit/m
 * [X] Enables easy batch testing against the [Postmark Spamcheck API](http://spamcheck.postmarkapp.com)
 * [X] Enables easy batch testing through [Litmus](http://litmus.com)
 * [X] Enables easy uploading of image assets to your CDN so you can include images in your templates (but you don't have to)
+* [X] Enables easy template pushing to your Postmark account
 
 ## Interested in contributing?
 
