@@ -1,5 +1,5 @@
 // Global
-@import 'scss/variables';
+@import 'scss/colors';
 @import 'scss/mixins';
 @import 'scss/base';
 @import 'scss/typography';
@@ -19,16 +19,16 @@
 // --------------------------------
 
 body {
-  background-color: $c-gray-light;
-  color: $c-slate;
+  background-color: $c-gray-50;
+  color: $c-slate-500;
 }
 p {
-  color: $c-slate;
+  color: $c-slate-500;
 }
 
 .email-wrapper {
   @include table-scale();
-  background-color: $c-gray-light;
+  background-color: $c-gray-50;
 }
 .email-content {
   @include table-scale();
@@ -47,7 +47,7 @@ p {
   &_name {
     font-size: 16px;
     font-weight: bold;
-    color: $c-slate-alt;
+    color: $c-slate-200;
     text-decoration: none;
     text-shadow: 0 1px 0 rgba(255,255,255,1);
   }
@@ -58,8 +58,6 @@ p {
 
 .email-body {
   @include table-scale();
-  border-top: 1px solid $c-slate-lighter;
-  border-bottom: 1px solid $c-slate-lighter;
   background-color: #FFFFFF;
 
   &_inner {
@@ -73,7 +71,7 @@ p {
   text-align: center;
 
   p {
-    color: $c-slate-alt;
+    color: $c-slate-200;
   }
 }
 
@@ -84,7 +82,7 @@ p {
 .body-sub {
   margin-top: 25px;
   padding-top: 25px;
-  border-top: 1px solid $c-slate-lighter;
+  border-top: 1px solid $c-slate-50;
 }
 .content-cell {
   padding: 35px;

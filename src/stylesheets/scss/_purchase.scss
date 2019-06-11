@@ -10,7 +10,7 @@
   // Items
   &_item {
     padding: 10px 0;
-    color: $c-slate;
+    color: $c-slate-100;
     font-size: 15px;
     line-height: 18px;
   }
@@ -18,11 +18,11 @@
   // Headings
   &_heading {
     padding-bottom: 8px;
-    border-bottom: 1px solid $c-slate-lighter;
+    border-bottom: 1px solid $c-slate-100;
 
     p {
       margin: 0;
-      color: $c-slate-light;
+      color: $c-slate-50;
       font-size: 12px;
     }
   }
@@ -30,14 +30,14 @@
   // Footer
   &_footer {
     padding-top: 15px;
-    border-top: 1px solid $c-slate-lighter;
+    border-top: 1px solid $c-slate-100;
   }
 
   &_total {
     margin: 0;
     text-align: right;
     font-weight: bold;
-    color: $c-gray-dark;
+    color: $c-gray-900;
 
     &--label {
       padding: 0 15px 0 0;

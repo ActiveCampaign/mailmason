@@ -25,21 +25,21 @@ td {
 /* Type ------------------------------ */
 h1 {
   margin-top: 0;
-  color: #2F3133;
+  color: #333333;
   font-size: 19px;
   font-weight: bold;
   text-align: left; }
 
 h2 {
   margin-top: 0;
-  color: #2F3133;
+  color: #333333;
   font-size: 16px;
   font-weight: bold;
   text-align: left; }
 
 h3 {
   margin-top: 0;
-  color: #2F3133;
+  color: #333333;
   font-size: 14px;
   font-weight: bold;
   text-align: left; }
@@ -96,7 +96,7 @@ p.center {
 .attributes {
   margin: 0 0 21px; }
   .attributes_content {
-    background-color: #EDEFF2;
+    background-color: #F4F4F7;
     padding: 16px; }
   .attributes_item {
     padding: 0; }
@@ -111,7 +111,7 @@ p.center {
   -premailer-cellspacing: 0; }
   .related_item {
     padding: 10px 0;
-    color: #74787E;
+    color: #CBCCCF;
     font-size: 15px;
     line-height: 18px; }
   .related_item-title {
@@ -121,7 +121,7 @@ p.center {
     display: block;
     padding-bottom: 10px; }
   .related_heading {
-    border-top: 1px solid #EDEFF2;
+    border-top: 1px solid #CBCCCF;
     text-align: center;
     padding: 25px 0 10px; }
 
@@ -133,8 +133,8 @@ p.center {
   -premailer-width: 100%;
   -premailer-cellpadding: 0;
   -premailer-cellspacing: 0;
-  background-color: #EDEFF2;
-  border: 2px dashed #9BA2AB; }
+  background-color: #CBCCCF;
+  border: 2px dashed #EAEAEC; }
   .discount_heading {
     text-align: center; }
   .discount_body {
@@ -169,24 +169,24 @@ p.center {
     -premailer-cellspacing: 0; }
   .purchase_item {
     padding: 10px 0;
-    color: #74787E;
+    color: #CBCCCF;
     font-size: 15px;
     line-height: 18px; }
   .purchase_heading {
     padding-bottom: 8px;
-    border-bottom: 1px solid #EDEFF2; }
+    border-bottom: 1px solid #CBCCCF; }
     .purchase_heading p {
       margin: 0;
-      color: #9BA2AB;
+      color: #EAEAEC;
       font-size: 12px; }
   .purchase_footer {
     padding-top: 15px;
-    border-top: 1px solid #EDEFF2; }
+    border-top: 1px solid #CBCCCF; }
   .purchase_total {
     margin: 0;
     text-align: right;
     font-weight: bold;
-    color: #2F3133; }
+    color: #333333; }
     .purchase_total--label {
       padding: 0 15px 0 0; }
 
@@ -222,7 +222,7 @@ p {
   .email-masthead_name {
     font-size: 16px;
     font-weight: bold;
-    color: #bbbfc3;
+    color: #A8AAAF;
     text-decoration: none;
     text-shadow: 0 1px 0 white; }
 
@@ -251,7 +251,7 @@ p {
   -premailer-cellspacing: 0;
   text-align: center; }
   .email-footer p {
-    color: #bbbfc3; }
+    color: #A8AAAF; }
 
 .body-action {
   width: 100%;
@@ -265,7 +265,7 @@ p {
 .body-sub {
   margin-top: 25px;
   padding-top: 25px;
-  border-top: 1px solid #EDEFF2; }
+  border-top: 1px solid #EAEAEC; }
 
 .content-cell {
   padding: 35px; }
@@ -293,7 +293,7 @@ p {
 
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: #333 !important;
+    background-color: #333333 !important;
     color: #FFF !important; }
   p,
   ul,

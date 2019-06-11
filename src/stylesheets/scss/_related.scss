@@ -6,7 +6,7 @@
   // Items
   &_item {
     padding: 10px 0;
-    color: $c-slate;
+    color: $c-slate-100;
     font-size: 15px;
     line-height: 18px;
   }
@@ -20,7 +20,7 @@
   }
 
   &_heading {
-    border-top: 1px solid $c-slate-lighter;
+    border-top: 1px solid $c-slate-100;
     text-align: center;
     padding: 25px 0 10px;
   }

@@ -1,5 +1,5 @@
 // Global
-@import 'scss/variables';
+@import 'scss/colors';
 @import 'scss/mixins';
 @import 'scss/base';
 @import 'scss/typography';
@@ -45,7 +45,7 @@ p {
   &_name {
     font-size: 16px;
     font-weight: bold;
-    color: $c-slate-alt;
+    color: $c-slate-200;
     text-decoration: none;
     text-shadow: 0 1px 0 rgba(255,255,255,1);
   }
@@ -67,7 +67,7 @@ p {
   text-align: center;
 
   p {
-    color: $c-slate-alt;
+    color: $c-slate-200;
   }
 }
 
@@ -78,7 +78,7 @@ p {
 .body-sub {
   margin-top: 25px;
   padding-top: 25px;
-  border-top: 1px solid $c-slate-lighter;
+  border-top: 1px solid $c-slate-50;
 }
 .content-cell {
   padding: 35px;
@@ -111,7 +111,7 @@ p {
 }
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: #333 !important;
+    background-color: $c-gray-900 !important;
     color: #FFF !important;
   }
   p,
