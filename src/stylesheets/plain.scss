@@ -20,9 +20,11 @@
 
 body {
   background-color: #FFF;
-  color: #000;
+  color: #333;
 }
-
+p {
+  color: #333;
+}
 .email-wrapper {
   @include table-scale();
 }
@@ -105,5 +107,28 @@ body {
 @media only screen and (max-width: 500px) {
   .button {
     width: 100% !important;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #333 !important;
+    color: #FFF !important;
+  }
+  p,
+  ul,
+  ol,
+  blockquote,
+  h1,
+  h2,
+  h3 {
+    color: #FFF !important;
+  }
+
+  .attributes_content,
+  .discount {
+    background-color: #222 !important;
+  }
+  .email-masthead_name {
+    text-shadow: none !important;
   }
 }
