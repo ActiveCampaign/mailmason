@@ -133,8 +133,8 @@ p.center {
   -premailer-width: 100%;
   -premailer-cellpadding: 0;
   -premailer-cellspacing: 0;
-  background-color: #CBCCCF;
-  border: 2px dashed #EAEAEC; }
+  background-color: #F4F4F7;
+  border: 2px dashed #CBCCCF; }
   .discount_heading {
     text-align: center; }
   .discount_body {
@@ -169,19 +169,19 @@ p.center {
     -premailer-cellspacing: 0; }
   .purchase_item {
     padding: 10px 0;
-    color: #CBCCCF;
+    color: #51545E;
     font-size: 15px;
     line-height: 18px; }
   .purchase_heading {
     padding-bottom: 8px;
-    border-bottom: 1px solid #CBCCCF; }
+    border-bottom: 1px solid #EAEAEC; }
     .purchase_heading p {
       margin: 0;
-      color: #EAEAEC;
+      color: #85878E;
       font-size: 12px; }
   .purchase_footer {
     padding-top: 15px;
-    border-top: 1px solid #CBCCCF; }
+    border-top: 1px solid #EAEAEC; }
   .purchase_total {
     margin: 0;
     text-align: right;

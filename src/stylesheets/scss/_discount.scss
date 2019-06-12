@@ -3,8 +3,8 @@
 .discount {
   @include table-scale($padding: 24px);
 
-  background-color: $c-slate-100;
-  border: 2px dashed $c-slate-50;
+  background-color: $c-slate-40;
+  border: 2px dashed $c-slate-100;
 
   &_heading {
     text-align: center;
