@@ -38,7 +38,7 @@ preheader: "This is example text for the preheader set via the YAML front-matter
 <hr>
 <!-- Action -->
 <h1>Action Buttons</h1>
-<table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0">
+<table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0" role="presentation">
   <tr>
     <td align="center">
       {{> button color="red" label="Danger Button" target_url="http://example.com" }}<br>
@@ -53,10 +53,10 @@ preheader: "This is example text for the preheader set via the YAML front-matter
 <h1>Attribute List</h1>
 <p>If your email client baseline is sufficiently modern, you can achieve the same effects with list much more succinctly. We chose to use tables for these lists to accommodate Outlook 2007, 2010, and 2013.</p>
 
-<table class="attribute-list" width="100%" cellpadding="0" cellspacing="0">
+<table class="attribute-list" width="100%" cellpadding="0" cellspacing="0" role="presentation">
   <tr>
     <td class="attribute-list-container">
-      <table width="100%" cellpadding="0" cellspacing="0">
+      <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
         <tr>
           <td class="attribute-list-item"><strong>Login Page:</strong> \{{login_url}}</td>
         </tr>
@@ -72,10 +72,10 @@ preheader: "This is example text for the preheader set via the YAML front-matter
 <h1>Option List</h1>
 <p>For the most part, option lists are just like attribute lists. They just use line breaks to create some separation between the items.</p>
 
-<table class="attribute-list" width="100%" cellpadding="0" cellspacing="0">
+<table class="attribute-list" width="100%" cellpadding="0" cellspacing="0" role="presentation">
   <tr>
     <td class="attribute-list-container">
-      <table width="100%" cellpadding="0" cellspacing="0">
+      <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
         <tr>
           <td class="attribute-list-item"><strong><a href="\{{trial_extension_url}}">Restart your trial</a></strong> - If you didn't get a chance to fully try out the product or need a little more time to evaluate, just let us know.  Simply reply to this email and we'll extend your trial period.<br><br></td>
         </tr>
@@ -106,7 +106,7 @@ preheader: "This is example text for the preheader set via the YAML front-matter
 <h1>Sub-text</h1>
 <p>Sub-text is for any content that needs to be included at the bottom of the email but doesn't need to stand out. This can be good for disclaimers and text alternatives.</p>
 <!-- Sub copy -->
-<table class="body-sub">
+<table class="body-sub" role="presentation">
   <tr>
     <td>
       <p class="sub">If you’re having trouble clicking the confirm account button, copy and paste the URL below into your web browser.

@@ -9,7 +9,7 @@ preheader: "This is a receipt for your recent purchase on {{ purchase_date }}. N
 
 {{> discount }}
 
-<table class="purchase" width="100%" cellpadding="0" cellspacing="0">
+<table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
   <tr>
     <td><h3>\{{receipt_id}}</h3></td>
     <td><h3 class="align-right">\{{date}}</h3></td>
@@ -41,7 +41,7 @@ preheader: "This is a receipt for your recent purchase on {{ purchase_date }}. N
 <p>Cheers,<br>The {{product_name}} Team</p>
 
 <!-- Action -->
-<table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0">
+<table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0" role="presentation">
   <tr>
     <td align="center">
       {{> button color="blue" label="Download as PDF" target_url="{{action_url}}" }}
@@ -52,7 +52,7 @@ preheader: "This is a receipt for your recent purchase on {{ purchase_date }}. N
 {{> related_items }}
 
 <!-- Sub copy -->
-<table class="body-sub">
+<table class="body-sub" role="presentation">
   <tr>
     <td>
       <p class="sub">Need a printable copy for your records?</strong> You can <a href="\{{action_url}}">download a PDF version</a>.</p>
@@ -60,4 +60,3 @@ preheader: "This is a receipt for your recent purchase on {{ purchase_date }}. N
     </td>
   </tr>
 </table>
-          

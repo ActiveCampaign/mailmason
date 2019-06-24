@@ -4,9 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title></title>
-    <!-- 
+    <!--
     The style block is collapsed on page load to save you some scrolling.
-    Postmark automatically inlines all CSS properties for maximum email client 
+    Postmark automatically inlines all CSS properties for maximum email client
     compatibility. You can just update styles here, and Postmark does the rest.
   -->
     <style type="text/css" rel="stylesheet" media="all">
@@ -396,10 +396,10 @@
   </head>
   <body>
     <span class="preheader">We received a request to reset your password with this email address. ({{email_address}})</span>
-    <table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0">
+    <table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0" role="presentation">
       <tr>
         <td align="center">
-          <table class="email-content" width="100%" cellpadding="0" cellspacing="0">
+          <table class="email-content" width="100%" cellpadding="0" cellspacing="0" role="presentation">
             <tr>
               <td class="email-masthead">
                 <a href="https://example.com" class="email-masthead_name">
@@ -410,19 +410,19 @@
             <!-- Email Body -->
             <tr>
               <td class="email-body" width="100%" cellpadding="0" cellspacing="0">
-                <table class="email-body_inner" align="center" width="570" cellpadding="0" cellspacing="0">
+                <table class="email-body_inner" align="center" width="570" cellpadding="0" cellspacing="0" role="presentation">
                   <!-- Body content -->
                   <tr>
                     <td class="content-cell">
                       <p>We received a request to reset the password to access [Product Name] with your email address ({{email_address}}) from a {{operating_system}} device using {{browser_name}}, but we were unable to find an account associated with this address.</p>
                       <p>If you use [Product Name] and were expecting this email, consider trying to request a password reset using the email address associated with your account.</p>
                       <!-- Action -->
-                      <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0">
+                      <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0" role="presentation">
                         <tr>
                           <td align="center">
                             <!-- Border based button
            https://litmus.com/blog/a-guide-to-bulletproof-buttons-in-email-design -->
-                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
                               <tr>
                                 <td align="center">
                                   <table border="0" cellspacing="0" cellpadding="0">
@@ -442,7 +442,7 @@
                       <p>Thanks,
                         <br>The [Product Name] Team</p>
                       <!-- Sub copy -->
-                      <table class="body-sub">
+                      <table class="body-sub" role="presentation">
                         <tr>
                           <td>
                             <p class="sub">If you’re having trouble with the button above, copy and paste the URL below into your web browser.</p>
@@ -457,7 +457,7 @@
             </tr>
             <tr>
               <td>
-                <table class="email-footer" align="center" width="570" cellpadding="0" cellspacing="0">
+                <table class="email-footer" align="center" width="570" cellpadding="0" cellspacing="0" role="presentation">
                   <tr>
                     <td class="content-cell" align="center">
                       <p class="sub align-center">&copy; 2019 [Product Name]. All rights reserved.</p>
