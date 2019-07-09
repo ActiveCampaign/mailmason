@@ -101,7 +101,7 @@ module.exports = function(grunt) {
       all: {
         expand: true,
         cwd: 'src/',
-        src: ['templates/**/*.hbs', 'layouts/**/*.hbs'],
+        src: ['templates/**/*.hbs'],
         dest: path.dist,
       },
     },
