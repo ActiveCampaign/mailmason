@@ -98,7 +98,12 @@ p {
 }
 
 @media (prefers-color-scheme: dark) {
-  body {
+  body,
+  .email-body,
+  .email-body_inner,
+  .email-content
+  .email-wrapper,
+  .email-masthead {
     background-color: $c-gray-900 !important;
     color: #FFF !important;
   }
