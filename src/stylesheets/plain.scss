@@ -1,18 +1,4 @@
-// Global
-@import 'scss/colors';
-@import 'scss/mixins';
-@import 'scss/base';
-@import 'scss/typography';
-@import 'scss/utilities';
-
-// Components
-@import 'scss/button';
-@import 'scss/attributes';
-@import 'scss/related';
-@import 'scss/discount';
-@import 'scss/social';
-@import 'scss/purchase';
-
+@import 'scss/imports';
 
 // --------------------------------
 // Layout specific styles
