@@ -1,5 +1,7 @@
 {
-  "Name":"Password Reset",
-  "Alias":"password_reset",
-  "Subject":"Set up a new password for {{ product_name }}"
+  "Name": "Password Reset",
+  "Alias": "password_reset",
+  "Subject": "Set up a new password for {{ product_name }}",
+  "TemplateType": "Standard",
+  "LayoutTemplate": ""
 }

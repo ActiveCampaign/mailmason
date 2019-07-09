@@ -1,5 +1,7 @@
 {
-  "Name":"Example",
-  "Alias":"example",
-  "Subject":"Welcome to <%= product_name %>, {{name}}!"
+  "Name": "Example",
+  "Alias": "example",
+  "Subject": "Welcome to <%= product_name %>, {{name}}!",
+  "TemplateType": "Standard",
+  "LayoutTemplate": ""
 }

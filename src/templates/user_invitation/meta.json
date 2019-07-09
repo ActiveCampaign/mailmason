@@ -1,5 +1,7 @@
 {
-  "Name":"User Invitation",
-  "Alias":"user_invitation",
-  "Subject":"{{ invite_sender_name }} invited you to {{ product_name }}"
+  "Name": "User Invitation",
+  "Alias": "user_invitation",
+  "Subject": "{{ invite_sender_name }} invited you to {{ product_name }}",
+  "TemplateType": "Standard",
+  "LayoutTemplate": ""
 }
