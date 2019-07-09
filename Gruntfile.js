@@ -42,7 +42,7 @@ module.exports = function(grunt) {
         cwd: path.css_src,
         ext: '.css',
         src: ['*.scss'],
-        dest: `${path.dist}styles/`,
+        dest: `${path.dist}stylesheets/`,
       },
     },
 
