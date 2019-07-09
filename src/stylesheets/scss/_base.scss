@@ -1,20 +1,10 @@
 /* Base ------------------------------ */
 
-*:not(br):not(tr):not(html) {
-  font-family: Helvetica, Arial, sans-serif;
-  box-sizing: border-box;
-}
 body {
   width: 100% !important;
   height: 100%;
   margin: 0;
-  line-height: 1.4;
   -webkit-text-size-adjust: none;
-}
-
-p, ul, ol, blockquote {
-  line-height: 1.4;
-  text-align: left;
 }
 
 a {
@@ -27,4 +17,16 @@ a {
 
 td {
   word-break: break-word;
+}
+
+.preheader {
+  display: none !important;
+  visibility: hidden;
+  mso-hide: all;
+  font-size: 1px;
+  line-height: 1px;
+  max-height: 0;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
 }

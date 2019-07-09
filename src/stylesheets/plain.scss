@@ -83,17 +83,6 @@ p {
 .content-cell {
   padding: 35px;
 }
-.preheader {
-  display: none !important;
-  visibility: hidden;
-  mso-hide: all;
-  font-size: 1px;
-  line-height: 1px;
-  max-height: 0;
-  max-width: 0;
-  opacity: 0;
-  overflow: hidden;
-}
 
 
 /*Media Queries ------------------------------ */
@@ -101,11 +90,6 @@ p {
 @media only screen and (max-width: 600px) {
   .email-body_inner,
   .email-footer {
-    width: 100% !important;
-  }
-}
-@media only screen and (max-width: 500px) {
-  .button {
     width: 100% !important;
   }
 }

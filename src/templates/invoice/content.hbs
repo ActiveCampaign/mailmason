@@ -6,15 +6,23 @@ preheader: "This is an invoice for your purchase on {{ purchase_date }}. Please 
 <h1>Hi \{{name}},</h1>
 <p>Thanks for using {{product_name}}. This is an invoice for your recent purchase.</p>
 
-<table class="attribute-list" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+<table class="attributes" width="100%" cellpadding="0" cellspacing="0" role="presentation">
   <tr>
-    <td class="attribute-list-container">
-      <table width="100%" cellpadding="0" cellspacing="0">
+    <td class="attributes_content">
+      <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
         <tr>
-          <td class="attribute-list-item"><strong>Amount Due:</strong> \{{total}}</td>
+          <td class="attributes_item">
+            <span class="f-fallback">
+              <strong>Amount Due:</strong> \{{total}}
+            </span>
+          </td>
         </tr>
         <tr>
-          <td class="attribute-list-item"><strong>Due By:</strong> \{{due_date}}</td>
+          <td class="attributes_item">
+            <span class="f-fallback">
+              <strong>Due By:</strong> \{{due_date}}
+            </span>
+          </td>
         </tr>
       </table>
     </td>
@@ -25,7 +33,7 @@ preheader: "This is an invoice for your purchase on {{ purchase_date }}. Please 
 <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0" role="presentation">
   <tr>
     <td align="center">
-      {{> button color="green" label="Pay this Invoice" target_url="{{action_url}}" }}
+      {{> button color="green" label="Pay Invoice" target_url="{{action_url}}" }}
     </td>
   </tr>
 </table>
@@ -43,25 +51,21 @@ preheader: "This is an invoice for your purchase on {{ purchase_date }}. Please 
     <td colspan="2">
       <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
         <tr>
-          <th class="purchase_heading">
-            <p>Description</p>
-          </th>
-          <th class="purchase_heading">
-            <p class="align-right">Amount</p>
-          </th>
+          <th class="purchase_heading" align="left"><p class="f-fallback">Description</p></th>
+          <th class="purchase_heading" align="right"><p class="f-fallback">Amount</p></th>
         </tr>
         \{{#each invoice_details}}
         <tr>
-          <td width="80%" class="purchase_item">\{{description}}</td>
-          <td class="align-right" width="20%" class="purchase_item">\{{amount}}</td>
+          <td width="80%" class="purchase_item"><span class="f-fallback">\{{description}}</span></td>
+          <td class="align-right" width="20%" class="purchase_item"><span class="f-fallback">\{{amount}}</span></td>
         </tr>
         \{{/each}}
         <tr>
           <td width="80%" class="purchase_footer" valign="middle">
-            <p class="purchase_total purchase_total--label">Total</p>
+            <p class="f-fallback purchase_total purchase_total--label">Total</p>
           </td>
           <td width="20%" class="purchase_footer" valign="middle">
-            <p class="purchase_total">\{{total}}</p>
+            <p class="f-fallback purchase_total">\{{total}}</p>
           </td>
         </tr>
       </table>

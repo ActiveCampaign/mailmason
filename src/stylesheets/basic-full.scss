@@ -19,16 +19,19 @@
 // --------------------------------
 
 body {
-  background-color: $c-gray-50;
+  background-color: $c-slate-40;
   color: $c-slate-500;
 }
 p {
   color: $c-slate-500;
 }
+p.sub {
+  color: $c-slate-400;
+}
 
 .email-wrapper {
   @include table-scale();
-  background-color: $c-gray-50;
+  background-color: $c-slate-40;
 }
 .email-content {
   @include table-scale();
@@ -71,7 +74,7 @@ p {
   text-align: center;
 
   p {
-    color: $c-slate-200;
+    color: $c-slate-400;
   }
 }
 
@@ -87,17 +90,6 @@ p {
 .content-cell {
   padding: 35px;
 }
-.preheader {
-  display: none !important;
-  visibility: hidden;
-  mso-hide: all;
-  font-size: 1px;
-  line-height: 1px;
-  max-height: 0;
-  max-width: 0;
-  opacity: 0;
-  overflow: hidden;
-}
 
 
 /*Media Queries ------------------------------ */
@@ -108,8 +100,4 @@ p {
     width: 100% !important;
   }
 }
-@media only screen and (max-width: 500px) {
-  .button {
-    width: 100% !important;
-  }
-}
+

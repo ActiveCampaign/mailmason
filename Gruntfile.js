@@ -7,10 +7,8 @@ module.exports = function(grunt) {
   const path = {
     css_src: 'src/stylesheets/',
     dist: 'dist/',
-    dist_test: 'dist_test/',
     dist_html_glob: 'dist/templates/**/*.html',
     dist_text_glob: 'dist/templates/**/*.txt',
-    dist_test_html_glob: 'dist_test/*.html',
     templates: 'src/templates/',
     layouts: 'src/layouts/',
     partials: 'src/partials/',
@@ -146,15 +144,14 @@ module.exports = function(grunt) {
     premailer: {
       options: {
         warnLevel: 'none',
+        preserveStyles: true,
+        preserveStyleAttribute: true,
       },
       html: {
-        options: {
-          removeComments: true,
-        },
         files: [
           {
             expand: true,
-            src: [path.dist_test_html_glob],
+            src: [path.dist_html_glob],
             dest: '',
           },
         ],
@@ -269,16 +266,6 @@ module.exports = function(grunt) {
           },
         ],
       },
-      testTemplates: {
-        files: [
-          {
-            expand: true,
-            src: [path.dist_html_glob],
-            dest: path.dist_test,
-            flatten: true,
-          },
-        ],
-      },
     },
 
     /* Spamcheck
@@ -294,7 +281,6 @@ module.exports = function(grunt) {
 
     /* Postmark
        Sends test emails through Postmark. Add and remove template targets as needed.
-       Ensure that the CSS is always inlined before sending tests. This can be done with the 'testBuild' task below.
        See: https://github.com/wildbit/grunt-postmark
     ------------------------------------------------- */
 
@@ -307,21 +293,21 @@ module.exports = function(grunt) {
       },
       // run "grunt postmark:welcome" - Sends just the welcome email
       welcome: {
-        src: 'dist_test/welcome.html',
+        src: 'dist/welcome.html',
       },
       // run "npm run flood" - Sends all of the emails. Be careful not to spam PM if you have a bunch of emails.
       flood: {
-        src: [path.dist_test_html_glob],
+        src: [path.dist_html_glob],
       },
       // run "npm run litmus" - Add a litmus test address here.
       litmus: {
         to: '<%= config.strings.litmus_email %>',
-        src: 'dist_test/user_invitation.html',
+        src: 'dist/user_invitation.html',
       },
     },
 
     /* Shell
-       Used for Pushing templates to Postmark via the postmark-cli tool. 
+       Used for Pushing templates to Postmark via the postmark-cli tool.
        The reason we use Grunt to execute this is so that we can easily pass the server tokens in from the secrets.json.
        See: https://github.com/sindresorhus/grunt-shell
     ------------------------------------------------- */
@@ -346,7 +332,7 @@ module.exports = function(grunt) {
   grunt.registerTask('html', [
     'assemble',
     'inline',
-    'premailer:txt',
+    'premailer',
     'replace',
     'prettify',
     'copy:metadata',
@@ -358,13 +344,6 @@ module.exports = function(grunt) {
 
   // Testing
   grunt.registerTask('spam', ['spamcheck'])
-  grunt.registerTask('litmus', ['testBuild', 'postmark:litmus'])
-  grunt.registerTask('flood', ['testBuild', 'postmark:flood'])
-
-  // Before sending tests via Postmark, ensure that test builds with inlined CSS are generated
-  grunt.registerTask('testBuild', [
-    'default',
-    'copy:testTemplates',
-    'premailer:html',
-  ])
+  grunt.registerTask('litmus', ['default', 'postmark:litmus'])
+  grunt.registerTask('flood', ['default', 'postmark:flood'])
 }

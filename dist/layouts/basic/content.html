@@ -1,36 +1,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title></title>
-    <!--
-    The style block is collapsed on page load to save you some scrolling.
-    Postmark automatically inlines all CSS properties for maximum email client
-    compatibility. You can just update styles here, and Postmark does the rest.
-  -->
     <style>
     /* Base ------------------------------ */
     
-    *:not(br):not(tr):not(html) {
-      font-family: Helvetica, Arial, sans-serif;
-      box-sizing: border-box;
-    }
-    
+    @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap");
     body {
       width: 100% !important;
       height: 100%;
       margin: 0;
-      line-height: 1.4;
       -webkit-text-size-adjust: none;
-    }
-    
-    p,
-    ul,
-    ol,
-    blockquote {
-      line-height: 1.4;
-      text-align: left;
     }
     
     a {
@@ -44,12 +26,30 @@
     td {
       word-break: break-word;
     }
+    
+    .preheader {
+      display: none !important;
+      visibility: hidden;
+      mso-hide: all;
+      font-size: 1px;
+      line-height: 1px;
+      max-height: 0;
+      max-width: 0;
+      opacity: 0;
+      overflow: hidden;
+    }
     /* Type ------------------------------ */
+    
+    body,
+    td,
+    th {
+      font-family: "Nunito Sans", Helvetica, Arial, sans-serif;
+    }
     
     h1 {
       margin-top: 0;
       color: #333333;
-      font-size: 19px;
+      font-size: 22px;
       font-weight: bold;
       text-align: left;
     }
@@ -70,19 +70,22 @@
       text-align: left;
     }
     
-    p {
+    td,
+    th {
+      font-size: 16px;
+    }
+    
+    p,
+    ul,
+    ol,
+    blockquote {
       margin: .4em 0 1.1875em;
       font-size: 16px;
       line-height: 1.625;
-      text-align: left;
     }
     
     p.sub {
-      font-size: 12px;
-    }
-    
-    p.center {
-      text-align: center;
+      font-size: 13px;
     }
     /* Utilities ------------------------------ */
     
@@ -111,6 +114,7 @@
       border-radius: 3px;
       box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16);
       -webkit-text-size-adjust: none;
+      box-sizing: border-box;
     }
     
     .button--green {
@@ -127,6 +131,13 @@
       border-right: 18px solid #FF6136;
       border-bottom: 10px solid #FF6136;
       border-left: 18px solid #FF6136;
+    }
+    
+    @media only screen and (max-width: 500px) {
+      .button {
+        width: 100% !important;
+        text-align: center !important;
+      }
     }
     /* Attribute list ------------------------------ */
     
@@ -365,18 +376,6 @@
     .content-cell {
       padding: 45px;
     }
-    
-    .preheader {
-      display: none !important;
-      visibility: hidden;
-      mso-hide: all;
-      font-size: 1px;
-      line-height: 1px;
-      max-height: 0;
-      max-width: 0;
-      opacity: 0;
-      overflow: hidden;
-    }
     /*Media Queries ------------------------------ */
     
     @media only screen and (max-width: 600px) {
@@ -385,13 +384,14 @@
         width: 100% !important;
       }
     }
-    
-    @media only screen and (max-width: 500px) {
-      .button {
-        width: 100% !important;
-      }
-    }
     </style>
+    <!--[if mso]>
+    <style type="text/css">
+      .f-fallback  {
+        font-family: Arial, sans-serif;
+      }
+    </style>
+  <![endif]-->
   </head>
   <body>
     <table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0" role="presentation">
@@ -400,7 +400,7 @@
           <table class="email-content" width="100%" cellpadding="0" cellspacing="0" role="presentation">
             <tr>
               <td class="email-masthead">
-                <a href="https://example.com" class="email-masthead_name">
+                <a href="https://example.com" class="f-fallback email-masthead_name">
                 [Product Name]
               </a>
               </td>
@@ -412,6 +412,8 @@
                   <!-- Body content -->
                   <tr>
                     <td class="content-cell">
+                      <div class="f-fallback">
+                      </div>
                     </td>
                   </tr>
                 </table>
@@ -422,8 +424,8 @@
                 <table class="email-footer" align="center" width="570" cellpadding="0" cellspacing="0" role="presentation">
                   <tr>
                     <td class="content-cell" align="center">
-                      <p class="sub align-center">&copy; 2019 [Product Name]. All rights reserved.</p>
-                      <p class="sub align-center">
+                      <p class="f-fallback sub align-center">&copy; 2019 [Product Name]. All rights reserved.</p>
+                      <p class="f-fallback sub align-center">
                         [Company Name, LLC]
                         <br>1234 Street Rd.
                         <br>Suite 1234

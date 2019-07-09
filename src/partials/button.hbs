@@ -4,13 +4,7 @@
 <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
   <tr>
     <td align="{{#if align}}{{align}}{{else}}center{{/if}}">
-      <table border="0" cellspacing="0" cellpadding="0">
-        <tr>
-          <td>
-            <a href="{{target_url}}" class="button button--{{color}}" target="_blank">{{label}}</a>
-          </td>
-        </tr>
-      </table>
+      <a href="{{target_url}}" class="f-fallback button{{#if color}} button--{{color}}{{/if}}" target="_blank">{{label}}</a>
     </td>
   </tr>
 </table>
