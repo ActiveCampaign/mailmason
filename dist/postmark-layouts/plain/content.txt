@@ -1,0 +1,11 @@
+[Product Name] ( https://example.com )
+
+{{{ @content }}}
+
+© 2019 [Product Name]. All rights reserved.
+
+[Company Name, LLC]
+
+1234 Street Rd.
+
+Suite 1234

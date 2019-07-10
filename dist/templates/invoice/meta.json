@@ -1,7 +1,0 @@
-{
-  "Name": "Invoice",
-  "Alias": "invoice",
-  "Subject": "Please pay {{ total }} due by {{ due_date }}",
-  "TemplateType": "Standard",
-  "LayoutTemplate": ""
-}

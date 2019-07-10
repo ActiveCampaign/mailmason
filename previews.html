@@ -140,7 +140,7 @@
       div.container {
         width: 1128px;
         margin-left: auto;
-        margin-right: auto;        
+        margin-right: auto;
       }
       a.mailmason-logo {
         float: right;
@@ -152,7 +152,7 @@
     </style>
   </head>
   <body>
-    
+
     <div class="container">
       <nav>
         <ul>
@@ -224,12 +224,12 @@
         previews.appendChild(heading);
         previews.appendChild(top_link);
         previews.appendChild(description);
-        
+
         // Build the wide iframe preview for wide view of the template
         var wide_preview = document.createElement("iframe")
         wide_preview.setAttribute("width", "640")
         wide_preview.setAttribute("height", "800")
-        wide_preview.setAttribute("src", "dist/templates/" + key + "/content.html")
+        wide_preview.setAttribute("src", "dist/compiled/" + key + "/content.html")
         wide_preview.setAttribute("frameBorder", 0)
         previews.appendChild(wide_preview);
 
@@ -237,7 +237,7 @@
         var narrow_preview = document.createElement("iframe");
         narrow_preview.setAttribute("width", "480")
         narrow_preview.setAttribute("height", "800")
-        narrow_preview.setAttribute("src", "dist/templates/" + key + "/content.html")
+        narrow_preview.setAttribute("src", "dist/compiled/" + key + "/content.html")
         narrow_preview.setAttribute("frameBorder", 0)
         previews.appendChild(narrow_preview);
 
@@ -245,7 +245,7 @@
         var wide_preview = document.createElement("iframe");
         wide_preview.setAttribute("width", "640")
         wide_preview.setAttribute("height", "400")
-        wide_preview.setAttribute("src", "dist/templates/" + key + "/content.txt")
+        wide_preview.setAttribute("src", "dist/compiled/" + key + "/content.txt")
         wide_preview.setAttribute("frameBorder", 0)
         previews.appendChild(wide_preview);
 
@@ -253,7 +253,7 @@
         var narrow_preview = document.createElement("iframe");
         narrow_preview.setAttribute("width", "480")
         narrow_preview.setAttribute("height", "400")
-        narrow_preview.setAttribute("src", "dist/templates/" + key + "/content.txt")
+        narrow_preview.setAttribute("src", "dist/compiled/" + key + "/content.txt")
         narrow_preview.setAttribute("frameBorder", 0)
         previews.appendChild(narrow_preview);
 

@@ -1,7 +1,0 @@
-{
-  "Name": "Trial Expired",
-  "Alias": "trial_expired",
-  "Subject": "Your {{ product_name }} trial has expired",
-  "TemplateType": "Standard",
-  "LayoutTemplate": ""
-}

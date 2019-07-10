@@ -7,8 +7,8 @@ module.exports = function(grunt) {
   const path = {
     css_src: 'src/stylesheets/',
     dist: 'dist/',
-    dist_html_glob: 'dist/templates/**/*.html',
-    dist_text_glob: 'dist/templates/**/*.txt',
+    dist_html_glob: 'dist/**/*.html',
+    dist_text_glob: 'dist/**/*.txt',
     templates: 'src/templates/',
     layouts: 'src/layouts/',
     partials: 'src/partials/',
@@ -98,10 +98,16 @@ module.exports = function(grunt) {
         youtube_url: '<%= config.images.youtube_url %>',
         linkedin_url: '<%= config.images.linkedin_url %>',
       },
-      all: {
+      generic: {
         expand: true,
-        cwd: 'src/',
-        src: ['templates/**/*.hbs'],
+        cwd: path.templates,
+        src: ['**/*.hbs'],
+        dest: `${path.dist}compiled`,
+      },
+      postmark: {
+        expand: true,
+        cwd: path.dist,
+        src: ['postmark-templates/**/*.hbs', 'postmark-layouts/**/*.hbs'],
         dest: path.dist,
       },
     },
@@ -112,11 +118,18 @@ module.exports = function(grunt) {
     ------------------------------------------------- */
 
     inline: {
-      html: {
+      postmark: {
         expand: true,
         cwd: path.dist,
         ext: '.html',
-        src: ['**/*.html'],
+        src: ['postmark-layouts/**/*.html'],
+        dest: path.dist,
+      },
+      generic: {
+        expand: true,
+        cwd: path.dist,
+        ext: '.html',
+        src: ['compiled/**/*.html'],
         dest: path.dist,
       },
     },
@@ -127,11 +140,18 @@ module.exports = function(grunt) {
     ------------------------------------------------- */
 
     prettify: {
-      html: {
+      postmark: {
         expand: true,
         cwd: path.dist,
         ext: '.html',
-        src: ['**/*.html'],
+        src: ['postmark-layouts/**/*.html'],
+        dest: path.dist,
+      },
+      generic: {
+        expand: true,
+        cwd: path.dist,
+        ext: '.html',
+        src: ['compiled/**/*.html'],
         dest: path.dist,
       },
     },
@@ -147,11 +167,11 @@ module.exports = function(grunt) {
         preserveStyles: true,
         preserveStyleAttribute: true,
       },
-      html: {
+      genericHtml: {
         files: [
           {
             expand: true,
-            src: [path.dist_html_glob],
+            src: [`${path.dist}compiled/**/*.html`],
             dest: '',
           },
         ],
@@ -171,6 +191,10 @@ module.exports = function(grunt) {
         ],
       },
     },
+
+    /* FTP Deploy
+    Deploy assets to FTP
+    ------------------------------------------------- */
 
     'ftp-deploy': {
       build: {
@@ -224,6 +248,22 @@ module.exports = function(grunt) {
     ------------------------------------------------- */
 
     replace: {
+      // Replace handlebars body placeholder with Postmark's content placeholder
+      postmarkPlaceholder: {
+        src: [`${path.dist}postmark-layouts/**/content.hbs`],
+        overwrite: true,
+        replacements: [
+          { from: /({{)(.?body.?)(}})/g, to: '\\{{{ @content }}}' },
+        ],
+      },
+
+      // Remove handlebars config
+      postmarkConfig: {
+        src: [`${path.dist}postmark-templates/**/content.hbs`],
+        overwrite: true,
+        replacements: [{ from: /(---)(.*)(---)/s, to: '' }],
+      },
+
       // Premailer escapes URLs, so our mustachio variables for URLs get fully escaped, and the
       // URL variables need to be converted from %7B%7Bsomething%7D%7D to {{something}}
       variableSyntax: {
@@ -233,10 +273,10 @@ module.exports = function(grunt) {
           { from: '%7B%7B', to: '{{ ' },
           { from: '%7D%7D', to: ' }}' },
           { from: '%7D%7D%22', to: ' }}' },
-          { from: '%20}}', to: ' }}' },
-          { from: '{{%20', to: '{{ ' },
+          { from: '%20', to: '' },
         ],
       },
+
       // Add some additional attributes that grunt inline removed
       styleBlock: {
         src: [path.dist_html_glob],
@@ -256,13 +296,23 @@ module.exports = function(grunt) {
      ------------------------------------------------- */
 
     copy: {
-      metadata: {
+      postmarkTemplates: {
         files: [
           {
             expand: true,
-            cwd: 'src',
-            src: ['**/meta.json'],
-            dest: path.dist,
+            cwd: 'src/templates/',
+            src: ['**/*'],
+            dest: `${path.dist}postmark-templates`,
+          },
+        ],
+      },
+      postmarkLayouts: {
+        files: [
+          {
+            expand: true,
+            cwd: 'src/layouts/',
+            src: ['**/*'],
+            dest: `${path.dist}postmark-layouts`,
           },
         ],
       },
@@ -318,7 +368,21 @@ module.exports = function(grunt) {
       },
       postmarkPush: {
         command:
-          'POSTMARK_SERVER_TOKEN=<%= secret.postmark.server_token %> postmark templates push ./dist/templates',
+          'POSTMARK_SERVER_TOKEN=<%= secret.postmark.server_token %> postmark templates push ./dist',
+      },
+    },
+
+    /**
+     * Used for cleaning up unneeded files and directories
+     * https://github.com/gruntjs/grunt-contrib-clean
+    ------------------------------------------------- */
+
+    clean: {
+      dist: {
+        src: [path.dist],
+      },
+      hbs: {
+        src: ['dist/**/*.hbs'],
       },
     },
   })
@@ -326,17 +390,46 @@ module.exports = function(grunt) {
   /* Tasks
   ================================================= */
 
-  grunt.registerTask('default', ['css', 'html'])
-
-  // Assets
-  grunt.registerTask('html', [
-    'assemble',
-    'inline',
-    'premailer',
-    'replace',
-    'prettify',
-    'copy:metadata',
+  grunt.registerTask('default', [
+    'clean:dist',
+    'css',
+    'postmark-templates',
+    'generic-templates',
   ])
+
+  /**
+   * Compiles Postmark compatible layouts and templates into separate files.
+   * Ideal if Postmark is your email service provider.
+   * CSS is not inlined since Postmark handles this for you.
+   */
+  grunt.registerTask('postmark-templates', [
+    'copy:postmarkTemplates', // Copy Handlebars templates to dist folder
+    'copy:postmarkLayouts', // Copy Handlebars layouts to dist folder
+    'replace:postmarkPlaceholder', // Replace handlebars {{body}} with Postmark content placeholder
+    'replace:postmarkConfig', // Remove handlebars config from layouts
+    'assemble:postmark', // Compile handlebars templates and layouts. Mainly used for loading partials into the templates.
+    'inline:postmark', // Load external CSS into layouts
+    'replace:styleBlock', // Add properties to style block
+    'prettify:postmark', // Format layout HTML
+    'premailer:txt', // Generate text versions
+    'replace:variableSyntax', // Clean up variable syntax in text versions
+    'clean:hbs', // Remove handlebars files
+  ])
+
+  /**
+   * Compiles templates and layouts to dist/compiled.
+   * Each template file includes the combined layout with inlined CSS.
+   * Ideal if you don't use Postmark as an email service provider.
+   */
+  grunt.registerTask('generic-templates', [
+    'assemble:generic', // Compile handlebars templates to HTML
+    'inline:generic', // Load external CSS into templates
+    'premailer', // Inline CSS and generate text version
+    'replace:variableSyntax', // Clean up variable syntax in text versions
+    'replace:styleBlock', // Add properties to style block
+    'prettify:generic', // Format HTML
+  ])
+
   grunt.registerTask('css', ['sass', 'autoprefixer'])
   grunt.registerTask('images-ftp', ['ftp-deploy'])
   grunt.registerTask('images-s3', ['s3'])
