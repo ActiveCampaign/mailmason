@@ -343,16 +343,16 @@ module.exports = function(grunt) {
       },
       // run "grunt postmark:welcome" - Sends just the welcome email
       welcome: {
-        src: 'dist/welcome.html',
+        src: 'dist/compiled/welcome/content.html',
       },
       // run "npm run flood" - Sends all of the emails. Be careful not to spam PM if you have a bunch of emails.
       flood: {
-        src: [path.dist_html_glob],
+        src: ['dist/compiled/**/content.html'],
       },
       // run "npm run litmus" - Add a litmus test address here.
       litmus: {
         to: '<%= config.strings.litmus_email %>',
-        src: 'dist/user_invitation.html',
+        src: 'dist/compiled/user-invitation/content.html',
       },
     },
 
