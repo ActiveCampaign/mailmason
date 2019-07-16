@@ -87,9 +87,10 @@ p {
   body,
   .email-body,
   .email-body_inner,
-  .email-content
+  .email-content,
   .email-wrapper,
-  .email-masthead {
+  .email-masthead,
+  .email-footer {
     background-color: $c-gray-900 !important;
     color: #FFF !important;
   }

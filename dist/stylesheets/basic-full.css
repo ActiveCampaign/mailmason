@@ -297,9 +297,10 @@ p.sub {
   body,
   .email-body,
   .email-body_inner,
-  .email-content
-.email-wrapper,
-  .email-masthead {
+  .email-content,
+  .email-wrapper,
+  .email-masthead,
+  .email-footer {
     background-color: #333333 !important;
     color: #FFF !important; }
   p,
