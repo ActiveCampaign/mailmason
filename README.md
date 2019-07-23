@@ -44,7 +44,7 @@ If you need help getting started or using MailMason, make sure to check out the 
     * [Images & Assets](https://github.com/wildbit/mailmason/wiki/Getting-Started#images--assets)
     * [Social Images](https://github.com/wildbit/mailmason/wiki/Getting-Started#social-images)
 * [Project Structure](https://github.com/wildbit/mailmason/wiki/Project-Structure)
-  * [Emails](https://github.com/wildbit/mailmason/wiki/Project-Structure#emails)
+  * [Templates](https://github.com/wildbit/mailmason/wiki/Project-Structure#templates)
   * [Images](https://github.com/wildbit/mailmason/wiki/Project-Structure#images)
   * [Layouts](https://github.com/wildbit/mailmason/wiki/Project-Structure#layouts)
   * [Partials](https://github.com/wildbit/mailmason/wiki/Project-Structure#partials)
@@ -52,6 +52,7 @@ If you need help getting started or using MailMason, make sure to check out the 
 * [Usage](https://github.com/wildbit/mailmason/wiki/Usage)
   * [Building](https://github.com/wildbit/mailmason/wiki/Usage#building)
   * [Testing](https://github.com/wildbit/mailmason/wiki/Usage#testing)
+  * [Pushing templates to Postmark](https://github.com/wildbit/mailmason/wiki/Usage#pushing-templates-to-postmark)
 * [Development](https://github.com/wildbit/mailmason/wiki/Development)
 * [Templates](https://github.com/wildbit/mailmason/wiki/Templates)
 
