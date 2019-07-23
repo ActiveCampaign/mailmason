@@ -5,5 +5,5 @@
 node_modules
 npm-debug.log
 config.json
+config.pm.json
 secrets.json
-dist_test

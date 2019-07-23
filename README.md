@@ -1,11 +1,10 @@
-<img src="http://assets.wildbit.com/wildbit/repos/mailmason/mailmason.png" alt="MailMason" width="148" height="149" align="right">
+<h1 align="center">
+  <img src="./media/header@2x.png" width="100%" style="max-width:1230px;" alt="MailMason">
+</h1>
+<p align="center">A complete toolset to streamline building and updating a set of consistent transactional emails.</p>
 
-# MailMason
-
-Brought to you by
-<a href="http://postmarkapp.com"><img src="http://assets.wildbit.com/postmark/misc/postmark.svg" alt="Postmark"></a>
-
-**A complete toolset to streamline building and updating a set of consistent transactional emails.**
+<p align="center">Brought to you by <a href="http://postmarkapp.com"><img src="http://assets.wildbit.com/postmark/misc/postmark.svg" alt="Postmark"></a>
+</p>
 
 *Few tasks are more tedious than building a consistent set of well-tested and beautiful transactional email templates for your application.* Not any longer.
 
@@ -24,6 +23,7 @@ By default, the generated templates use [Mustachio](https://github.com/wildbit/m
 * [X] Enables easy batch testing against the [Postmark Spamcheck API](http://spamcheck.postmarkapp.com)
 * [X] Enables easy batch testing through [Litmus](http://litmus.com)
 * [X] Enables easy uploading of image assets to your CDN so you can include images in your templates (but you don't have to)
+* [X] Enables easy template pushing to your Postmark account
 
 ## Interested in contributing?
 
@@ -54,3 +54,7 @@ If you need help getting started or using MailMason, make sure to check out the 
   * [Testing](https://github.com/wildbit/mailmason/wiki/Usage#testing)
 * [Development](https://github.com/wildbit/mailmason/wiki/Development)
 * [Templates](https://github.com/wildbit/mailmason/wiki/Templates)
+
+## License
+
+MailMason is licensed under the **MIT** license. Please refer to the [LICENSE](https://github.com/wildbit/mailmason/blob/master/LICENSE) for more information.

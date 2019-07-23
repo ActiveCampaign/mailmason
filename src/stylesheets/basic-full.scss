@@ -1,0 +1,118 @@
+@import 'scss/imports';
+
+// --------------------------------
+// Layout specific styles
+// --------------------------------
+
+body {
+  background-color: $c-slate-40;
+  color: $c-slate-500;
+}
+p {
+  color: $c-slate-500;
+}
+p.sub {
+  color: $c-slate-400;
+}
+
+.email-wrapper {
+  @include table-scale();
+  background-color: $c-slate-40;
+}
+.email-content {
+  @include table-scale();
+}
+
+
+/* Masthead ----------------------- */
+
+.email-masthead {
+  padding: 25px 0;
+  text-align: center;
+
+  &_logo {
+    width: 94px;
+  }
+  &_name {
+    font-size: 16px;
+    font-weight: bold;
+    color: $c-slate-200;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(255,255,255,1);
+  }
+}
+
+
+/* Body ------------------------------ */
+
+.email-body {
+  @include table-scale();
+  background-color: #FFFFFF;
+
+  &_inner {
+    @include table-scale($width: 570px, $margin: 0 auto);
+    background-color: #FFFFFF;
+  }
+}
+
+.email-footer {
+  @include table-scale($width: 570px, $margin: 0 auto);
+  text-align: center;
+
+  p {
+    color: $c-slate-400;
+  }
+}
+
+.body-action {
+  @include table-scale($margin: 30px auto);
+  text-align: center;
+}
+.body-sub {
+  margin-top: 25px;
+  padding-top: 25px;
+  border-top: 1px solid $c-slate-50;
+}
+.content-cell {
+  padding: 35px;
+}
+
+
+/*Media Queries ------------------------------ */
+
+@media only screen and (max-width: 600px) {
+  .email-body_inner,
+  .email-footer {
+    width: 100% !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body,
+  .email-body,
+  .email-body_inner,
+  .email-content,
+  .email-wrapper,
+  .email-masthead,
+  .email-footer {
+    background-color: $c-gray-900 !important;
+    color: #FFF !important;
+  }
+  p,
+  ul,
+  ol,
+  blockquote,
+  h1,
+  h2,
+  h3 {
+    color: #FFF !important;
+  }
+
+  .attributes_content,
+  .discount {
+    background-color: #222 !important;
+  }
+  .email-masthead_name {
+    text-shadow: none !important;
+  }
+}

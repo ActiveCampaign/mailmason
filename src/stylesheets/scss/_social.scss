@@ -1,0 +1,15 @@
+/* Social Icons ------------------------------ */
+
+.social {
+  width: auto;
+
+  td {
+    padding: 0;
+    width: auto;
+  }
+  &_icon {
+    height: 20px;
+    margin: 0 8px 10px 8px;
+    padding: 0;
+  }
+}

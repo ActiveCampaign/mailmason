@@ -1,22 +1,22 @@
 {{#if use_images }}
 <!-- Related Items -->
-<table class="related" align="center" width="100%" cellpadding="0" cellspacing="0">
+<table class="related" align="center" width="100%" cellpadding="0" cellspacing="0" role="presentation">
   <tr>
     <td align="center" colspan="2">
-      <h2 class="related_heading" >You may also like...</h2>
+      <h2 class="f-fallback related_heading" >You may also like...</h2>
     </td>
   </tr>
   <tr>
     <td class="related_item" align="center">
       <a href="{{ item_one_link }}">
         <img class="related_item-thumb" src="{{ images_url }}related_placeholder.png" width="180">
-        <h4 class="related_item-title">\{{ item_one_name }}</h4>
+        <h4 class="f-fallback related_item-title">\{{ item_one_name }}</h4>
       </a>
     </td>
     <td class="related_item" align="center">
       <a href="{{ item_two_link }}">
         <img class="related_item-thumb" src="{{ images_url }}related_placeholder.png" width="180">
-        <h4 class="related_item-title">\{{ item_two_name }}</h4>
+        <h4 class="f-fallback related_item-title">\{{ item_two_name }}</h4>
       </a>
     </td>
   </tr>

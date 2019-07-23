@@ -1,0 +1,7 @@
+{
+  "Name": "User Invitation",
+  "Alias": "user-invitation",
+  "Subject": "{{ invite_sender_name }} invited you to {{ product_name }}",
+  "TemplateType": "Standard",
+  "LayoutTemplate": "basic"
+}

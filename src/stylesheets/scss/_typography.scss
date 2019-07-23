@@ -1,24 +1,32 @@
 /* Type ------------------------------ */
 
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap');
+
+$f-stack: 'Nunito Sans', Helvetica, Arial, sans-serif;
+$f-base-size: 16px;
+
+body, td, th {
+  font-family: $f-stack;
+}
+
 h1 {
   @include heading();
 }
 h2 {
-  @include heading($size: 16px);
+  @include heading($size: $f-base-size);
 }
 h3 {
   @include heading($size: 14px);
 }
-p {
-  margin-top: 0;
-  color: $c-slate;
-  font-size: 16px;
-  line-height: 1.5em;
-  text-align: left;
+td, th {
+  font-size: $f-base-size;
+}
+p, ul, ol, blockquote {
+  margin: .4em 0 1.1875em;
+  font-size: $f-base-size;
+  line-height: 1.625;
 }
 p.sub {
-  font-size: 12px;
+  font-size: 13px;
 }
-p.center {
-  text-align: center;
-}
+

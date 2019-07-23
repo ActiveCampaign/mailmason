@@ -1,24 +1,19 @@
 module.exports = function(grunt) {
+  const sass = require('node-sass')
+  require('load-grunt-tasks')(grunt, { pattern: ['grunt-*', 'assemble'] })
+  require('time-grunt')(grunt)
+  grunt.loadNpmTasks('grunt-ftp-deploy')
 
-  // Include modules
-  require('load-grunt-tasks')(grunt, {pattern: ['grunt-*', 'assemble']});
-  require('time-grunt')(grunt);
-
-  grunt.loadNpmTasks('grunt-ftp-deploy');
-
-  var path = {
-    css_src: 'src/stylesheets/global.scss',
-    css_dest: 'src/stylesheets/global.css',
-    email_src: 'src/emails/*.hbs',
+  const path = {
+    css_src: 'src/stylesheets/',
     dist: 'dist/',
-    dist_test: 'dist_test/',
-    dist_html_glob: 'dist/*.html',
-    dist_text_glob: 'dist/*.txt',
-    dist_test_html_glob: 'dist_test/*.html',
-    layouts: 'src/layouts',
-    partials: 'src/partials/*',
-    images_src: 'src/images'
-  };
+    dist_html_glob: 'dist/**/*.html',
+    dist_text_glob: 'dist/**/*.txt',
+    templates: 'src/templates/',
+    layouts: 'src/layouts/',
+    partials: 'src/partials/',
+    images_src: 'src/images',
+  }
 
   /* Configuration
   ================================================= */
@@ -30,33 +25,42 @@ module.exports = function(grunt) {
        common changes centralized to key files instead of being littered
        throughout the Gruntfile. This also makes it easy to .gitignore secrets
     ================================================= */
-    secret: grunt.file.exists('secrets.json') ? grunt.file.readJSON('secrets.json') : {},
+    secret: grunt.file.exists('secrets.json')
+      ? grunt.file.readJSON('secrets.json')
+      : {},
     config: grunt.file.readJSON('config.json'),
 
     /* SASS
     ------------------------------------------------- */
 
     sass: {
+      options: {
+        implementation: sass,
+      },
       styles: {
-        src: path.css_src,
-        dest: path.css_dest
-      }
+        expand: true,
+        cwd: path.css_src,
+        ext: '.css',
+        src: ['*.scss'],
+        dest: `${path.dist}stylesheets/`,
+      },
     },
-
 
     /* Autoprefixer
     ------------------------------------------------- */
 
     autoprefixer: {
       options: {
-        browsers: ['last 6 versions', 'ie >= 9']
+        browsers: ['last 6 versions', 'ie >= 9'],
       },
       styles: {
-        src: path.css_dest,
-        dest: path.css_dest
-      }
+        expand: true,
+        cwd: `${path.dist}styles/`,
+        ext: '.css',
+        src: ['*.css'],
+        dest: `${path.dist}styles/`,
+      },
     },
-
 
     /* Assemble
        Assembles our handlebars templates. Documentation might be incompatible since the latest version uses an entirely different build system.
@@ -66,39 +70,47 @@ module.exports = function(grunt) {
     assemble: {
       options: {
         layoutdir: path.layouts,
-        partials: path.partials,
+        partials: `${path.partials}*.hbs`,
         flatten: true,
-        sender_name: "<%= config.strings.sender_name %>",
-        product_name: "<%= config.strings.product_name %>",
-        product_url: "<%= config.strings.product_url %>",
-        credit_card_statement_name: "<%= config.strings.credit_card_statement_name %>",
-        formal_company_name: "<%= config.strings.formal_company_name %>",
-        address_line_1: "<%= config.strings.address_line_1 %>",
-        address_line_2: "<%= config.strings.address_line_2 %>",
-        city: "<%= config.strings.city %>",
-        state: "<%= config.strings.state %>",
-        country: "<%= config.strings.country %>",
-        phone: "<%= config.strings.phone %>",
-        images_url: "<%= config.images.images_url %>",
-        use_images: "<%= config.images.use_images %>",
-        logo_file: "<%= config.images.logo_file %>",
-        logo_width: "<%= config.images.logo_width %>",
-        use_social_circles: "<%= config.images.use_social_circles %>",
-        twitter_url: "<%= config.images.twitter_url %>",
-        facebook_url: "<%= config.images.facebook_url %>",
-        pinterest_url: "<%= config.images.pinterest_url %>",
-        instagram_url: "<%= config.images.instagram_url %>",
-        dribbble_url: "<%= config.images.dribbble_url %>",
-        google_plus_url: "<%= config.images.google_plus_url %>",
-        youtube_url: "<%= config.images.youtube_url %>",
-        linkedin_url: "<%= config.images.linkedin_url %>"
+        sender_name: '<%= config.strings.sender_name %>',
+        product_name: '<%= config.strings.product_name %>',
+        product_url: '<%= config.strings.product_url %>',
+        credit_card_statement_name:
+          '<%= config.strings.credit_card_statement_name %>',
+        formal_company_name: '<%= config.strings.formal_company_name %>',
+        address_line_1: '<%= config.strings.address_line_1 %>',
+        address_line_2: '<%= config.strings.address_line_2 %>',
+        city: '<%= config.strings.city %>',
+        state: '<%= config.strings.state %>',
+        country: '<%= config.strings.country %>',
+        phone: '<%= config.strings.phone %>',
+        images_url: '<%= config.images.images_url %>',
+        use_images: '<%= config.images.use_images %>',
+        logo_file: '<%= config.images.logo_file %>',
+        logo_width: '<%= config.images.logo_width %>',
+        use_social_circles: '<%= config.images.use_social_circles %>',
+        twitter_url: '<%= config.images.twitter_url %>',
+        facebook_url: '<%= config.images.facebook_url %>',
+        pinterest_url: '<%= config.images.pinterest_url %>',
+        instagram_url: '<%= config.images.instagram_url %>',
+        dribbble_url: '<%= config.images.dribbble_url %>',
+        google_plus_url: '<%= config.images.google_plus_url %>',
+        youtube_url: '<%= config.images.youtube_url %>',
+        linkedin_url: '<%= config.images.linkedin_url %>',
       },
-      pages: {
-        src: [path.email_src],
-        dest: path.dist
-      }
+      generic: {
+        expand: true,
+        cwd: path.templates,
+        src: ['**/*.hbs'],
+        dest: `${path.dist}compiled`,
+      },
+      postmark: {
+        expand: true,
+        cwd: path.dist,
+        src: ['postmark-templates/**/*.hbs', 'postmark-layouts/**/*.hbs'],
+        dest: path.dist,
+      },
     },
-
 
     /* Inline
        Brings external resources in the HTML files. Basically just takes our CSS file and inserts it as a style block.
@@ -106,15 +118,21 @@ module.exports = function(grunt) {
     ------------------------------------------------- */
 
     inline: {
-      html: {
+      postmark: {
         expand: true,
         cwd: path.dist,
         ext: '.html',
-        src: ['*.html'],
-        dest: path.dist
-      }
+        src: ['postmark-layouts/**/*.html'],
+        dest: path.dist,
+      },
+      generic: {
+        expand: true,
+        cwd: path.dist,
+        ext: '.html',
+        src: ['compiled/**/*.html'],
+        dest: path.dist,
+      },
     },
-
 
     /* Prettify
        Formats our template HTML files.
@@ -122,18 +140,21 @@ module.exports = function(grunt) {
     ------------------------------------------------- */
 
     prettify: {
-      options: {
-        indent: '2'
-      },
-      html: {
+      postmark: {
         expand: true,
         cwd: path.dist,
         ext: '.html',
-        src: ['*.html'],
-        dest: path.dist
-      }
+        src: ['postmark-layouts/**/*.html'],
+        dest: path.dist,
+      },
+      generic: {
+        expand: true,
+        cwd: path.dist,
+        ext: '.html',
+        src: ['compiled/**/*.html'],
+        dest: path.dist,
+      },
     },
-
 
     /* Premailer
        Adds all sorts of email magic. Adds inline styles to each element based off class. Also generates plain text versions and allows us to control commonly used table attributes via CSS.
@@ -142,47 +163,55 @@ module.exports = function(grunt) {
 
     premailer: {
       options: {
-        warnLevel: 'none'
+        warnLevel: 'none',
+        preserveStyles: true,
+        preserveStyleAttribute: true,
       },
-      html: {
-        options: {
-          removeComments: true
-        },
-        files: [{
-          expand: true,
-          src: [path.dist_test_html_glob],
-          dest: ''
-        }]
+      genericHtml: {
+        files: [
+          {
+            expand: true,
+            src: [`${path.dist}compiled/**/*.html`],
+            dest: '',
+          },
+        ],
       },
       txt: {
         options: {
           mode: 'txt',
-          lineLength: 16384
+          lineLength: 16384,
         },
-        files: [{
-          expand: true,
-          src: [path.dist_html_glob],
-          dest: '',
-          ext: '.txt'
-        }]
-      }
+        files: [
+          {
+            expand: true,
+            src: [path.dist_html_glob],
+            dest: '',
+            ext: '.txt',
+          },
+        ],
+      },
     },
 
+    /* FTP Deploy
+    Deploy assets to FTP
+    ------------------------------------------------- */
 
     'ftp-deploy': {
       build: {
         auth: {
-          host: "<%= config.ftp.host %>",
-          port: "<%= config.ftp.port %>",
-          username: "<%= secret.ftp.username %>",
-          password: "<%= secret.ftp.password %>"
+          host: '<%= config.ftp.host %>',
+          port: '<%= config.ftp.port %>',
+          username: '<%= secret.ftp.username %>',
+          password: '<%= secret.ftp.password %>',
         },
-        src: "<%= config.ftp.src %>",
-        dest: "<%= config.ftp.dest %>",
-        exclusions: ['path/to/source/folder/**/.DS_Store', 'path/to/source/folder/**/Thumbs.db']
-      }
+        src: '<%= config.ftp.src %>',
+        dest: '<%= config.ftp.dest %>',
+        exclusions: [
+          'path/to/source/folder/**/.DS_Store',
+          'path/to/source/folder/**/Thumbs.db',
+        ],
+      },
     },
-
 
     /* S3
        Pushes image assets to an Amazon S3 bucket.
@@ -191,18 +220,17 @@ module.exports = function(grunt) {
 
     s3: {
       options: {
-        accessKeyId: "<%= secret.s3.access_key_id %>",
-        secretAccessKey: "<%= secret.s3.secret_access_key %>",
-        bucket: "<%= config.s3.bucket %>",
-        region: "<%= config.s3.region %>",
-        overwrite: "<%= config.s3.overwrite %>"
+        accessKeyId: '<%= secret.s3.access_key_id %>',
+        secretAccessKey: '<%= secret.s3.secret_access_key %>',
+        bucket: '<%= config.s3.bucket %>',
+        region: '<%= config.s3.region %>',
+        overwrite: '<%= config.s3.overwrite %>',
       },
       build: {
         cwd: path.images_src,
-        src: "**"
-      }
+        src: '**',
+      },
     },
-
 
     /* Watch
        Watches all files in the src directory for changes.
@@ -210,18 +238,32 @@ module.exports = function(grunt) {
 
     watch: {
       options: {
-        livereload: true
+        livereload: true,
       },
       files: ['src/**/*'],
-      tasks: ['default']
+      tasks: ['default'],
     },
-
 
     /* Replace
     ------------------------------------------------- */
 
-
     replace: {
+      // Replace handlebars body placeholder with Postmark's content placeholder
+      postmarkPlaceholder: {
+        src: [`${path.dist}postmark-layouts/**/content.hbs`],
+        overwrite: true,
+        replacements: [
+          { from: /({{)(.?body.?)(}})/g, to: '\\{{{ @content }}}' },
+        ],
+      },
+
+      // Remove handlebars config
+      postmarkConfig: {
+        src: [`${path.dist}postmark-templates/**/content.hbs`],
+        overwrite: true,
+        replacements: [{ from: /(---)(.*)(---)/s, to: '' }],
+      },
+
       // Premailer escapes URLs, so our mustachio variables for URLs get fully escaped, and the
       // URL variables need to be converted from %7B%7Bsomething%7D%7D to {{something}}
       variableSyntax: {
@@ -231,10 +273,10 @@ module.exports = function(grunt) {
           { from: '%7B%7B', to: '{{ ' },
           { from: '%7D%7D', to: ' }}' },
           { from: '%7D%7D%22', to: ' }}' },
-          { from: '%20}}', to: ' }}' },
-          { from: '{{%20', to: '{{ ' }
-        ]
+          { from: '%20', to: '' },
+        ],
       },
+
       // Add some additional attributes that grunt inline removed
       styleBlock: {
         src: [path.dist_html_glob],
@@ -242,12 +284,11 @@ module.exports = function(grunt) {
         replacements: [
           {
             from: '<style>',
-            to: '<style type="text/css" rel="stylesheet" media="all">'
-          }
-        ]
-      }
+            to: '<style type="text/css" rel="stylesheet" media="all">',
+          },
+        ],
+      },
     },
-
 
     /* Copy
        This is mainly used to copy compiled templates to a new directory for the CSS to be inlined before being tested.
@@ -255,16 +296,27 @@ module.exports = function(grunt) {
      ------------------------------------------------- */
 
     copy: {
-      testTemplates: {
-        files: [{
-          expand: true,
-          src: [path.dist_html_glob],
-          dest: path.dist_test,
-          flatten: true
-        }]
-      }
+      postmarkTemplates: {
+        files: [
+          {
+            expand: true,
+            cwd: 'src/templates/',
+            src: ['**/*'],
+            dest: `${path.dist}postmark-templates`,
+          },
+        ],
+      },
+      postmarkLayouts: {
+        files: [
+          {
+            expand: true,
+            cwd: 'src/layouts/',
+            src: ['**/*'],
+            dest: `${path.dist}postmark-layouts`,
+          },
+        ],
+      },
     },
-
 
     /* Spamcheck
        Sends all of our HTML files through Postmark’s spamcheck API.
@@ -273,58 +325,118 @@ module.exports = function(grunt) {
 
     spamcheck: {
       emails: {
-        src: [path.dist_html_glob]
-      }
+        src: [path.dist_html_glob],
+      },
     },
-
 
     /* Postmark
        Sends test emails through Postmark. Add and remove template targets as needed.
-       Ensure that the CSS is always inlined before sending tests. This can be done with the 'testBuild' task below.
        See: https://github.com/wildbit/grunt-postmark
     ------------------------------------------------- */
 
     postmark: {
       options: {
-        serverToken: "<%= secret.postmark.server_token %>",
-        from: "<%= config.postmark.from %>",
-        to: "<%= config.postmark.to %>",
-        subject: "<%= config.postmark.subject %>",
+        serverToken: '<%= secret.postmark.server_token %>',
+        from: '<%= config.postmark.from %>',
+        to: '<%= config.postmark.to %>',
+        subject: '<%= config.postmark.subject %>',
       },
       // run "grunt postmark:welcome" - Sends just the welcome email
       welcome: {
-        src: 'dist_test/welcome.html'
+        src: 'dist/compiled/welcome/content.html',
       },
       // run "npm run flood" - Sends all of the emails. Be careful not to spam PM if you have a bunch of emails.
       flood: {
-        src: [path.dist_test_html_glob]
+        src: ['dist/compiled/**/content.html'],
       },
       // run "npm run litmus" - Add a litmus test address here.
       litmus: {
-        to: "<%= config.strings.litmus_email %>",
-        src: 'dist_test/user_invitation.html'
-      }
-    }
+        to: '<%= config.strings.litmus_email %>',
+        src: 'dist/compiled/user-invitation/content.html',
+      },
+    },
 
-  });
+    /* Shell
+       Used for Pushing templates to Postmark via the postmark-cli tool.
+       The reason we use Grunt to execute this is so that we can easily pass the server tokens in from the secrets.json.
+       See: https://github.com/sindresorhus/grunt-shell
+    ------------------------------------------------- */
 
+    shell: {
+      options: {
+        stderr: true,
+      },
+      postmarkPush: {
+        command:
+          'POSTMARK_SERVER_TOKEN=<%= secret.postmark.server_token %> postmark templates push ./dist',
+      },
+    },
+
+    /**
+     * Used for cleaning up unneeded files and directories
+     * https://github.com/gruntjs/grunt-contrib-clean
+    ------------------------------------------------- */
+
+    clean: {
+      dist: {
+        src: [path.dist],
+      },
+      hbs: {
+        src: ['dist/**/*.hbs'],
+      },
+    },
+  })
 
   /* Tasks
   ================================================= */
 
-  grunt.registerTask('default', ['css', 'html']);
+  grunt.registerTask('default', [
+    'clean:dist',
+    'css',
+    'postmark-templates',
+    'generic-templates',
+  ])
 
-  // Assets
-  grunt.registerTask('html', ['assemble', 'inline', 'premailer:txt', 'replace', 'prettify']);
-  grunt.registerTask('css', ['sass', 'autoprefixer']);
-  grunt.registerTask('images-ftp', ['ftp-deploy']);
-  grunt.registerTask('images-s3', ['s3']);
+  /**
+   * Compiles Postmark compatible layouts and templates into separate files.
+   * Ideal if Postmark is your email service provider.
+   * CSS is not inlined since Postmark handles this for you.
+   */
+  grunt.registerTask('postmark-templates', [
+    'copy:postmarkTemplates', // Copy Handlebars templates to dist folder
+    'copy:postmarkLayouts', // Copy Handlebars layouts to dist folder
+    'replace:postmarkPlaceholder', // Replace handlebars {{body}} with Postmark content placeholder
+    'replace:postmarkConfig', // Remove handlebars config from layouts
+    'assemble:postmark', // Compile handlebars templates and layouts. Mainly used for loading partials into the templates.
+    'inline:postmark', // Load external CSS into layouts
+    'replace:styleBlock', // Add properties to style block
+    'prettify:postmark', // Format layout HTML
+    'premailer:txt', // Generate text versions
+    'replace:variableSyntax', // Clean up variable syntax in text versions
+    'clean:hbs', // Remove handlebars files
+  ])
+
+  /**
+   * Compiles templates and layouts to dist/compiled.
+   * Each template file includes the combined layout with inlined CSS.
+   * Ideal if you don't use Postmark as an email service provider.
+   */
+  grunt.registerTask('generic-templates', [
+    'assemble:generic', // Compile handlebars templates to HTML
+    'inline:generic', // Load external CSS into templates
+    'premailer', // Inline CSS and generate text version
+    'replace:variableSyntax', // Clean up variable syntax in text versions
+    'replace:styleBlock', // Add properties to style block
+    'prettify:generic', // Format HTML
+  ])
+
+  grunt.registerTask('css', ['sass', 'autoprefixer'])
+  grunt.registerTask('images-ftp', ['ftp-deploy'])
+  grunt.registerTask('images-s3', ['s3'])
+  grunt.registerTask('deploy', ['default', 'shell:postmarkPush'])
 
   // Testing
-  grunt.registerTask('spam', ['spamcheck']);
-  grunt.registerTask('litmus', ['testBuild', 'postmark:litmus']);
-  grunt.registerTask('flood', ['testBuild', 'postmark:flood']);
-
-  // Before sending tests via Postmark, ensure that test builds with inlined CSS are generated
-  grunt.registerTask('testBuild', ['default', 'copy:testTemplates', 'premailer:html']);
-};
+  grunt.registerTask('spam', ['spamcheck'])
+  grunt.registerTask('litmus', ['default', 'postmark:litmus'])
+  grunt.registerTask('flood', ['default', 'postmark:flood'])
+}

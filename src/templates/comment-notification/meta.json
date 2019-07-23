@@ -1,0 +1,7 @@
+{
+  "Name": "Comment notification",
+  "Alias": "comment-notification",
+  "Subject": "{{commenter_name}} made a comment",
+  "TemplateType": "Standard",
+  "LayoutTemplate": "basic"
+}

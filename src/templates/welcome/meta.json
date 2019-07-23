@@ -1,0 +1,7 @@
+{
+  "Name": "Welcome",
+  "Alias": "welcome",
+  "Subject": "Welcome to {{ product_name }}, {{ name }}!",
+  "TemplateType": "Standard",
+  "LayoutTemplate": "basic"
+}

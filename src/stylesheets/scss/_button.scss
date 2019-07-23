@@ -20,11 +20,19 @@ $b-h-padding: 18px;
   border-radius: 3px;
   box-shadow: 0 2px 3px rgba(0,0,0,0.16);
   -webkit-text-size-adjust: none;
+  box-sizing: border-box;
 
   &--green {
     @include button-fill($c-green);
   }
   &--red {
     @include button-fill($c-red);
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .button {
+    width: 100% !important;
+    text-align: center !important;
   }
 }

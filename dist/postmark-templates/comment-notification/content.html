@@ -1,0 +1,21 @@
+
+{{body}}<br><br>
+
+{{#attachment_details}}
+<table class="attributes" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+  <tr>
+    <td class="attributes_content">
+      <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
+        {{#each . }}
+        <tr>
+          <td class="attributes_item"><a href="{{attachment_url}}">{{attachment_name}}</a> <span>({{attachment_size}} {{attachment_type}})</span></td>
+        </tr>
+        {{/each}}
+      </table>
+    </td>
+  </tr>
+</table>
+{{/attachment_details}}
+
+<p>By {{commenter_name}} at {{timestamp}}</p>
+<p class="sub"><a href="{{action_url}}">View the comment</a> or <a href="{{notifications_url}}">Manage notifications</a></p>

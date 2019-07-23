@@ -1,0 +1,27 @@
+/* Related Items ------------------------------ */
+
+.related {
+  @include table-scale($padding: 25px 0 0 0);
+
+  // Items
+  &_item {
+    padding: 10px 0;
+    color: $c-slate-100;
+    font-size: 15px;
+    line-height: 18px;
+  }
+  &_item-title {
+    display: block;
+    margin: .5em 0 0;
+  }
+  &_item-thumb {
+    display: block;
+    padding-bottom: 10px;
+  }
+
+  &_heading {
+    border-top: 1px solid $c-slate-100;
+    text-align: center;
+    padding: 25px 0 10px;
+  }
+}
