@@ -238,9 +238,9 @@ module.exports = function(grunt) {
 
     watch: {
       options: {
-        livereload: true,
+        livereload: 3000,
       },
-      files: ['src/**/*'],
+      files: ['src/**/*', './preview.html'],
       tasks: ['default'],
     },
 
