@@ -365,10 +365,15 @@ module.exports = function(grunt) {
     shell: {
       options: {
         stderr: true,
+        execOptions: {
+          env: {
+            'POSTMARK_SERVER_TOKEN': '<%= secret.postmark.server_token %>'
+          }
+        }
       },
       postmarkPush: {
         command:
-          'POSTMARK_SERVER_TOKEN=<%= secret.postmark.server_token %> postmark templates push ./dist',
+          'postmark templates push ./dist',
       },
     },
 
