@@ -116,3 +116,8 @@ p.sub {
     text-shadow: none !important;
   }
 }
+
+:root {
+  color-scheme: light dark;
+  supported-color-schemes: light dark;
+}
