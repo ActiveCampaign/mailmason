@@ -257,6 +257,15 @@ module.exports = function(grunt) {
         ],
       },
 
+      // Insert mustachio syntax on Postmark layout preheaders
+      postmarkPreheader: {
+        src: [`${path.dist}postmark-layouts/**/content.hbs`],
+        overwrite: true,
+        replacements: [
+          { from: /({{)(.?pm:preheader.?)(}})/g, to: '\\{{#preheader}}<span class="preheader">\\{{.}}</span>\\{{/preheader}}' },
+        ],
+      },
+
       // Remove handlebars config
       postmarkConfig: {
         src: [`${path.dist}postmark-templates/**/content.hbs`],
@@ -412,6 +421,7 @@ module.exports = function(grunt) {
     'copy:postmarkLayouts', // Copy Handlebars layouts to dist folder
     'replace:postmarkPlaceholder', // Replace handlebars {{body}} with Postmark content placeholder
     'replace:postmarkConfig', // Remove handlebars config from layouts
+    'replace:postmarkPreheader', // Insert mustachio syntax on Postmark layout preheaders
     'assemble:postmark', // Compile handlebars templates and layouts. Mainly used for loading partials into the templates.
     'inline:postmark', // Load external CSS into layouts
     'replace:styleBlock', // Add properties to style block
