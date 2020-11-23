@@ -306,7 +306,8 @@ p {
   h1,
   h2,
   h3,
-  span {
+  span,
+  .purchase_item {
     color: #FFF !important; }
   .attributes_content,
   .discount {
