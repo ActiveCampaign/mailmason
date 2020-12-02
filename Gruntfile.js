@@ -270,6 +270,9 @@ module.exports = function(grunt) {
         src: [path.dist_text_glob],
         overwrite: true,
         replacements: [
+          { from: '%7B%7B%7B', to: '{{{ ' },
+          { from: '%7D%7D%7D', to: ' }}}' },
+          { from: '%7D%7D%7D%22', to: ' }}}' },
           { from: '%7B%7B', to: '{{ ' },
           { from: '%7D%7D', to: ' }}' },
           { from: '%7D%7D%22', to: ' }}' },
