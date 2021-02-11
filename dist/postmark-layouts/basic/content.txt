@@ -2,7 +2,7 @@
 
 {{{ @content }}}
 
-© 2019 [Product Name]. All rights reserved.
+© 2021 [Product Name]. All rights reserved.
 
 [Company Name, LLC]
 
