@@ -43,7 +43,7 @@
     "bucket": "",
     "region": "",
     "dest": "/",
-    "access": "private",
+    "access": "public-read",
     "overwrite": true
   }
 }
