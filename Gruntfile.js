@@ -224,6 +224,7 @@ module.exports = function (grunt) {
         secretAccessKey: '<%= secret.s3.secret_access_key %>',
         bucket: '<%= config.s3.bucket %>',
         region: '<%= config.s3.region %>',
+        overwrite: '<%= config.s3.overwrite %>',
         access: '<%= config.s3.access %>'
       },
       build: {
