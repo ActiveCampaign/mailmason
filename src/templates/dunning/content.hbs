@@ -1,0 +1,48 @@
+---
+layout: basic-full/content.hbs
+preheader: ""
+---
+<h1>Hi \{{name}},</h1>
+<p>We were unable to process your last payment of \{{value}} for your {{product_name}} subscription.</p>
+
+<p>Please take a moment to double-check your payment information to make sure your {{product_name}} account keeps running smoothly.</p>
+
+<!-- Action -->
+<table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+  <tr>
+    <td align="center">
+      {{> button color="green" label="Check and update your billing info →" target_url="\{{action_url}}" }}
+    </td>
+  </tr>
+</table>
+
+<table class="attributes" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+  <tr>
+    <td class="attributes_content">
+      <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
+        <tr>
+          <td class="attributes_item">
+            <div class="f-fallback">
+              <h2>Why did the payment fail?</h2>
+              <p>In most cases, a payment might fail because:</p>
+
+              <ul>
+                <li>The card expired</li>
+                <li>There are insufficient funds</li>
+                <li>The payment needs additional authentication before we can process it.</li>
+              </ul>
+
+              <p class="u-margin-bottom-none">You can see more details on your recent order and why the payment failed on the <a href="\{{invoice_url}}">invoice page</a>.</p>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<p>We’ll try charging your card again in [x] days and let you know if the payment is successful.</p>
+
+<p>If you have any questions or need our help, you can reach our support team at [email address] or just reply to this email.</p>
+
+<p>Thanks,<br>The {{ product_name }} team</p>

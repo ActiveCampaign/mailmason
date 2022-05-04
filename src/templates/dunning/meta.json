@@ -1,0 +1,7 @@
+{
+  "Name": "Dunning",
+  "Alias": "dunning",
+  "Subject": "Update your payment information to keep using <%= product_name %>",
+  "TemplateType": "Standard",
+  "LayoutTemplate": "basic"
+}

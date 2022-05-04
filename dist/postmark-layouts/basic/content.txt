@@ -2,8 +2,6 @@
 
 {{{ @content }}}
 
-© 2021 [Product Name]. All rights reserved.
-
 [Company Name, LLC]
 
 1234 Street Rd.

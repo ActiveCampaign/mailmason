@@ -9,7 +9,7 @@ Reset your password ( {{ action_url }} )
 For security, this request was received from a {{operating_system}} device using {{browser_name}}. If you did not request a password reset, please ignore this email or contact support ( {{ support_url }} ) if you have questions.
 
 Thanks,
-The [Product Name] Team
+The [Product Name] team
 
 If you’re having trouble with the button above, copy and paste the URL below into your web browser.
 

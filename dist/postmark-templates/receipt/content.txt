@@ -38,7 +38,7 @@ Total
 If you have any questions about this receipt, simply reply to this email or reach out to our support team ( {{ support_url }} ) for help.
 
 Cheers,
-The [Product Name] Team
+The [Product Name] team
 
 Download as PDF ( {{ action_url }} )
 

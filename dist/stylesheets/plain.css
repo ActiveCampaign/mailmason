@@ -71,6 +71,9 @@ p.sub {
 .align-center {
   text-align: center; }
 
+.u-margin-bottom-none {
+  margin-bottom: 0; }
+
 /* Buttons ------------------------------ */
 .button {
   background-color: #3869D4;

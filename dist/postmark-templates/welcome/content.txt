@@ -21,7 +21,7 @@ Trial End Date: {{trial_end_date}}
 If you have any questions, feel free to email our customer success team ( {{ support_email }} ). (We're lightning quick at replying.) We also offer live chat ( {{ live_chat_url }} ) during business hours.
 
 Thanks,
-[Sender Name] and the [Product Name] Team
+[Sender Name] and the [Product Name] team
 
 P.S. Need immediate help getting started? Check out our help documentation ( {{ help_url }} ). Or, just reply to this email, the [Product Name] support team is always ready to help!
 
