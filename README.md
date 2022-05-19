@@ -3,7 +3,7 @@
 </h1>
 <p align="center">A complete toolset to streamline building and updating a set of consistent transactional emails.</p>
 
-<p align="center">Brought to you by <a href="http://postmarkapp.com"><img src="http://assets.wildbit.com/postmark/misc/postmark.svg" alt="Postmark"></a>
+<p align="center">Brought to you by <a href="http://postmarkapp.com"><img src="https://newsletter.postmarkapp.com/assets/images/pm_logo@2x.png" width="100" alt="Postmark"></a>
 </p>
 
 *Few tasks are more tedious than building a consistent set of well-tested and beautiful transactional email templates for your application.* Not any longer.
