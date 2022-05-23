@@ -1,3 +1,5 @@
+We couldn’t process your payment. Let’s get that fixed!
+
 [Product Name] ( https://example.com )
 
 ************
@@ -8,7 +10,7 @@ We were unable to process your last payment of {{value}} for your [Product Name]
 
 Please take a moment to double-check your payment information to make sure your [Product Name] account keeps running smoothly.
 
-Check and update your billing info → ( %5C{{ action_url }} )
+Check and update your billing info → ( {{ action_url }} )
 
 -------------------------
 Why did the payment fail?
