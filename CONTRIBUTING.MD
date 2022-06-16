@@ -6,7 +6,7 @@ These guidelines are here so we can all be on the same page. They also help ensu
 
 ## What types of contributions help?
 
-MailMason is an open source project, and we love to receive contributions from our community — you! There are many ways to contribute, from writing tutorials or blog posts, improving [the documentation](https://github.com/wildbit/mailmason/wiki), submitting [bug reports and feature requests](https://github.com/wildbit/mailmason/issues), or writing code which can be incorporated into MailMason itself.
+MailMason is an open source project, and we love to receive contributions from our community — you! There are many ways to contribute, from writing tutorials or blog posts, improving [the documentation](https://github.com/activecampaign/mailmason/wiki), submitting [bug reports and feature requests](https://github.com/activecampaign/mailmason/issues), or writing code which can be incorporated into MailMason itself.
 
 ## Sources for Support
 
@@ -26,8 +26,8 @@ Building and testing highly compatible HTML emails is difficult no matter how yo
 ### Technical and procedural considerations
 
 * Ensure compatibility across email clients for every change that's accepted. We recommend [Litmus](https://litmus.com)
-* Ensure that code that goes into core meets all requirements in this checklist: 
-* Create [issues](https://github.com/wildbit/mailmason/issues) for any major changes and enhancements that you wish to make. Discuss things transparently and get community feedback.
+* Ensure that code that goes into core meets all requirements in this checklist:
+* Create [issues](https://github.com/activecampaign/mailmason/issues) for any major changes and enhancements that you wish to make. Discuss things transparently and get community feedback.
 * Before adding new templates, start out with a feature request issue. We may already have some underway.
 * Keep pull requests as atomic as possible, preferably one new feature per pull request.
 * Be welcoming to newcomers and encourage diverse new contributors from all backgrounds. See the [Code of Conduct](http://wildbit.com/open-source-code-of-conduct).
@@ -36,8 +36,8 @@ Building and testing highly compatible HTML emails is difficult no matter how yo
 
 Unsure where to begin contributing to MailMason? You can start by looking through these beginner and help-wanted issues:
 
-* [Beginner issues](https://github.com/wildbit/mailmason/labels/beginner) - issues which should only require a few lines of code, and a little testing.
-* [Help wanted issues](https://github.com/wildbit/mailmason/labels/help%20wanted) - issues which should be a bit more involved than beginner issues.
+* [Beginner issues](https://github.com/activecampaign/mailmason/labels/beginner) - issues which should only require a few lines of code, and a little testing.
+* [Help wanted issues](https://github.com/activecampaign/mailmason/labels/help%20wanted) - issues which should be a bit more involved than beginner issues.
 
 Both issue lists are sorted by total number of comments. While not perfect, number of comments is a reasonable proxy for impact a given change will have.
 
@@ -48,7 +48,7 @@ At this point, you're ready to make your changes! Feel free to ask for help; eve
 ## Getting started
 
 1. Create your own fork of the code
-2. Setup your local environment by following [the instructions in the Wiki](https://github.com/wildbit/mailmason/wiki/Getting-Started).
+2. Setup your local environment by following [the instructions in the Wiki](https://github.com/activecampaign/mailmason/wiki/Getting-Started).
 3. Make some great changes in your fork
 4. Submit a pull request with a detailed explanation of the change and reasoning.
 
@@ -83,7 +83,7 @@ While we don't have an active roadmap, we do have plans to add new templates. Wh
 
 * Simple Alert Notification
 * Charge Failure
-* Dunning & Expired Credit Card 
+* Dunning & Expired Credit Card
 * Account Updated
 * Cart Abandonment
 * Order Confirmation

@@ -4,7 +4,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/wildbit/mailmason"
+    "url": "https://github.com/activecampaign/mailmason"
   },
   "scripts": {
     "start": "grunt watch",

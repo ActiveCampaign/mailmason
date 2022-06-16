@@ -332,7 +332,7 @@ module.exports = function(grunt) {
 
     /* Spamcheck
        Sends all of our HTML files through Postmark’s spamcheck API.
-       See: https://github.com/wildbit/grunt-spamcheck
+       See: https://github.com/activecampaign/grunt-spamcheck
     ------------------------------------------------- */
 
     spamcheck: {
@@ -343,7 +343,7 @@ module.exports = function(grunt) {
 
     /* Postmark
        Sends test emails through Postmark. Add and remove template targets as needed.
-       See: https://github.com/wildbit/grunt-postmark
+       See: https://github.com/activecampaign/grunt-postmark
     ------------------------------------------------- */
 
     postmark: {

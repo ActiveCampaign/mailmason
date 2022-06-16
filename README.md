@@ -10,7 +10,7 @@
 
 With MailMason, you can use Grunt tasks, Handlebars, and SASS to streamline building a consistent set of transactional email templates using layouts and partials to reduce redundancy and create both the HTML and plain text versions of your transactional emails in one fell swoop.
 
-By default, the generated templates use [Mustachio](https://github.com/wildbit/mustachio) for the variable placeholders so that you can easily use them as [Postmark](https://postmarkapp.com) templates. However, the Mustachio pieces are only placeholders, and the generated templates could easily be adapted to work with any email provider.
+By default, the generated templates use [Mustachio](https://github.com/activecampaign/mustachio) for the variable placeholders so that you can easily use them as [Postmark](https://postmarkapp.com) templates. However, the Mustachio pieces are only placeholders, and the generated templates could easily be adapted to work with any email provider.
 
 ## What does it do for you?
 
@@ -27,35 +27,35 @@ By default, the generated templates use [Mustachio](https://github.com/wildbit/m
 
 ## Interested in contributing?
 
-Read through our [guidelines for contributing](https://github.com/wildbit/mailmason/blob/template_updates/CONTRIBUTING.MD) to help make contributions quick and easy.
+Read through our [guidelines for contributing](https://github.com/activecampaign/mailmason/blob/template_updates/CONTRIBUTING.MD) to help make contributions quick and easy.
 
 ## Visit the wiki for documentation and usage
 
-If you need help getting started or using MailMason, make sure to check out the [MailMason wiki](https://github.com/wildbit/mailmason/wiki).
+If you need help getting started or using MailMason, make sure to check out the [MailMason wiki](https://github.com/activecampaign/mailmason/wiki).
 
-* [About](https://github.com/wildbit/mailmason/wiki/About)
-  * [What can it do?](https://github.com/wildbit/mailmason/wiki/About#what-can-it-do)
-  * [What templates are included?](https://github.com/wildbit/mailmason/wiki/About#what-templates-are-included)
-* [Getting Started](https://github.com/wildbit/mailmason/wiki/Getting-Started)
-  * [Setup](https://github.com/wildbit/mailmason/wiki/Getting-Started#setup)
-  * [Configuration](https://github.com/wildbit/mailmason/wiki/Getting-Started#configuration)
-    * [Secrets.json](https://github.com/wildbit/mailmason/wiki/Getting-Started#secretsjson)
-    * [Config.json](https://github.com/wildbit/mailmason/wiki/Getting-Started#secretsjson)
-    * [Images & Assets](https://github.com/wildbit/mailmason/wiki/Getting-Started#images--assets)
-    * [Social Images](https://github.com/wildbit/mailmason/wiki/Getting-Started#social-images)
-* [Project Structure](https://github.com/wildbit/mailmason/wiki/Project-Structure)
-  * [Templates](https://github.com/wildbit/mailmason/wiki/Project-Structure#templates)
-  * [Images](https://github.com/wildbit/mailmason/wiki/Project-Structure#images)
-  * [Layouts](https://github.com/wildbit/mailmason/wiki/Project-Structure#layouts)
-  * [Partials](https://github.com/wildbit/mailmason/wiki/Project-Structure#partials)
-  * [Stylesheets](https://github.com/wildbit/mailmason/wiki/Project-Structure#stylesheets)
-* [Usage](https://github.com/wildbit/mailmason/wiki/Usage)
-  * [Building](https://github.com/wildbit/mailmason/wiki/Usage#building)
-  * [Testing](https://github.com/wildbit/mailmason/wiki/Usage#testing)
-  * [Pushing templates to Postmark](https://github.com/wildbit/mailmason/wiki/Usage#pushing-templates-to-postmark)
-* [Development](https://github.com/wildbit/mailmason/wiki/Development)
-* [Templates](https://github.com/wildbit/mailmason/wiki/Templates)
+* [About](https://github.com/activecampaign/mailmason/wiki/About)
+  * [What can it do?](https://github.com/activecampaign/mailmason/wiki/About#what-can-it-do)
+  * [What templates are included?](https://github.com/activecampaign/mailmason/wiki/About#what-templates-are-included)
+* [Getting Started](https://github.com/activecampaign/mailmason/wiki/Getting-Started)
+  * [Setup](https://github.com/activecampaign/mailmason/wiki/Getting-Started#setup)
+  * [Configuration](https://github.com/activecampaign/mailmason/wiki/Getting-Started#configuration)
+    * [Secrets.json](https://github.com/activecampaign/mailmason/wiki/Getting-Started#secretsjson)
+    * [Config.json](https://github.com/activecampaign/mailmason/wiki/Getting-Started#secretsjson)
+    * [Images & Assets](https://github.com/activecampaign/mailmason/wiki/Getting-Started#images--assets)
+    * [Social Images](https://github.com/activecampaign/mailmason/wiki/Getting-Started#social-images)
+* [Project Structure](https://github.com/activecampaign/mailmason/wiki/Project-Structure)
+  * [Templates](https://github.com/activecampaign/mailmason/wiki/Project-Structure#templates)
+  * [Images](https://github.com/activecampaign/mailmason/wiki/Project-Structure#images)
+  * [Layouts](https://github.com/activecampaign/mailmason/wiki/Project-Structure#layouts)
+  * [Partials](https://github.com/activecampaign/mailmason/wiki/Project-Structure#partials)
+  * [Stylesheets](https://github.com/activecampaign/mailmason/wiki/Project-Structure#stylesheets)
+* [Usage](https://github.com/activecampaign/mailmason/wiki/Usage)
+  * [Building](https://github.com/activecampaign/mailmason/wiki/Usage#building)
+  * [Testing](https://github.com/activecampaign/mailmason/wiki/Usage#testing)
+  * [Pushing templates to Postmark](https://github.com/activecampaign/mailmason/wiki/Usage#pushing-templates-to-postmark)
+* [Development](https://github.com/activecampaign/mailmason/wiki/Development)
+* [Templates](https://github.com/activecampaign/mailmason/wiki/Templates)
 
 ## License
 
-MailMason is licensed under the **MIT** license. Please refer to the [LICENSE](https://github.com/wildbit/mailmason/blob/master/LICENSE) for more information.
+MailMason is licensed under the **MIT** license. Please refer to the [LICENSE](https://github.com/activecampaign/mailmason/blob/master/LICENSE) for more information.
