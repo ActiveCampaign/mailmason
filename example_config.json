@@ -42,6 +42,8 @@
   "s3": {
     "bucket": "",
     "region": "",
+    "dest": "/",
+    "access": "public-read",
     "overwrite": true
   }
 }

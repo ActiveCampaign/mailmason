@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
   const sass = require('node-sass')
   require('load-grunt-tasks')(grunt, { pattern: ['grunt-*', 'assemble'] })
   require('time-grunt')(grunt)
@@ -225,10 +225,12 @@ module.exports = function(grunt) {
         bucket: '<%= config.s3.bucket %>',
         region: '<%= config.s3.region %>',
         overwrite: '<%= config.s3.overwrite %>',
+        access: '<%= config.s3.access %>'
       },
       build: {
         cwd: path.images_src,
         src: '**',
+        dest: "<%= config.s3.dest %>"
       },
     },
 
